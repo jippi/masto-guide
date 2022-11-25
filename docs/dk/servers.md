@@ -2,7 +2,7 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 25 Nov 22 23:10 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 25 Nov 22 23:12 CET_
 
 
 ## Åbne servere
@@ -20,7 +20,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [expressional.social](https://expressional.social/){target=_blank}
         * **Ejer:** [@jippi](https://expressional.social/@jippi){target=_blank}
         * [**Covenant:** ✅](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `77`
+        * **Brugere:** 77
+
         * **Version:** `4.0.2+glitch`
         * _[Læs mere om serveren](https://expressional.social/about){target=_blank}_
 
@@ -35,7 +36,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [expressional.social](https://expressional.social/){target=_blank}
         * **Ejer:** [@jippi](https://expressional.social/@jippi){target=_blank}
         * [**Covenant:** ✅](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `77`
+        * **Brugere:** 77
+
         * **Version:** `4.0.2+glitch`
         * _[Læs mere om serveren](https://expressional.social/about){target=_blank}_
 
@@ -64,7 +66,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [mstdn.dk](https://mstdn.dk/){target=_blank}
         * **Ejer:** [@saustrup](https://mstdn.dk/@saustrup){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `270`
+        * **Brugere:** 270
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://mstdn.dk/about){target=_blank}_
 
@@ -81,7 +84,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [mstdn.dk](https://mstdn.dk/){target=_blank}
         * **Ejer:** [@saustrup](https://mstdn.dk/@saustrup){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `270`
+        * **Brugere:** 270
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://mstdn.dk/about){target=_blank}_
 
@@ -112,7 +116,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [norrebro.space](https://norrebro.space/){target=_blank}
         * **Ejer:** [@asbjorn](https://norrebro.space/@asbjorn){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `115`
+        * **Brugere:** 115
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://norrebro.space/about){target=_blank}_
 
@@ -130,7 +135,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [norrebro.space](https://norrebro.space/){target=_blank}
         * **Ejer:** [@asbjorn](https://norrebro.space/@asbjorn){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `115`
+        * **Brugere:** 115
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://norrebro.space/about){target=_blank}_
 
@@ -157,7 +163,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [uddannelse.social](https://uddannelse.social/){target=_blank}
         * **Ejer:** [@jeppe](https://uddannelse.social/@jeppe){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `40`
+        * **Brugere:** 40
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://uddannelse.social/about){target=_blank}_
 
@@ -170,7 +177,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [uddannelse.social](https://uddannelse.social/){target=_blank}
         * **Ejer:** [@jeppe](https://uddannelse.social/@jeppe){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `40`
+        * **Brugere:** 40
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://uddannelse.social/about){target=_blank}_
 
@@ -191,7 +199,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [turingfesten.dk](https://turingfesten.dk/){target=_blank}
         * **Ejer:** [@kenneth](https://turingfesten.dk/@kenneth){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `24`
+        * **Brugere:** 24
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://turingfesten.dk/about){target=_blank}_
 
@@ -204,7 +213,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [turingfesten.dk](https://turingfesten.dk/){target=_blank}
         * **Ejer:** [@kenneth](https://turingfesten.dk/@kenneth){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `24`
+        * **Brugere:** 24
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://turingfesten.dk/about){target=_blank}_
 
@@ -225,7 +235,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [helvede.net](https://helvede.net/){target=_blank}
         * **Ejer:** [@hekla](https://helvede.net/@hekla){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `117`
+        * **Brugere:** 117
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://helvede.net/about){target=_blank}_
 
@@ -244,7 +255,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [helvede.net](https://helvede.net/){target=_blank}
         * **Ejer:** [@hekla](https://helvede.net/@hekla){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `117`
+        * **Brugere:** 117
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://helvede.net/about){target=_blank}_
 
@@ -273,7 +285,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [social.data.coop](https://social.data.coop/){target=_blank}
         * **Ejer:** [@valberg](https://social.data.coop/@valberg){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `25`
+        * **Brugere:** 25
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://social.data.coop/about){target=_blank}_
 
@@ -286,7 +299,8 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [social.data.coop](https://social.data.coop/){target=_blank}
         * **Ejer:** [@valberg](https://social.data.coop/@valberg){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `25`
+        * **Brugere:** 25
+
         * **Version:** `4.0.2`
         * _[Læs mere om serveren](https://social.data.coop/about){target=_blank}_
 

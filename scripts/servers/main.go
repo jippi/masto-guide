@@ -13,6 +13,9 @@ import (
 	"sync"
 	"text/template"
 	"time"
+
+	"golang.org/x/text/language"
+	"golang.org/x/text/message"
 )
 
 var (
@@ -148,6 +151,9 @@ var tmplFuncs = template.FuncMap{
 	},
 	"NoNewlines": func(in string) string {
 		return strings.ReplaceAll(strings.ReplaceAll(in, "\n", " "), "\r", " ")
+	},
+	"NumberFormat": func(in int) string {
+		return message.NewPrinter(language.Danish).Sprintf("%d\n", in)
 	},
 	"BoolIcon": func(in *bool) string {
 		if in == nil {

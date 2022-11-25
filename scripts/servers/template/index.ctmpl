@@ -20,7 +20,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
         * **Ejer:** [@{{ .Contact.Account.Username }}]({{ .Contact.Account.URL }}){target=_blank}
         * [**Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `{{ .Usage.Users.ActiveMonth }}`
+        * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth }}
         * **Version:** `{{ .Version }}`
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
@@ -33,7 +33,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
         * **Ejer:** [@{{ .Contact.Account.Username }}]({{ .Contact.Account.URL }}){target=_blank}
         * [**Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** `{{ .Usage.Users.ActiveMonth }}`
+        * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth }}
         * **Version:** `{{ .Version }}`
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
