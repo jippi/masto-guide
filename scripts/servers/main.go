@@ -34,11 +34,6 @@ var (
 		Timeout: time.Second * 2, // Timeout after 2 seconds
 	}
 
-	// Template management
-	serverTemplate *template.Template
-	//go:embed template/server.ctmpl
-	serverTemplateText string
-
 	indexTemplate *template.Template
 	//go:embed template/index.ctmpl
 	indexTemplateText string
@@ -169,10 +164,6 @@ var tmplFuncs = template.FuncMap{
 
 func initTemplate() {
 	var err error
-	serverTemplate, err = template.New("").Funcs(tmplFuncs).Parse(serverTemplateText)
-	if err != nil {
-		panic(err)
-	}
 
 	indexTemplate, err = template.New("").Funcs(tmplFuncs).Parse(indexTemplateText)
 	if err != nil {

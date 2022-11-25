@@ -2,7 +2,7 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 25 Nov 22 22:56 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 25 Nov 22 23:10 CET_
 
 
 ## Åbne servere
@@ -22,8 +22,11 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ✅](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `77`
         * **Version:** `4.0.2+glitch`
+        * _[Læs mere om serveren](https://expressional.social/about){target=_blank}_
 
-    🇩🇰 Mastodon server hosted in Copenhagen, Denmark. All languages are welcome. Click the "Learn more" button for more information about the server and some "getting started on mastodon" guides
+    🇩🇰 Mastodon server hosted in Copenhagen, Denmark. 
+    
+    All languages are welcome. Click the "Learn more" button for more information about the server and some "getting started on mastodon" guides
 
 === "Server regler"
 
@@ -34,6 +37,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ✅](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `77`
         * **Version:** `4.0.2+glitch`
+        * _[Læs mere om serveren](https://expressional.social/about){target=_blank}_
 
     
     - [X] Don't be a dick.
@@ -62,6 +66,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `270`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://mstdn.dk/about){target=_blank}_
 
     🇩🇰 Mastodon Danmark 🐘
     🦸 Drevet af frivillige superhelte!
@@ -78,6 +83,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `270`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://mstdn.dk/about){target=_blank}_
 
     
     - [X] 🇩🇰 Det skrevne sprog her er engelsk eller dansk. Den praktiske årsag er at det er de sprog alle moderatorerne kan læse.
@@ -108,6 +114,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `115`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://norrebro.space/about){target=_blank}_
 
     Nørrebro.space er et hyggeligt sted på nettet - uden reklamer eller unødvendig sporing. Ligesom virkelighedens Nørrebro, er alle velkomne her.
     
@@ -125,6 +132,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `115`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://norrebro.space/about){target=_blank}_
 
     
     - [X] Don't be a dick.
@@ -151,6 +159,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `40`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://uddannelse.social/about){target=_blank}_
 
     Uddannelse.social er for alle danske brugere der indimellem også diskuterer uddannelse. Du må altså godt være interesseret i andre ting :-)
 
@@ -163,6 +172,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `40`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://uddannelse.social/about){target=_blank}_
 
     
     - [X] Man kan godt være engageret og råbe. Men man skal behandle andre ordentligt.
@@ -183,6 +193,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `24`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://turingfesten.dk/about){target=_blank}_
 
     En dansk server drevet af edbkenneth.
 
@@ -195,6 +206,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `24`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://turingfesten.dk/about){target=_blank}_
 
     
     - [X] No racism, sexism, homophobia, transphobia, xenophobia, or casteism.
@@ -215,6 +227,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `117`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://helvede.net/about){target=_blank}_
 
     Velkommen til Helvede, fediversets hotteste instance! Vi praktiserer mørk meme-magi og shitposter langt ind i de dybeste afgrunde. Hatespeech tolereres ikke. #helliswholesome
     
@@ -233,6 +246,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `117`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://helvede.net/about){target=_blank}_
 
     
     - [X] Serveren er tiltænkt feminister, queers, progressive nørder og andre cool beans! . Den er modereret af @hekla og @maiathecyberwitch og vi sørger for et safer space til alle jer der mangler.  
@@ -261,6 +275,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `25`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://social.data.coop/about){target=_blank}_
 
     Denne Mastodon server er for medlemmer af data.coop. Du er naturligvis velkommen til at melde dig ind i vores forening hvis du vil være med! Mere info på vores <a href="https://data.coop">hjemmeside</a>.
 
@@ -273,6 +288,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
         * **Brugere:** `25`
         * **Version:** `4.0.2`
+        * _[Læs mere om serveren](https://social.data.coop/about){target=_blank}_
 
     
     - [X] Do not engage in homophobic, racist, transphobic, ableist, sexist, or otherwise prejudiced behaviour.
