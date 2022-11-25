@@ -2,17 +2,17 @@
 
 ## Generelle
 
-* `#nypåmastodon`
-* `#introduktion`
-* `#dkmastodon`
+* `#NyPåMastodon`
+* `#Introduktion`
+* `#DkMastodon`
 * `#MastoDansk`
-* `#dktrut`
-* `#fælleshjerne`
-* `#anbefaling`
-* `#somedk`
-* `#finderselvud`
-* `#dansk`
-* `#dk`
+* `#DkTrut`
+* `#FællesHjerne`
+* `#Anbefaling`
+* `#SoMeDk`
+* `#FinderSelvUd`
+* `#Dansk`
+* `#DK`
 * `#ffdk`
 
 ## 𝗣𝗼𝗹𝗶𝘁𝗶𝗸/samfund
@@ -24,7 +24,7 @@
 * `#uddpol`
 * `#skolechat`
 * `#dksocial`
-* `#dkhandicap`
+* `#DkHandicap`
 * `#dkmedier`
 
 ## Kultur/fritid
