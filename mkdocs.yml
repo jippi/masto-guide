@@ -24,17 +24,17 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - attr_list
 
 theme:
   name: material
   logo: logo.png
   features:
-    #- navigation.tabs
-    #- navigation.tabs.sticky
     - navigation.expand
     - navigation.instant
-#    - navigation.tracking
+    - navigation.tracking
     - navigation.sections
     - navigation.indexes
     - toc.follow
@@ -59,10 +59,6 @@ theme:
         name: Switch to light mode
 
 nav:
-  - 🌟 Join the server: https://expressional.social/auth/sign_up" target="_blank
-  - 👀 Explore the server: https://expressional.social/" target="_blank
-  - 🧑‍🏫 About us: index.md
-  - 👋 Follow me: https://expressional.social/@jippi" target="_blank
   - 📚 Mastodon guide:
       - guide/choosing-a-server.md
       - guide/getting-started-on-mastodon.md
@@ -70,3 +66,6 @@ nav:
       - guide/twitter-and-mastodon.md
       - guide/tips.md
       - guide/faq.md
+  - 🇩🇰 Dansk Mastodon:
+      - Hashtags: dk/hashtags.md
+      - Servere: dk/servers.md

@@ -1,0 +1,28 @@
+# Danske Mastodon servere
+
+Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
+
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret {{ .UpdateAt }}_
+
+{{- range .Categories }}
+## {{ .Name }}
+
+!!! info "{{ .Description }}"
+
+{{ range .Servers }}
+### {{ .Domain }}
+
+{{ prefixWith .Description "> "}}
+
+* Link: [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
+* Ejer: [@{{ .Contact.Account.Username }}@{{ .Domain }}]({{ .Contact.Account.URL }}){target=_blank}
+* Brugere: `{{ .Usage.Users.ActiveMonth }}`
+* Version: `{{ .Version }}`
+
+??? quote "Server regler"
+
+    {{ range .Rules }}
+    - [X] {{ NoNewlines .Text }}
+    {{- end }}
+    {{ end -}}
+{{ end -}}
