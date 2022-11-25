@@ -1,0 +1,73 @@
+site_name: expressional.social
+repo_url: https://github.com/jippi/masto-guide
+edit_uri: blob/main/docs/
+site_description: "expressional.social is a Mastodon server hosted in Denmark"
+site_author: "Jippi"
+site_dir: web/docs
+site_url: https://expressional.social/docs
+
+plugins:
+  - social
+  - search
+  - macros
+
+extra:
+  server_name: expressional.social
+  server_url: https://expressional.social
+  server_domain: expressional.social
+  server_owner: jippi
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+      baselevel: 1
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+
+theme:
+  name: material
+  logo: logo.png
+  features:
+    #- navigation.tabs
+    #- navigation.tabs.sticky
+    - navigation.expand
+    - navigation.instant
+#    - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - search.highlight
+    - search.share
+
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - 🌟 Join the server: https://expressional.social/auth/sign_up" target="_blank
+  - 👀 Explore the server: https://expressional.social/" target="_blank
+  - 🧑‍🏫 About us: index.md
+  - 👋 Follow me: https://expressional.social/@jippi" target="_blank
+  - 📚 Mastodon guide:
+      - guide/choosing-a-server.md
+      - guide/getting-started-on-mastodon.md
+      - guide/changing-server.md
+      - guide/twitter-and-mastodon.md
+      - guide/tips.md
+      - guide/faq.md
