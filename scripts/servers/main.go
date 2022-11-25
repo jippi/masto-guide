@@ -132,6 +132,8 @@ func worker(in Server) {
 			continue
 		}
 
+		serverResponse.MastodonCovenant = in.MastodonCovenant
+
 		category := serverResponse.Categorize(in)
 		category.Servers = append(category.Servers, serverResponse)
 		return
@@ -151,6 +153,17 @@ var tmplFuncs = template.FuncMap{
 	},
 	"NoNewlines": func(in string) string {
 		return strings.ReplaceAll(strings.ReplaceAll(in, "\n", " "), "\r", " ")
+	},
+	"BoolIcon": func(in *bool) string {
+		if in == nil {
+			return "❓"
+		}
+
+		if *in {
+			return "✅"
+		}
+
+		return "❌"
 	},
 }
 

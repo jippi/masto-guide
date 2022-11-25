@@ -4,25 +4,39 @@ Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere 
 
 _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret {{ .UpdateAt }}_
 
-{{- range .Categories }}
+{{ range .Categories }}
 ## {{ .Name }}
 
-!!! info "{{ .Description }}"
+!!! abstract "{{ .Description }}"
 
 {{ range .Servers }}
+
 ### {{ .Domain }}
 
-{{ prefixWith .Description "> "}}
+=== "Om serveren"
 
-* Link: [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
-* Ejer: [@{{ .Contact.Account.Username }}@{{ .Domain }}]({{ .Contact.Account.URL }}){target=_blank}
-* Brugere: `{{ .Usage.Users.ActiveMonth }}`
-* Version: `{{ .Version }}`
+    !!! info inline "Server detaljer"
 
-??? quote "Server regler"
+        * **Navn:** [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
+        * **Ejer:** [@{{ .Contact.Account.Username }}]({{ .Contact.Account.URL }}){target=_blank}
+        * [**Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `{{ .Usage.Users.ActiveMonth }}`
+        * **Version:** `{{ .Version }}`
+
+{{ prefixWith .Description "    " }}
+
+=== "Server regler"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
+        * **Ejer:** [@{{ .Contact.Account.Username }}]({{ .Contact.Account.URL }}){target=_blank}
+        * [**Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `{{ .Usage.Users.ActiveMonth }}`
+        * **Version:** `{{ .Version }}`
 
     {{ range .Rules }}
-    - [X] {{ NoNewlines .Text }}
-    {{- end }}
+    - [X] {{ NoNewlines .Text -}}
     {{ end -}}
-{{ end -}}
+    {{ end }}
+{{- end -}}

@@ -1,11 +1,14 @@
 package main
 
+var yes = boolPtr(true)
+var no = boolPtr(false)
+
 var servers = []Server{
 	{URL: "https://norrebro.space"},
 	{URL: "https://turingfesten.dk"},
 	{URL: "https://mstdn.dk"},
 	{URL: "https://helvede.net"},
-	{URL: "https://expressional.social"},
+	{URL: "https://expressional.social", MastodonCovenant: yes},
 	{URL: "https://uddannelse.social"},
 	{URL: "https://social.data.coop", ForceCategory: PrivateCategory},
 }
@@ -35,3 +38,7 @@ var (
 		Servers:     make([]ServerResponse, 0),
 	}
 )
+
+func boolPtr(in bool) *bool {
+	return &in
+}

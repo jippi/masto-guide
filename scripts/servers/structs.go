@@ -9,11 +9,16 @@ type Category struct {
 }
 
 type Server struct {
-	URL           string
-	ForceCategory *Category
+	URL              string
+	ForceCategory    *Category
+	MastodonCovenant *bool
 }
 
 type ServerResponse struct {
+	// Custom config
+	MastodonCovenant *bool
+
+	// API response
 	Domain      string `json:"domain"`
 	Title       string `json:"title"`
 	Version     string `json:"version"`

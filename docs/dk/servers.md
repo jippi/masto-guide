@@ -2,22 +2,38 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 25 Nov 22 22:19 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 25 Nov 22 22:56 CET_
+
+
 ## Åbne servere
 
-!!! info "Servere du kan blive medlem af med det samme, uden godkendelse."
+!!! abstract "Servere du kan blive medlem af med det samme, uden godkendelse."
+
 
 
 ### expressional.social
 
-> 🇩🇰 Mastodon server hosted in Copenhagen, Denmark. All languages are welcome. Click the "Learn more" button for more information about the server and some "getting started on mastodon" guides
+=== "Om serveren"
 
-* Link: [expressional.social](https://expressional.social/){target=_blank}
-* Ejer: [@jippi@expressional.social](https://expressional.social/@jippi){target=_blank}
-* Brugere: `77`
-* Version: `4.0.2+glitch`
+    !!! info inline "Server detaljer"
 
-??? quote "Server regler"
+        * **Navn:** [expressional.social](https://expressional.social/){target=_blank}
+        * **Ejer:** [@jippi](https://expressional.social/@jippi){target=_blank}
+        * [**Covenant:** ✅](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `77`
+        * **Version:** `4.0.2+glitch`
+
+    🇩🇰 Mastodon server hosted in Copenhagen, Denmark. All languages are welcome. Click the "Learn more" button for more information about the server and some "getting started on mastodon" guides
+
+=== "Server regler"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [expressional.social](https://expressional.social/){target=_blank}
+        * **Ejer:** [@jippi](https://expressional.social/@jippi){target=_blank}
+        * [**Covenant:** ✅](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `77`
+        * **Version:** `4.0.2+glitch`
 
     
     - [X] Don't be a dick.
@@ -34,21 +50,34 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] Safe Space: neurodivergent (ADHD, Aspie, Autism, etc)
     - [X] No hacking.
     - [X] I've read and agree with the "Why you should join this server" text linked on the About page ("Learn more" button the left menu)
-    
+
 ### mstdn.dk
 
-> 🇩🇰 Mastodon Danmark 🐘
-> 🦸 Drevet af frivillige superhelte!
-> ⎈ Hostet på @midgaard
-> 💰 Sponsoreret af @incrediblebits
-> 
+=== "Om serveren"
 
-* Link: [mstdn.dk](https://mstdn.dk/){target=_blank}
-* Ejer: [@saustrup@mstdn.dk](https://mstdn.dk/@saustrup){target=_blank}
-* Brugere: `270`
-* Version: `4.0.2`
+    !!! info inline "Server detaljer"
 
-??? quote "Server regler"
+        * **Navn:** [mstdn.dk](https://mstdn.dk/){target=_blank}
+        * **Ejer:** [@saustrup](https://mstdn.dk/@saustrup){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `270`
+        * **Version:** `4.0.2`
+
+    🇩🇰 Mastodon Danmark 🐘
+    🦸 Drevet af frivillige superhelte!
+    ⎈ Hostet på @midgaard
+    💰 Sponsoreret af @incrediblebits
+    
+
+=== "Server regler"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [mstdn.dk](https://mstdn.dk/){target=_blank}
+        * **Ejer:** [@saustrup](https://mstdn.dk/@saustrup){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `270`
+        * **Version:** `4.0.2`
 
     
     - [X] 🇩🇰 Det skrevne sprog her er engelsk eller dansk. Den praktiske årsag er at det er de sprog alle moderatorerne kan læse.
@@ -67,22 +96,35 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] 🇬🇧 This server is meant for private individuals, and the creation of accounts for associations, companies etc. requires a preexisting agreement with the administration team. Reach out to support@mstdn.dk.
     - [X] 🇩🇰 Serverne som denne instans kører på, er sponsoreret af Incredible Bits ApS. Driften af selve instansen er derimod baseret på frivilligt arbejde, og brugere af sitet kan derfor ikke forvente samme serviceniveau som på en betalt service.
     - [X] 🇬🇧 The servers hosting this instance are sponsored by Incredible Bits ApS. The administration of the instance itself is solely a volunteer effort, and users of the site shouldn't expect the same service level as on a paid service.
-    
+
 ### norrebro.space
 
-> Nørrebro.space er et hyggeligt sted på nettet - uden reklamer eller unødvendig sporing. Ligesom virkelighedens Nørrebro, er alle velkomne her.
-> 
-> 
-> 🇩🇰🐘
-> 
-> Nørrebro.space er et etisk socialt medie - fordi vi kan.
+=== "Om serveren"
 
-* Link: [norrebro.space](https://norrebro.space/){target=_blank}
-* Ejer: [@asbjorn@norrebro.space](https://norrebro.space/@asbjorn){target=_blank}
-* Brugere: `115`
-* Version: `4.0.2`
+    !!! info inline "Server detaljer"
 
-??? quote "Server regler"
+        * **Navn:** [norrebro.space](https://norrebro.space/){target=_blank}
+        * **Ejer:** [@asbjorn](https://norrebro.space/@asbjorn){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `115`
+        * **Version:** `4.0.2`
+
+    Nørrebro.space er et hyggeligt sted på nettet - uden reklamer eller unødvendig sporing. Ligesom virkelighedens Nørrebro, er alle velkomne her.
+    
+    
+    🇩🇰🐘
+    
+    Nørrebro.space er et etisk socialt medie - fordi vi kan.
+
+=== "Server regler"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [norrebro.space](https://norrebro.space/){target=_blank}
+        * **Ejer:** [@asbjorn](https://norrebro.space/@asbjorn){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `115`
+        * **Version:** `4.0.2`
 
     
     - [X] Don't be a dick.
@@ -97,61 +139,100 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] No transphobia.
     - [X] Safe Space: LGTBQIA+
     - [X] Safe Space: neurodivergent (ADHD, Aspie, Autism, etc)
-    
+
 ### uddannelse.social
 
-> Uddannelse.social er for alle danske brugere der indimellem også diskuterer uddannelse. Du må altså godt være interesseret i andre ting :-)
+=== "Om serveren"
 
-* Link: [uddannelse.social](https://uddannelse.social/){target=_blank}
-* Ejer: [@jeppe@uddannelse.social](https://uddannelse.social/@jeppe){target=_blank}
-* Brugere: `40`
-* Version: `4.0.2`
+    !!! info inline "Server detaljer"
 
-??? quote "Server regler"
+        * **Navn:** [uddannelse.social](https://uddannelse.social/){target=_blank}
+        * **Ejer:** [@jeppe](https://uddannelse.social/@jeppe){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `40`
+        * **Version:** `4.0.2`
+
+    Uddannelse.social er for alle danske brugere der indimellem også diskuterer uddannelse. Du må altså godt være interesseret i andre ting :-)
+
+=== "Server regler"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [uddannelse.social](https://uddannelse.social/){target=_blank}
+        * **Ejer:** [@jeppe](https://uddannelse.social/@jeppe){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `40`
+        * **Version:** `4.0.2`
 
     
     - [X] Man kan godt være engageret og råbe. Men man skal behandle andre ordentligt.
-    
 ## Server med manuel godkendelse
 
-!!! info "Servere der ønsker at godkende dit medlemsskab manuelt efter oprettelse."
+!!! abstract "Servere der ønsker at godkende dit medlemsskab manuelt efter oprettelse."
+
 
 
 ### turingfesten.dk
 
-> En dansk server drevet af edbkenneth.
+=== "Om serveren"
 
-* Link: [turingfesten.dk](https://turingfesten.dk/){target=_blank}
-* Ejer: [@kenneth@turingfesten.dk](https://turingfesten.dk/@kenneth){target=_blank}
-* Brugere: `24`
-* Version: `4.0.2`
+    !!! info inline "Server detaljer"
 
-??? quote "Server regler"
+        * **Navn:** [turingfesten.dk](https://turingfesten.dk/){target=_blank}
+        * **Ejer:** [@kenneth](https://turingfesten.dk/@kenneth){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `24`
+        * **Version:** `4.0.2`
+
+    En dansk server drevet af edbkenneth.
+
+=== "Server regler"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [turingfesten.dk](https://turingfesten.dk/){target=_blank}
+        * **Ejer:** [@kenneth](https://turingfesten.dk/@kenneth){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `24`
+        * **Version:** `4.0.2`
 
     
     - [X] No racism, sexism, homophobia, transphobia, xenophobia, or casteism.
-    
 ## Accepterer ikke nye medlemmer
 
-!!! info "Servere der ikke længere accepterer nye medlemmer"
+!!! abstract "Servere der ikke længere accepterer nye medlemmer"
+
 
 
 ### helvede.net
 
-> Velkommen til Helvede, fediversets hotteste instance! Vi praktiserer mørk meme-magi og shitposter langt ind i de dybeste afgrunde. Hatespeech tolereres ikke. #helliswholesome
-> 
-> Vi har lige nu lukket for nye brugere, da vi er lidt overvældede af Twitter-exodussen. Du kan stadig oprette dig på andre instances - fx. turingfesten.dk eller mastodon.social.
-> 
-> Welcome to Hell, the hottest instance in the fediverse! We practice dark meme-magic and shitpost far into the abyss. Hate speech will not be tolerated. #helliswholesome
-> Currently, we are closed for new sign-ups. We recommend joining another mastodon instance.
-> 
+=== "Om serveren"
 
-* Link: [helvede.net](https://helvede.net/){target=_blank}
-* Ejer: [@hekla@helvede.net](https://helvede.net/@hekla){target=_blank}
-* Brugere: `117`
-* Version: `4.0.2`
+    !!! info inline "Server detaljer"
 
-??? quote "Server regler"
+        * **Navn:** [helvede.net](https://helvede.net/){target=_blank}
+        * **Ejer:** [@hekla](https://helvede.net/@hekla){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `117`
+        * **Version:** `4.0.2`
+
+    Velkommen til Helvede, fediversets hotteste instance! Vi praktiserer mørk meme-magi og shitposter langt ind i de dybeste afgrunde. Hatespeech tolereres ikke. #helliswholesome
+    
+    Vi har lige nu lukket for nye brugere, da vi er lidt overvældede af Twitter-exodussen. Du kan stadig oprette dig på andre instances - fx. turingfesten.dk eller mastodon.social.
+    
+    Welcome to Hell, the hottest instance in the fediverse! We practice dark meme-magic and shitpost far into the abyss. Hate speech will not be tolerated. #helliswholesome
+    Currently, we are closed for new sign-ups. We recommend joining another mastodon instance.
+    
+
+=== "Server regler"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [helvede.net](https://helvede.net/){target=_blank}
+        * **Ejer:** [@hekla](https://helvede.net/@hekla){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `117`
+        * **Version:** `4.0.2`
 
     
     - [X] Serveren er tiltænkt feminister, queers, progressive nørder og andre cool beans! . Den er modereret af @hekla og @maiathecyberwitch og vi sørger for et safer space til alle jer der mangler.  
@@ -163,26 +244,38 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] Opfordringer til at ødelægge helvede.net fællesskabet eller at angribe dets tekniske infrastruktur, på denne server eller andetsteds, kan resultere i bortvisning.
     - [X] Indhold der er ulovligt i Danmark eller Frankrig, hvor serveren er lokaliseret, tolereres ikke.
     - [X] 9. Vi tolererer ikke spam og bots. Det inkluderer automatisk crossposting af indhold fra andre platforme over på din profil på helvede.net.
-    
 ## Forening / private
 
-!!! info "Servere der kræver medlemsskab af en forening eller andet specielt for at få en bruger."
+!!! abstract "Servere der kræver medlemsskab af en forening eller andet specielt for at få en bruger."
+
 
 
 ### social.data.coop
 
-> Denne Mastodon server er for medlemmer af data.coop. Du er naturligvis velkommen til at melde dig ind i vores forening hvis du vil være med! Mere info på vores <a href="https://data.coop">hjemmeside</a>.
+=== "Om serveren"
 
-* Link: [social.data.coop](https://social.data.coop/){target=_blank}
-* Ejer: [@valberg@social.data.coop](https://social.data.coop/@valberg){target=_blank}
-* Brugere: `25`
-* Version: `4.0.2`
+    !!! info inline "Server detaljer"
 
-??? quote "Server regler"
+        * **Navn:** [social.data.coop](https://social.data.coop/){target=_blank}
+        * **Ejer:** [@valberg](https://social.data.coop/@valberg){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `25`
+        * **Version:** `4.0.2`
+
+    Denne Mastodon server er for medlemmer af data.coop. Du er naturligvis velkommen til at melde dig ind i vores forening hvis du vil være med! Mere info på vores <a href="https://data.coop">hjemmeside</a>.
+
+=== "Server regler"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [social.data.coop](https://social.data.coop/){target=_blank}
+        * **Ejer:** [@valberg](https://social.data.coop/@valberg){target=_blank}
+        * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        * **Brugere:** `25`
+        * **Version:** `4.0.2`
 
     
     - [X] Do not engage in homophobic, racist, transphobic, ableist, sexist, or otherwise prejudiced behaviour.
     - [X] Do not harass people. Stalking, unconsented contact, or unwanted sexual attention is harassment.
     - [X] Aggression and elitism are not welcome — nobody should be afraid to ask questions.
     - [X] Data.coops Acceptable Usage Policy gælder for social.data.coop: https://git.data.coop/data.coop/dokumenter/src/branch/master/Acceptable%20Usage%20Policy.md
-    
