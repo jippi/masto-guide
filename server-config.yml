@@ -9,19 +9,19 @@ categories:
 
   review:
     name: Kræver godkendelse
-    description: Servere der godkender dit medlemsskab manuelt.
+    description: Servere der manuelt godkender dit medlemsskab.
     more: |
       Det svinger meget fra server til server hvor hurtigt din bruger bliver godkendt, men regn med omkring 24 timer.
     admonition: note
 
   invite:
     name: Invitation påkrævet
-    description: Servere der ikke accepterer nye medlemmer uden invitation.
+    description: Servere der ikke accepterer nye medlemmer uden invitation (eller overhovedet).
     more: |
       Servere kræver ofte invitation af to årsager.
 
       1. Serveren har ikke kapacitet til flere brugere.
-      2. Ejeren af serveren vil gerne sikre sig der ikke kommer brugere på serveren som mindst én anden kender i forvejen.
+      2. Ejeren af serveren vil gerne sikre sig der ikke kommer brugere på serveren som mindst én anden på serveren kender i forvejen.
     admonition: warning
 
   private:

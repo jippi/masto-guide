@@ -4,7 +4,7 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:56 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 02:02 CET_
 
 
 ## Åbne servere
@@ -191,7 +191,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] Man kan godt være engageret og råbe. Men man skal behandle andre ordentligt.
 ## Kræver godkendelse
 
-!!! note "Servere der godkender dit medlemsskab manuelt."
+!!! note "Servere der manuelt godkender dit medlemsskab."
 
     Det svinger meget fra server til server hvor hurtigt din bruger bliver godkendt, men regn med omkring 24 timer.
     
@@ -230,12 +230,12 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] No racism, sexism, homophobia, transphobia, xenophobia, or casteism.
 ## Invitation påkrævet
 
-!!! warning "Servere der ikke accepterer nye medlemmer uden invitation."
+!!! warning "Servere der ikke accepterer nye medlemmer uden invitation (eller overhovedet)."
 
     Servere kræver ofte invitation af to årsager.
     
     1. Serveren har ikke kapacitet til flere brugere.
-    2. Ejeren af serveren vil gerne sikre sig der ikke kommer brugere på serveren som mindst én anden kender i forvejen.
+    2. Ejeren af serveren vil gerne sikre sig der ikke kommer brugere på serveren som mindst én anden på serveren kender i forvejen.
     
 
 
