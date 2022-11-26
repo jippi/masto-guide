@@ -4,7 +4,7 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 02:02 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 17:58 CET_
 
 
 ## Åbne servere
