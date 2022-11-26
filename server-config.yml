@@ -1,15 +1,4 @@
 ---
-servers:
-  - url: https://norrebro.space
-  - url: https://turingfesten.dk
-  - url: https://mstdn.dk
-  - url: https://helvede.net
-  - url: https://expressional.social
-    covenant: true
-  - url: https://uddannelse.social
-  - url: https://social.data.coop
-    category: private
-
 categories:
   open:
     name: Åbne servere
@@ -39,3 +28,15 @@ categories:
     name: Forening / private
     description: Servere der kræver medlemsskab af en forening eller opfylde andre særlige krav for at få en bruger.
     admonition: warning
+
+servers:
+  - url: https://norrebro.space
+  - url: https://turingfesten.dk
+  - url: https://mstdn.dk
+  - url: https://helvede.net
+  - url: https://expressional.social
+    covenant: true
+  - url: https://uddannelse.social
+  - url: https://social.data.coop
+    category: private
+
