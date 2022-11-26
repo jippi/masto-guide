@@ -15,7 +15,7 @@
 * `#DK`
 * `#ffdk`
 
-## 𝗣𝗼𝗹𝗶𝘁𝗶𝗸/samfund
+## Politik/samfund
 
 * `#dkpol`
 * `#eudk`
