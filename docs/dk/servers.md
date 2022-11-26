@@ -4,12 +4,15 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:47 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:56 CET_
 
 
 ## Åbne servere
 
 !!! success "Servere du kan blive medlem af med det samme, uden godkendelse."
+
+    Du kan oprette dig og begynde at bruge din konto med det samme. Der er ingen godkendelse eller krav du skal opfylde (udover at følge reglerne).
+    
 
 
 
@@ -190,6 +193,9 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
 
 !!! note "Servere der godkender dit medlemsskab manuelt."
 
+    Det svinger meget fra server til server hvor hurtigt din bruger bliver godkendt, men regn med omkring 24 timer.
+    
+
 
 
 ### turingfesten.dk
@@ -225,6 +231,12 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
 ## Invitation påkrævet
 
 !!! warning "Servere der ikke accepterer nye medlemmer uden invitation."
+
+    Servere kræver ofte invitation af to årsager.
+    
+    1. Serveren har ikke kapacitet til flere brugere.
+    2. Ejeren af serveren vil gerne sikre sig der ikke kommer brugere på serveren som mindst én anden kender i forvejen.
+    
 
 
 
@@ -274,7 +286,9 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] 9. Vi tolererer ikke spam og bots. Det inkluderer automatisk crossposting af indhold fra andre platforme over på din profil på helvede.net.
 ## Forening / private
 
-!!! warning "Servere der kræver medlemsskab af en forening eller andet gruppe for at få en bruger."
+!!! warning "Servere der kræver medlemsskab af en forening eller opfylde andre særlige krav for at få en bruger."
+
+    
 
 
 
