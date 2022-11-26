@@ -2,8 +2,11 @@
 name: Deploy static content to Pages
 
 on:
+  # automatically update the DK servers page on an interval
   schedule:
-    - cron: "*/5 * * * *"
+    # update once an hour
+    - cron: "0 * * * *"
+  # deploy on merge to main branch
   push:
     branches: ["main"]
 
@@ -22,7 +25,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
