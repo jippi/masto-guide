@@ -45,7 +45,7 @@ func main() {
 	categories = []*Category{
 		config.Categories["open"],
 		config.Categories["review"],
-		config.Categories["closed"],
+		config.Categories["invite"],
 		config.Categories["private"],
 	}
 

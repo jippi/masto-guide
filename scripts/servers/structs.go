@@ -168,5 +168,5 @@ func (s *ServerResponse) Categorize(server Server) *Category {
 		return config.Categories["review"]
 	}
 
-	return config.Categories["closed"]
+	return config.Categories["invite"]
 }

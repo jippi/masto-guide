@@ -5,16 +5,16 @@ categories:
     description: Servere du kan blive medlem af med det samme, uden godkendelse.
 
   review:
-    name: Server med manuel godkendelse
-    description: Servere der ønsker at godkende dit medlemsskab manuelt efter oprettelse
+    name: Kræver godkendelse
+    description: Servere der godkender dit medlemsskab manuelt.
 
-  closed:
-    name: Accepterer ikke nye medlemmer
-    description: Servere der ikke længere accepterer nye medlemmer
+  invite:
+    name: Invitation påkrævet
+    description: Servere der ikke accepterer nye medlemmer uden invitation.
 
   private:
     name: Forening / private
-    description: Servere der kræver medlemsskab af en forening eller andet specielt for at få en bruger
+    description: Servere der kræver medlemsskab af en forening eller andet gruppe for at få en bruger.
 
 servers:
   - url: https://norrebro.space
