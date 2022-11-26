@@ -74,12 +74,21 @@ Note that the following can't be imported:
 
 1. If you haven't already, <a identity="new" target="_blank" path="/auth/sign_up">create an account on the **new** server.</a>
 1. Create an account alias on **new** server.
-    1. <a identity="new" target="_blank" path="/settings/aliases">`Preferences -> Profile -> (scroll to the bottom) "Moving from a different account"`</a>
+    1. Navigate to <a identity="new" target="_blank" path="/settings/profile">`Preferences -> Profile`</a>
+    1. Scroll to the bottom of the page and click <a identity="new" target="_blank" path="/settings/aliases">`Moving from a different account`</a>
+    1. Write your *full* username from your **old** server in the `Handle of the old account` field.
     <br />
-    You need to add the *full* username from your **old** server
-    <br />
-    ex. <span identity="old" tag="code" prefix="your-user@" default="old-server.com"></span>.
-1. Your new account on the **new** server is probably a bit empty. No `bio`, `profile picture` and so on. This is an excellent time to copy this over from your **old** account.
+    (ex. <span identity="old" tag="code" prefix="your-user@" default="old-server.com"></span>)
+    1. Click `Create alias` button.
+
+<div style="clear: both" />
+
+!!! tip "Setting up your profile on the new server"
+
+    Your account on the **new** server is probably a bit empty. No `bio`, `profile picture` and so on.
+
+    This is an excellent time to copy this over from your **old** account.
+
     1. <a identity="old" target="_blank" path="/settings/profile">Open your **old** account (`Preferences -> Profile`)</a>
     1. <a identity="new" target="_blank" path="/settings/profile">Open your **new** account (`Preferences -> Profile`)</a>
     1. Start copying fields one by one and tweak as necessary.
