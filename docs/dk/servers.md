@@ -1,10 +1,10 @@
 # Danske Mastodon servere
 
-!!! tip "Hvis du har en dansk Mastodon server [kan du tilføje den i konfiguration filen](https://github.com/jippi/masto-guide/blob/main/server-config.yml){target=_blank}"
+!!! tip "Hvis du har en dansk Mastodon server [kan du tilføje den i vores konfiguration fil, så bliver den inkluderet automatisk](https://github.com/jippi/masto-guide/blob/main/server-config.yml){target=_blank}"
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:42 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:47 CET_
 
 
 ## Åbne servere
