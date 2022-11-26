@@ -6,6 +6,7 @@ on:
   schedule:
     # update once an hour
     - cron: "0 * * * *"
+
   # deploy on merge to main branch
   push:
     branches: ["main"]
@@ -29,21 +30,33 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    # Ubuntu is fine, we just need Docker and bash
     runs-on: ubuntu-latest
     steps:
+      # checkout the code
       - name: Checkout
         uses: actions/checkout@v3
+
+      # generate the DK servers markdown page
       - name: Generate DK servers
         run: ./scripts/update-servers.sh
+
+      # build the mkdocs site
       - name: build docs
         run: ./mkdocs.sh build
+
+      # Configure GitHub pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
+
+      # Upload site/ directory to GitHub pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
           path: 'site'
+
+      # Deploy to GitHub pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
