@@ -31,6 +31,8 @@ var (
 
 	// The latest release of Mastodon according to GitHub releases
 	mastodonVersion *semver.Constraints
+
+	serverErrors map[string]error
 )
 
 func main() {
@@ -48,6 +50,8 @@ func main() {
 		config.Categories["invite"],
 		config.Categories["private"],
 	}
+
+	serverErrors = make(map[string]error)
 
 	// Start workers
 	for w := 1; w <= int(math.Min(5, float64(len(config.Servers)))); w++ {
@@ -91,9 +95,11 @@ func main() {
 	payload := struct {
 		Categories []*Category
 		UpdateAt   string
+		Errors     map[string]error
 	}{
 		Categories: categories,
 		UpdateAt:   time.Now().Format(time.RFC822),
+		Errors:     serverErrors,
 	}
 
 	logger.Info("Rendering MarkDown file")
@@ -108,22 +114,23 @@ func main() {
 func fetchServerInformation(server Server, log *log.Entry) {
 	defer wg.Done()
 
+	var lastError error
+
 	// Very simplistic retry policy
 	for i := 0; i < 5; i++ {
 		logger := log.WithField("subsystem", "worker").WithField("attempt", i).WithField("server", server.URL)
-		if i > 0 {
-			logger.Info("Fetching server information")
-		}
+		logger.Info("Fetching server information")
 
 		retry := func(err error) {
+			lastError = err
+
 			logger.Error(err)
 			// We will sleep 1, 2, 3, 4, 5 seconds
 			time.Sleep(time.Duration(i) * time.Second)
 		}
 
 		serverResponse := ServerResponse{}
-		_, err := httpClient.R().SetResult(&serverResponse).Get(server.URL + "/api/v2/instance")
-		if err != nil {
+		if _, err := httpClient.R().SetResult(&serverResponse).Get(server.URL + "/api/v2/instance"); err != nil {
 			retry(err)
 			continue
 		}
@@ -140,6 +147,8 @@ func fetchServerInformation(server Server, log *log.Entry) {
 
 		return
 	}
+
+	serverErrors[server.URL] = lastError
 }
 
 func getLatestReleaseOfMastodon() {

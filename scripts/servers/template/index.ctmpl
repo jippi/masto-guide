@@ -45,4 +45,14 @@ _Listen bliver opdateret automatisk, ca en gang i timen og er sorteret efter dom
     - [X] {{ NoNewlines .Text -}}
     {{ end -}}
     {{ end }}
+{{- end }}
+
+{{ if .Errors }}
+## Fejl ved hentning af server information
+
+Følgende servere fejlede da vi prøvede at hente information om den:
+
+{{ range $url, $err := .Errors }}
+* `{{ $url }}` fejlede efter 5 forsøg med `{{ $err }}`
+{{- end }}
 {{- end -}}
