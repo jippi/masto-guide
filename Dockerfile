@@ -21,5 +21,7 @@ RUN set -ex \
         "mkdocs-redirects>=1.0" \
         "pillow>=9.0" \
         "cairosvg>=2.5" \
+        'mkdocs-redirects' \
+        'mkdocs-glightbox' \
     && apk del .build \
     && rm -rf /tmp/* /root/.cache

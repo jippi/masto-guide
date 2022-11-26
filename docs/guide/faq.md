@@ -24,6 +24,6 @@ Example: If we follow each other but are on different servers, you would only ha
 
 ## How do I move away from your server?
 
-Follow the steps in the [changing server](changing-server.md), but use different servers than in the example.
+Follow the steps in the [changing server](move-mastodon-server.md), but use different servers than in the example.
 
 You will not lose your followers; the Mastodon network will make sure to migrate them to your new server transparently and forward any messages sent to your old account to the new one. It generally works really well.

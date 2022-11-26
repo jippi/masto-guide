@@ -4,7 +4,7 @@
 
         If you don't have a Mastodon account yet, [please sign up to one](../dk/servers.md)
 
-        If you already have a Mastodon account on another server, please see [How do I move my existing account to your server?](changing-server.md)
+        If you already have a Mastodon account on another server, please see [How do I move my existing account to your server?](move-mastodon-server.md)
 
         If you're coming from Twitter, check out the [Twitter and Mastodon similarities and differences](twitter-and-mastodon.md) too.
 

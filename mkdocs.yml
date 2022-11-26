@@ -1,7 +1,7 @@
 site_name: Masto Guide
 repo_url: https://github.com/jippi/masto-guide
 edit_uri: blob/main/docs/
-site_description: "MastoGuides goal is to help everyone learn about Mastodon"
+site_description: "The MastoGuide goal is to help everyone learn about Mastodon"
 site_author: "Jippi"
 site_url: https://guide.toot.as/
 
@@ -9,6 +9,10 @@ plugins:
   - social
   - search
   - macros
+  - glightbox
+  - redirects:
+      redirect_maps:
+        "guide/changing-server.md": "guide/move-mastodon-server.md"
 
 extra_css:
   - css/default.css
@@ -64,8 +68,8 @@ theme:
 nav:
   - 📚 Mastodon guide:
       - guide/choosing-a-server.md
+      - "Move Mastodon server": guide/move-mastodon-server.md
       - guide/getting-started-on-mastodon.md
-      - guide/changing-server.md
       - guide/twitter-and-mastodon.md
       - guide/tips.md
       - guide/faq.md

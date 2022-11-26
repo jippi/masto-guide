@@ -14,6 +14,6 @@ If you want to help, found a typo or something else entirely, feel free to [chec
 
 Feel free to explore the different options in the menu to the left - there is a lot of great articles in there.
 
-For example, we've written a bit about [things to consider when choosing a Mastodon server](guide/choosing-a-server.md), [how to change Mastodon server](guide/changing-server.md), a [Twitter to Mastodon guide](guide/twitter-and-mastodon.md) and a great [guide on getting started on Mastodon](guide/getting-started-on-mastodon.md)
+For example, we've written a bit about [things to consider when choosing a Mastodon server](guide/choosing-a-server.md), [how to change Mastodon server](guide/move-mastodon-server.md), a [Twitter to Mastodon guide](guide/twitter-and-mastodon.md) and a great [guide on getting started on Mastodon](guide/getting-started-on-mastodon.md)
 
 If you have ideas for guides, questions needing answering or anything else, [please let us know on GitHub](https://github.com/jippi/masto-guide){target=_blank}

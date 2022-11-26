@@ -13,3 +13,18 @@ input.server-selector.bad {
 input.server-selector::placeholder {
     color: var(--md-primary-bg-color--light);
 }
+
+.md-typeset img[align=right] {
+    margin-bottom: 0;
+}
+.md-typeset figure {
+    display: block;
+}
+.md-typeset figcaption {
+    margin: 0;
+}
+
+figure figcaption {
+    float: right;
+    width: 50%;
+}
