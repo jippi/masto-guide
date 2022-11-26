@@ -1,0 +1,28 @@
+---
+categories:
+  open:
+    name: Åbne servere
+    description: Servere du kan blive medlem af med det samme, uden godkendelse.
+
+  review:
+    name: Server med manuel godkendelse
+    description: Servere der ønsker at godkende dit medlemsskab manuelt efter oprettelse
+
+  closed:
+    name: Accepterer ikke nye medlemmer
+    description: Servere der ikke længere accepterer nye medlemmer
+
+  private:
+    name: Forening / private
+    description: Servere der kræver medlemsskab af en forening eller andet specielt for at få en bruger
+
+servers:
+  - url: https://norrebro.space
+  - url: https://turingfesten.dk
+  - url: https://mstdn.dk
+  - url: https://helvede.net
+  - url: https://expressional.social
+    covenant: true
+  - url: https://uddannelse.social
+  - url: https://social.data.coop
+    category: private

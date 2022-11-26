@@ -1,17 +1,55 @@
 package main
 
-import "time"
+import (
+	"errors"
+	"time"
+)
+
+type Config struct {
+	Servers    []Server             `json:"servers"`
+	Categories map[string]*Category `json:"categories"`
+}
 
 type Category struct {
-	Name        string
-	Description string
-	Servers     []ServerResponse
+	Name        string           `json:"name"`
+	Description string           `json:"description"`
+	Servers     []ServerResponse `json:"-"`
 }
 
 type Server struct {
-	URL              string
-	ForceCategory    *Category
-	MastodonCovenant *bool
+	URL      string    `json:"url"`
+	Category *Category `json:"category,omitempty"`
+	Covenant *bool     `json:"covenant,omitempty"`
+}
+
+func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
+	var details map[string]interface{}
+	if err := unmarshal(&details); err != nil {
+		return err
+	}
+
+	url, ok := details["url"]
+	if !ok {
+		return errors.New("missing url")
+	}
+	s.URL = url.(string)
+
+	covenant, ok := details["covenant"]
+	if ok {
+		s.Covenant = boolPtr(covenant.(bool))
+	}
+
+	category, ok := details["category"]
+	if ok {
+		s.Category = config.Categories[category.(string)]
+	}
+
+	return nil
+}
+
+type GithubReleaseResponse struct {
+	Name    string `json:"name"`
+	TagName string `json:"tag_name"`
 }
 
 type ServerResponse struct {
@@ -111,17 +149,17 @@ type ServerResponse struct {
 }
 
 func (s *ServerResponse) Categorize(server Server) *Category {
-	if server.ForceCategory != nil {
-		return server.ForceCategory
+	if server.Category != nil {
+		return server.Category
 	}
 
 	if s.Registrations.Enabled && !s.Registrations.ApprovalRequired {
-		return OpenCategory
+		return config.Categories["open"]
 	}
 
 	if s.Registrations.Enabled {
-		return OpenCategoryWithApproval
+		return config.Categories["review"]
 	}
 
-	return ClosedCategory
+	return config.Categories["closed"]
 }
