@@ -69,7 +69,7 @@ Note that the following can't be imported:
 
 <figure markdown>
 ![Export page](img/account-alias.png){align="right" width="50%" loading=lazy}
-<figcaption>The migrate account page has important warning that you should read carefully.</figcaption>
+<figcaption>Use your full username from the old server. <br />(ex. <span identity="old" tag="code" prefix="your-user@" default="old-server.com"></span>.)</figcaption>
 </figure>
 
 1. If you haven't already, <a identity="new" target="_blank" path="/auth/sign_up">create an account on the **new** server.</a>
