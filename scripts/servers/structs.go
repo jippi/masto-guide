@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"time"
 )
 
@@ -41,7 +42,13 @@ func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
 
 	category, ok := details["category"]
 	if ok {
-		s.Category = config.Categories[category.(string)]
+		categoryString := category.(string)
+
+		if _, ok := config.Categories[categoryString]; !ok {
+			return fmt.Errorf("Invalid category: %s", category)
+		}
+
+		s.Category = config.Categories[categoryString]
 	}
 
 	return nil

@@ -2,7 +2,7 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:08 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:14 CET_
 
 
 ## Åbne servere
@@ -20,7 +20,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [expressional.social](https://expressional.social/){target=_blank}
         * **Ejer:** [@jippi](https://expressional.social/@jippi){target=_blank}
         * [**Covenant:** ✅](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** 77
+        * **Brugere:** 79
 
         * **Version:** ✅ (`4.0.2+glitch`)
         * _[Læs mere om serveren](https://expressional.social/about){target=_blank}_
@@ -36,7 +36,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [expressional.social](https://expressional.social/){target=_blank}
         * **Ejer:** [@jippi](https://expressional.social/@jippi){target=_blank}
         * [**Covenant:** ✅](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** 77
+        * **Brugere:** 79
 
         * **Version:** ✅ (`4.0.2+glitch`)
         * _[Læs mere om serveren](https://expressional.social/about){target=_blank}_
@@ -235,7 +235,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [helvede.net](https://helvede.net/){target=_blank}
         * **Ejer:** [@hekla](https://helvede.net/@hekla){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** 117
+        * **Brugere:** 123
 
         * **Version:** ✅ (`4.0.2`)
         * _[Læs mere om serveren](https://helvede.net/about){target=_blank}_
@@ -255,7 +255,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
         * **Navn:** [helvede.net](https://helvede.net/){target=_blank}
         * **Ejer:** [@hekla](https://helvede.net/@hekla){target=_blank}
         * [**Covenant:** ❓](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** 117
+        * **Brugere:** 123
 
         * **Version:** ✅ (`4.0.2`)
         * _[Læs mere om serveren](https://helvede.net/about){target=_blank}_
