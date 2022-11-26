@@ -100,14 +100,22 @@ Note that the following can't be imported:
 
 <figure markdown>
 ![Migrate Account Page](img/migrate-account.png){align=right width=50% loading=lazy}
-<figcaption>The <code>Account Migration</code> page has important warning that you should read carefully.</figcaption>
+<figcaption>Please read the full description before clicking <code>Move followers</code>.</figcaption>
 </figure>
 
-1. Navigate to <a identity="old" target="_blank" path="/settings/migration">`Preferences -> Profile -> (scroll to the bottom) "Move to a different account"`</a>
+1. Navigate to <a identity="old" target="_blank" path="/settings/profile">`Preferences -> Profile`</a>
+1. Scroll to the bottom of the page and click <a identity="old" target="_blank" path="/settings/migration">`Move to a different account`</a>
     <br />
-    1. For the `Handle of the new account` field, enter your username on the **new** server (ex. <span identity="new" tag="code" prefix="@your-user@" default="new-server.com"></span>))
-    1. For the `Password` field, enter the password you use on the **old** server (ex. <span identity="old" tag="code" default="old-server.com"></span>)
-    1. Click `Move followers`
+1. For the `Handle of the new account` field, enter your username on the **new** server
+    <br />
+    (ex. <span identity="new" tag="code" prefix="@your-user@" default="new-server.com"></span>)
+1. For the `Password` field, enter the password you use on the **old** server
+    <br />
+    (ex. <span identity="old" tag="code" default="old-server.com"></span>)
+1. Read the description on the page *carefully*
+1. Click `Move followers`
+
+<div style="clear: both" />
 
 !!! success "Done!"
 
