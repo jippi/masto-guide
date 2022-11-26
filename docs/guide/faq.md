@@ -20,7 +20,7 @@ Even search generally works between servers to some degree since the various Mas
 
 Once you follow someone, when you want to mention them, like on Twitter, your `@their-username` will look the same if you're on the same server or different,
 
-Example: If we follow each other but are on different servers, you would only have to use `@jippi` to mention me since the servers know we're related. You do not need to include the `@{{ server_url }}` part of the user.
+Example: If we follow each other but are on different servers, you would only have to use `@jippi` to mention me since the servers know we're related. You do not need to include the `@expressional.social` part of the user.
 
 ## How do I move away from your server?
 

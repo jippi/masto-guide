@@ -1,7 +1,7 @@
 site_name: Masto Guide
 repo_url: https://github.com/jippi/masto-guide
 edit_uri: blob/main/docs/
-site_description: "expressional.social is a Mastodon server hosted in Denmark"
+site_description: "MastoGuides goal is to help everyone learn about Mastodon"
 site_author: "Jippi"
 site_url: https://guide.toot.as/
 
@@ -9,12 +9,6 @@ plugins:
   - social
   - search
   - macros
-
-extra:
-  server_name: expressional.social
-  server_url: https://expressional.social
-  server_domain: expressional.social
-  server_owner: jippi
 
 markdown_extensions:
   - tables

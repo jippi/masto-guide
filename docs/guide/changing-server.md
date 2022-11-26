@@ -12,7 +12,7 @@
 
 You can check out the [official documentation on moving accounts between servers](https://docs.joinmastodon.org/user/moving/){target="_blank"} if this guide isn't clear.
 
-This is a quick guide to moving your old user `@example-user@mastodon.social` to this server where your username is `@example-user@{{ server_url }}`.
+This is a quick guide to moving your old user `@example-user@mastodon.social` to this server where your username is `@example-user@expressional.social`.
 
 ## 1. Export your data
 
@@ -37,17 +37,17 @@ Note that the following can't be imported
 
 ## 2. Migrate your user
 
-1. [Create a new account on **this** server]({{ server_url }}/auth/sign_up){target="_blank"}
-1. [Create an account alias on **this** server]({{ server_url }}/settings/aliases){target="_blank"}. You need to add the *full* username you use on the **old** server (ex. `@example-user@mastodon.social`). This configures your account to accept the account move from the *other* server.
+1. Create a new account on the **new** server.
+1. Create an account alias on **old** server. (`Preferences -> Profile -> (scroll to the bottom) Moving from a different account`). You need to add the *full* username you use on the **old** server (ex.`@example-user@mastodon.social`). This configures your account to accept the account move from the *other* server.
 1. Go to the `Profile` page on your *old* server, scroll to the bottom and select `Move to a different account`
     1. **Important**: Please read the warning text on the page to make sure you are okay with the consequences
-    1. For the `Handle of the new account` field you enter your username on *this* server (ex. `@example-user@{{ server_url }}`)
+    1. For the `Handle of the new account` field you enter your username on *this* server (ex. `@example-user@expressional.social`)
     1. For the `Password` field enter your password you used on the *other* server
 1. Click `Move followers`
 
 ## 3. Import your data
 
-1. On the **new** server navigate to [Import and export -> Import]({{ server_url }}/settings/import){target="_blank"}
+1. On the **new** server navigate to `Import and export -> Import`
 1. From the dropdown, select the kind of data you want to import (this is the `CSV` files from [step 1](#1-export-your-data))
 1. Select the file you exported by clicking the file input (`Choose file`)
     1. `Following list` file is called something like `follows.csv` in your Downloads folder

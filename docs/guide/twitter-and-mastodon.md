@@ -25,7 +25,7 @@ There are also areas where Mastodon has unique features you don't find on Twitte
 
 ## No algorithm
 
-This is not something Mastodon uses. At all. All timelines are strictly chronologic by default, and no automatic filtering will apply to what appears in your timeline. (You can, of course, tweak this via the [filters]({{ server_url }}/filters){target="_blank"}) menu in your profile. This also means `boosting`, and liberal usage of hashtags is much more important (and less intrusive than on Twitter) for discovering content.
+This is not something Mastodon uses. At all. All timelines are strictly chronologic by default, and no automatic filtering will apply to what appears in your timeline. (You can, of course, tweak this via the `filters` menu in your profile. This also means `boosting`, and liberal usage of hashtags is much more important (and less intrusive than on Twitter) for discovering content.
 
 ## No ads
 
