@@ -1,4 +1,4 @@
-# Mastodon Relay Server
+# Dansk Mastodon Relay Server
 
 Da det danske Mastodon server netværk består af en masse små og mindre servere, er flere servere der er gået sammen om et dansk `relay` netværk.
 

@@ -1,4 +1,4 @@
-# Danske hashtags
+# Danske Mastodon hashtags
 
 ## Generelle
 

@@ -70,6 +70,6 @@ nav:
       - guide/tips.md
       - guide/faq.md
   - 🇩🇰 Dansk Mastodon:
-      - Hashtags: dk/hashtags.md
-      - Servere: dk/servers.md
-      - Relay netværk: dk/relay.md
+      - "Danske Mastodon #hashtags": dk/hashtags.md
+      - Danske Mastodon servere: dk/servers.md
+      - Dansk Mastodon Relay netværk: dk/relay.md
