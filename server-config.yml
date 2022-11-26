@@ -3,18 +3,22 @@ categories:
   open:
     name: Åbne servere
     description: Servere du kan blive medlem af med det samme, uden godkendelse.
+    admonition: success
 
   review:
     name: Kræver godkendelse
     description: Servere der godkender dit medlemsskab manuelt.
+    admonition: note
 
   invite:
     name: Invitation påkrævet
     description: Servere der ikke accepterer nye medlemmer uden invitation.
+    admonition: warning
 
   private:
     name: Forening / private
     description: Servere der kræver medlemsskab af en forening eller andet gruppe for at få en bruger.
+    admonition: warning
 
 servers:
   - url: https://norrebro.space

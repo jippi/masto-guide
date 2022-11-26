@@ -4,12 +4,12 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:21 CET_
+_Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter domæne navn. Sidst opdateret 26 Nov 22 01:42 CET_
 
 
 ## Åbne servere
 
-!!! abstract "Servere du kan blive medlem af med det samme, uden godkendelse."
+!!! success "Servere du kan blive medlem af med det samme, uden godkendelse."
 
 
 
@@ -188,7 +188,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] Man kan godt være engageret og råbe. Men man skal behandle andre ordentligt.
 ## Kræver godkendelse
 
-!!! abstract "Servere der godkender dit medlemsskab manuelt."
+!!! note "Servere der godkender dit medlemsskab manuelt."
 
 
 
@@ -224,7 +224,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] No racism, sexism, homophobia, transphobia, xenophobia, or casteism.
 ## Invitation påkrævet
 
-!!! abstract "Servere der ikke accepterer nye medlemmer uden invitation."
+!!! warning "Servere der ikke accepterer nye medlemmer uden invitation."
 
 
 
@@ -274,7 +274,7 @@ _Listen bliver opdateret automatisk, ca en gang i døgnet og er sorteret efter d
     - [X] 9. Vi tolererer ikke spam og bots. Det inkluderer automatisk crossposting af indhold fra andre platforme over på din profil på helvede.net.
 ## Forening / private
 
-!!! abstract "Servere der kræver medlemsskab af en forening eller andet gruppe for at få en bruger."
+!!! warning "Servere der kræver medlemsskab af en forening eller andet gruppe for at få en bruger."
 
 
 

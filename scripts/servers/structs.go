@@ -14,6 +14,7 @@ type Config struct {
 type Category struct {
 	Name        string           `json:"name"`
 	Description string           `json:"description"`
+	Admonition  string           `json:"admonition"` // https://squidfunk.github.io/mkdocs-material/reference/admonitions/
 	Servers     []ServerResponse `json:"-"`
 }
 
