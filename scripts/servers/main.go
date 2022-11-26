@@ -26,7 +26,7 @@ var (
 
 	// HTTP client
 	httpClient = resty.New().
-			SetTimeout(2*time.Second).
+			SetTimeout(5*time.Second).
 			SetHeader("User-Agent", "Masto-Guide")
 
 	// The latest release of Mastodon according to GitHub releases
