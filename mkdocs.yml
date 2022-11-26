@@ -10,6 +10,12 @@ plugins:
   - search
   - macros
 
+extra_css:
+  - css/default.css
+
+extra_javascript:
+  - js/migrate.js
+
 markdown_extensions:
   - tables
   - toc:

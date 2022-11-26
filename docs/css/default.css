@@ -1,0 +1,15 @@
+input.server-selector {
+    color: var(--md-primary-bg-color--light);
+    padding: 10px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: var(--md-primary-fg-color--dark);
+}
+
+input.server-selector.bad {
+    border: 2px solid red
+}
+
+input.server-selector::placeholder {
+    color: var(--md-primary-bg-color--light);
+}
