@@ -2,11 +2,11 @@
 
 !!! success "Contributions welcome - this guide is Open Source!"
 
-    If you find a bug, issue or want to contribute a new webserver, language or framework, please [click the small pencil in the upper right part of this page next to the page title](https://github.com/jippi/masto-guide/blob/main/docs/guide/use-your-own-domain.md){target=_blank}. This page is a normal Markdown page using simple `string.replace()` logic to interpolate values, and built with `mkdocs`
+    If you find a bug or issue or want to contribute a new web server, language, or framework, please [click the small pencil in the upper right part of this page next to the page title](https://github.com/jippi/masto-guide/blob/main/docs/guide/use-your-own-domain.md){target=_blank}. This page is a normal Markdown page using simple `string.replace()` logic to interpolate values, and built with `mkdocs`
 
-This guide will help you configure various hosting platforms, webservers and systems so you can use your own domain as an alias to your Mastodon account.
+This guide will help you configure various hosting platforms, web servers, and systems so you can use your own domain as an alias for your Mastodon account.
 
-Basically, it will allow your user `my-user@mastodon.social` to be found as `me@my-domain.com`.
+It will allow your user `my-user@mastodon.social` to be found as `me@my-domain.com`.
 
 ## Getting started
 
@@ -28,15 +28,15 @@ Basically, it will allow your user `my-user@mastodon.social` to be found as `me@
 
     These changes will only make `__USER_NAME__@__USER_DOMAIN__` discoverable/searchable via `__ALIAS_NAME__@__ALIAS_DOMAIN__`.
 
-    People will still see `__USER_NAME__@__USER_DOMAIN__` when they follow you, write to you, or you writing to them.
+    People will still see `__USER_NAME__@__USER_DOMAIN__` when they follow you, write to you, or you write to them.
 
-!!! tip "You can find the right webserver, hosting platform or framework in the left menu"
+!!! tip "You can find the right web server, hosting platform, or framework in the left menu"
 
-Much like with e-mail, you want folks to have an easy address to find you, and one that you can keep giving out to everyone even if later you switch to a different Mastodon server. A bit like e-mail forwarding to your ISP’s e-mail service.
+Much like with e-mail, you want folks to have an easy address to find you and one that you can keep giving out to everyone, even if later you switch to a different Mastodon server. A bit like e-mail forwarding to your ISP’s e-mail service.
 
 **The good news is:** You can use your own domain and share it with other folks.
 
-In Mastodon, `Users` (in Mastodon lingo called `Actors`) are discovered using [WebFinger](https://webfinger.net/){target=_blank}, a way to attach information to an email address, or other online resource. WebFinger lives on `/.well-known/webfinger` on a server.
+In Mastodon, `Users` (in Mastodon lingo called `Actors`) are discovered using [WebFinger](https://webfinger.net/){target=_blank}, a way to attach information to an email address or other online resource. WebFinger lives on `/.well-known/webfinger` on a server.
 
 When someone searches for you on Mastodon, your server will be queried for accounts using an endpoint that looks like this:
 
@@ -50,15 +50,15 @@ In the code examples on the page below, we're implementing the WebFinger endpoin
 
 !!! tip "The WebFinger request flow looks like this when your alias is set up"
 
-This is a slightly more technical overview on how the alias functionality work in practice.
+This is a slightly more technical overview of how the alias functionality works.
 
 1. A user searches for `__ALIAS_NAME__@__ALIAS_DOMAIN__` on a Mastodon server called `example.com`
 1. The `example.com` Mastodon server queries the WebFinger endpoint at `__ALIAS_DOMAIN__`, asking for the `__ALIAS_NAME__@__ALIAS_DOMAIN__` user.
     1. `GET https://__ALIAS_DOMAIN__/.well-known/webfinger?resource=acct:__ALIAS_NAME__@__ALIAS_DOMAIN__`
-1. The webserver responsible for `__ALIAS_DOMAIN__` accepts the request and redirects the `example.com` Mastodon server to the `__USER_DOMAIN__` Mastodon server
-    1. The webserver responds with `HTTP/1.1 301 Moved Permanently`
-    1. The webserver with `Location: https://__USER_DOMAIN__/.well-known/webfinger?resource=acct:__USER_NAME__@__USER_DOMAIN__`
-1. The `example.com` Mastodon server follows the redirect and query the `__USER_DOMAIN_` WebFinger endpoint.
+1. The web server responsible for `__ALIAS_DOMAIN__` accepts the request and redirects the `example.com` Mastodon server to the `__USER_DOMAIN__` Mastodon server
+    1. The web server responds with `HTTP/1.1 301 Moved Permanently`
+    1. The web server with `Location: https://__USER_DOMAIN__/.well-known/webfinger?resource=acct:__USER_NAME__@__USER_DOMAIN__`
+1. The `example.com` Mastodon server follows the redirect and queries the `__USER_DOMAIN_` WebFinger endpoint.
     1. `GET https://__USER_DOMAIN__/.well-known/webfinger?resource=acct:__USER_NAME__@__USER_DOMAIN__`
 1. The `example.com` Mastodon server gets a valid `__USER_DOMAIN__` Mastodon profile back named `__USER_NAME__@__USER_DOMAIN__` and shows the result to the user that searched for you.
 
@@ -68,7 +68,7 @@ This is a slightly more technical overview on how the alias functionality work i
 
 !!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
-Put the following in your `.htaccess` file
+Put the following in your `.htaccess` file.
 
 ```htaccess
 RewriteEngine On
@@ -79,7 +79,7 @@ RewriteRule ^.well-known/nodeinfo(.*)$ https://__USER_DOMAIN__/.well-known/nodei
 
 ### Nginx
 
-The following will set up nginx to redirect from your custom domain to your Mastodon account
+The following will set up nginx to redirect from your custom domain to your Mastodon account.
 
 #### Before server{} block
 
@@ -98,7 +98,7 @@ map $arg_resource $valid_mastodon {
     #       __ALIAS_NAME__-@__ALIAS_DOMAIN__
     #       anything-else@__ALIAS_DOMAIN__
     #
-    # and so on all pointing to
+    # and so on, all pointing to
     #
     #       __USER_NAME__@__USER_DOMAIN__
     #
@@ -108,7 +108,7 @@ map $arg_resource $valid_mastodon {
     # If you want limit the accounts from @__ALIAS_DOMAIN__, add them individually
     # in the list below like this.
     #
-    # NOTE: The value need to be url encoded like this
+    # NOTE: The value needs to be URL encoded like this
     #
     #      replace : with %3A
     #      replace @ with %40
@@ -134,11 +134,11 @@ You can find the right configuration file by looking through the configuration f
 
 ```nginx
 server {
-    #... other config
+    #... other configs
 
     server_name __ALIAS_DOMAIN__;
 
-    #... other config
+    #... other configs
 }
 ```
 
@@ -146,7 +146,7 @@ Add the following `location` clause inside your `server{}` for your domain confi
 
 ```nginx
 
-    #... other config
+    #... other configs
 
     location ~ ^/.well-known/(host-meta|webfinger|nodeinfo) {
         if ($valid_mastodon = 1) {
@@ -154,12 +154,12 @@ Add the following `location` clause inside your `server{}` for your domain confi
         }
 
         if ($valid_mastodon = 0) {
-            # Mastodon account not in allowed list so return 404
+            # Mastodon account not in the allowed list, so return 404
             return 404;
         }
     }
 
-    #... other config
+    #... other configs
 ```
 
 ## Serverless
@@ -170,7 +170,7 @@ Add the following `location` clause inside your `server{}` for your domain confi
 
 !!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
-Add the following to your `firebase.json` file
+Add the following to your `firebase.json` file.
 
 ```json
 {
@@ -287,7 +287,7 @@ Assuming your public web directory for your website is `www/public`
 
 ## Frameworks
 
-### Wordpress
+### WordPress
 
 !!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
@@ -302,7 +302,7 @@ Assuming your public web directory for your website is `www/public`
 
 <figure markdown>
 ![Export page](img/wordpress-redirection-plugin.png){loading=lazy}
-<figcaption style="float: inherit; width: auto">This is how the Wordpress Redirection form look.</figcaption>
+<figcaption style="float: inherit; width: auto">This is how the WordPress Redirection form look.</figcaption>
 </figure>
 
 <div style="clear: both" />
@@ -313,7 +313,7 @@ Assuming your public web directory for your website is `www/public`
 
 !!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
-Add 3 views to your Django application like this
+Add 3 views to your Django application like this:
 
 ```python
 from proxy.views import proxy_view
@@ -333,7 +333,7 @@ def wellknown_nodeinfo(request):
     return proxy_view(request, remote_url)
 ```
 
-This uses the django-proxy package to provide the proxy_view. You might also want to put in a view that redirects yourdomain.com/@username:
+This uses the `django-proxy` package to provide the proxy_view. You might also want to put in a view that redirects yourdomain.com/@username:
 
 ```python
 from django.http import HttpResponseRedirect
