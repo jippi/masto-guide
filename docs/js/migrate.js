@@ -10,11 +10,9 @@ function url_domain(data) {
 
 document$.subscribe(function () {
   var fromServerElement = document.getElementById("from-server")
-  if (!fromServerElement) {
-    return
-  }
   var toServerElement = document.getElementById("to-server")
-  if (!toServerElement) {
+
+  if (!fromServerElement || !toServerElement) {
     return
   }
 

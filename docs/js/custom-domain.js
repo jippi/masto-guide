@@ -2,6 +2,10 @@ document$.subscribe(function () {
   var usernameElem = document.getElementById("username")
   var aliasElem = document.getElementById("alias")
 
+  if (!usernameElem || !aliasElem) {
+    return
+  }
+
   var refreshTemplates = function () {
     var q = new URLSearchParams(location.search)
     var username = q.get("username")
@@ -46,7 +50,6 @@ document$.subscribe(function () {
     var params = new URLSearchParams(location.search)
     var updateURL = false
 
-    console.log("usernameValue", usernameValue)
     if (isValidUsername(usernameValue)) {
       updateURL = true
       params.set("username", usernameValue)
