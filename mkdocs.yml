@@ -75,7 +75,7 @@ nav:
       - guide/faq.md
   - 📚 Mastodon guide:
       - "Move Mastodon server": guide/move-mastodon-server.md
-      - "Use your own domain": guide/use-your-own-domain.md
+      - "Using your own domain": guide/use-your-own-domain.md
   - 🇩🇰 Dansk Mastodon:
       - "Danske Mastodon #hashtags": dk/hashtags.md
       - Danske Mastodon servere: dk/servers.md
