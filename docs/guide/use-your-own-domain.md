@@ -1,5 +1,9 @@
 # Use your own domain for Mastodon discoverability
 
+!!! success "Contributions welcome - this guide is Open Source!"
+
+    If you find a bug, issue or want to contribute a new webserver, language or framework, please [click the small pencil in the upper right part of this page next to the page title](https://github.com/jippi/masto-guide/blob/main/docs/guide/use-your-own-domain.md){target=_blank}. This page is a normal Markdown page using simple `string.replace()` logic to interpolate values, and built with `mkdocs`
+
 This guide will help you configure various hosting platforms, webservers and system so you can use your own domain as an alias to your Mastodon account.
 
 Basically, it will allow your user `my-user@mastodon.social` to be found as `me@my-domain.com`.
