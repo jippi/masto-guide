@@ -26,7 +26,7 @@ It will allow your user `my-user@mastodon.social` to be found as `me@my-domain.c
 
 !!! warning "This will **not** change your Mastodon username. Only how you can be found on Mastodon."
 
-    These changes will only make `${MASTODON_USER}@${MASTODON_DOMAIN}` discoverable/searchable via `${ALIAS_NAME}@${ALIAS_DOMAIN}`.
+    These changes will only make `${MASTODON_USER}@${MASTODON_DOMAIN}` discoverable/searchable via `${ALIAS_USER}@${ALIAS_DOMAIN}`.
 
     People will still see `${MASTODON_USER}@${MASTODON_DOMAIN}` when they follow you, write to you, or you write to them.
 
@@ -44,7 +44,7 @@ When someone searches for you on Mastodon, your server will be queried for accou
 GET https://${MASTODON_DOMAIN}/.well-known/webfinger?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}
 ```
 
-In the code examples on the page below, we're implementing the WebFinger endpoint on *your* domain and redirecting from *your* domain (`${ALIAS_DOMAIN}`) to the Mastodon servers (`${MASTODON_DOMAIN}`) WebFinger endpoint, effectively making `${ALIAS_NAME}@${ALIAS_DOMAIN}` become an alias of `${MASTODON_USER}@${MASTODON_DOMAIN}`.
+In the code examples on the page below, we're implementing the WebFinger endpoint on *your* domain and redirecting from *your* domain (`${ALIAS_DOMAIN}`) to the Mastodon servers (`${MASTODON_DOMAIN}`) WebFinger endpoint, effectively making `${ALIAS_USER}@${ALIAS_DOMAIN}` become an alias of `${MASTODON_USER}@${MASTODON_DOMAIN}`.
 
 ### 2.1 How it works
 
@@ -52,9 +52,9 @@ In the code examples on the page below, we're implementing the WebFinger endpoin
 
 This is a slightly more technical overview of how the alias functionality works.
 
-1. A user searches for `${ALIAS_NAME}@${ALIAS_DOMAIN}` on a Mastodon server called `example.com`
-1. The `example.com` Mastodon server queries the WebFinger endpoint at `${ALIAS_DOMAIN}`, asking for the `${ALIAS_NAME}@${ALIAS_DOMAIN}` user.
-    1. `GET https://${ALIAS_DOMAIN}/.well-known/webfinger?resource=acct:${ALIAS_NAME}@${ALIAS_DOMAIN}`
+1. A user searches for `${ALIAS_USER}@${ALIAS_DOMAIN}` on a Mastodon server called `example.com`
+1. The `example.com` Mastodon server queries the WebFinger endpoint at `${ALIAS_DOMAIN}`, asking for the `${ALIAS_USER}@${ALIAS_DOMAIN}` user.
+    1. `GET https://${ALIAS_DOMAIN}/.well-known/webfinger?resource=acct:${ALIAS_USER}@${ALIAS_DOMAIN}`
 1. The web server responsible for `${ALIAS_DOMAIN}` accepts the request and redirects the `example.com` Mastodon server to the `${MASTODON_DOMAIN}` Mastodon server
     1. The web server responds with `HTTP/1.1 301 Moved Permanently`
     1. The web server with `Location: https://${MASTODON_DOMAIN}/.well-known/webfinger?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}`
@@ -95,7 +95,7 @@ map $arg_resource $valid_mastodon {
     # If you want any account at *@${ALIAS_DOMAIN} to redirect to your Mastodon account e.x.
     #
     #       ${MASTODON_USER}-@${ALIAS_DOMAIN}
-    #       ${ALIAS_NAME}-@${ALIAS_DOMAIN}
+    #       ${ALIAS_USER}-@${ALIAS_DOMAIN}
     #       anything-else@${ALIAS_DOMAIN}
     #
     # and so on, all pointing to
@@ -116,15 +116,15 @@ map $arg_resource $valid_mastodon {
     # Example
     #
     #      acct:${MASTODON_USER}@${MASTODON_DOMAIN} becomes acct%3A${MASTODON_USER}%40${MASTODON_DOMAIN}
-    #      acct:${ALIAS_NAME}@${ALIAS_DOMAIN} becomes acct%3${ALIAS_NAME}%40${ALIAS_DOMAIN}
+    #      acct:${ALIAS_USER}@${ALIAS_DOMAIN} becomes acct%3${ALIAS_USER}%40${ALIAS_DOMAIN}
     #
     # Add as many additional ones as you would like
 
     # acct:${MASTODON_USER}@${MASTODON_DOMAIN}
     'acct%3A${MASTODON_USER}%40${MASTODON_DOMAIN}' 1;
 
-    # acct:${ALIAS_NAME}@${ALIAS_DOMAIN}
-    'acct%3A${ALIAS_NAME}%40${ALIAS_DOMAIN}' 1;
+    # acct:${ALIAS_USER}@${ALIAS_DOMAIN}
+    'acct%3A${ALIAS_USER}%40${ALIAS_DOMAIN}' 1;
 }
 ```
 
@@ -227,8 +227,8 @@ Add the following three lines to your redirect rules file (`_redirects`):
     [plugins.inputs]
         username = "${MASTODON_USER}"
         instance = "${MASTODON_DOMAIN}"
-        # delete or comment the next line if you want "*@${ALIAS_DOMAIN}" to work rather than just "${ALIAS_NAME}@${ALIAS_DOMAIN}"
-        strictUsername = "${ALIAS_NAME}"
+        # delete or comment the next line if you want "*@${ALIAS_DOMAIN}" to work rather than just "${ALIAS_USER}@${ALIAS_DOMAIN}"
+        strictUsername = "${ALIAS_USER}"
     ```
 3. Deploy netlify
 
