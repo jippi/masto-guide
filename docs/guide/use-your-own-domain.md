@@ -8,7 +8,7 @@ This guide will help you configure various hosting platforms, web servers, and s
 
 It will allow your user `my-user@mastodon.social` to be found as `me@my-domain.com`.
 
-## Getting started
+## 1. Getting started
 
 !!! tip "Filling out the two fields will automatically generate valid configurations in all the examples below, with your bespoke values."
 
@@ -22,7 +22,7 @@ It will allow your user `my-user@mastodon.social` to be found as `me@my-domain.c
 1. My Mastodon username is <input id="username" placeholder="user@mastodon-server.com" class="username-selector" /> `← your current Mastodon username`
 1. And I want to be discoverable as <input id="alias" placeholder="user@your-domain.com" class="username-selector" /> `← username@custom-domain-you-own.com`
 
-## Read before starting
+## 2. Important information
 
 !!! warning "This will **not** change your Mastodon username. Only how you can be found on Mastodon."
 
@@ -46,7 +46,7 @@ GET https://__USER_DOMAIN__/.well-known/webfinger?resource=acct:__USER_NAME__@__
 
 In the code examples on the page below, we're implementing the WebFinger endpoint on *your* domain and redirecting from *your* domain (`__ALIAS_DOMAIN__`) to the Mastodon servers (`__USER_DOMAIN__`) WebFinger endpoint, effectively making `__ALIAS_NAME__@__ALIAS_DOMAIN__` become an alias of `__USER_NAME__@__USER_DOMAIN__`.
 
-### How does it works
+### 2.1 How it works
 
 !!! tip "The WebFinger request flow looks like this when your alias is set up"
 
@@ -62,7 +62,7 @@ This is a slightly more technical overview of how the alias functionality works.
     1. `GET https://__USER_DOMAIN__/.well-known/webfinger?resource=acct:__USER_NAME__@__USER_DOMAIN__`
 1. The `example.com` Mastodon server gets a valid `__USER_DOMAIN__` Mastodon profile back named `__USER_NAME__@__USER_DOMAIN__` and shows the result to the user that searched for you.
 
-## Web servers
+## 3. Web servers
 
 ### Apache (.htaccess)
 
@@ -162,7 +162,7 @@ Add the following `location` clause inside your `server{}` for your domain confi
     #... other configs
 ```
 
-## Serverless
+## 4. Serverless
 
 ### Firebase hosting
 
@@ -211,7 +211,7 @@ Add the following three lines to your redirect rules file (`_redirects`):
 /.well-known/nodeinfo* https://__USER_DOMAIN__/.well-known/nodeinfo:splat 301
 ```
 
-## Static file generator
+## 5. Static file generator
 
 !!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
@@ -285,7 +285,7 @@ Assuming your public web directory for your website is `www/public`
 }
 ```
 
-## Frameworks
+## 6. Frameworks
 
 ### WordPress
 
