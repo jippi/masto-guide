@@ -45,8 +45,8 @@ document$.subscribe(function () {
   }
 
   var onChange = function () {
-    var usernameValue = usernameElem.value
-    var aliasValue = aliasElem.value
+    var usernameValue = usernameElem.value.replace(/^@/, "")
+    var aliasValue = aliasElem.value.replace(/^@/, "")
     var params = new URLSearchParams(location.search)
     var updateURL = false
 
