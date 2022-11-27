@@ -66,7 +66,7 @@ This is a slightly more technical overview on how the alias functionality work i
 
 ### Apache (.htaccess)
 
-!!! note "This configuration will redirect all usernames on `@**ALIAS_DOMAIN**` to your Mastodon account `**USER_NAME**@**USER_DOMAIN**`"
+!!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
 Put the following in your `.htaccess` file
 
@@ -168,7 +168,7 @@ Add the following `location` clause inside your `server{}` for your domain confi
 
 !!! info "Original implementation by [johnmu.com](https://johnmu.com/2022-mastodon-for-your-domain//){target=_blank}, please see their blog post for more information"
 
-!!! note "This configuration will redirect all usernames on `@**ALIAS_DOMAIN**` to your Mastodon account `**USER_NAME**@**USER_DOMAIN**`"
+!!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
 Add the following to your `firebase.json` file
 
@@ -201,7 +201,7 @@ Add the following to your `firebase.json` file
 
 !!! info "Original implementation by [jacobian.org](https://jacobian.org/til/my-mastodon-instance/){target=_blank}, please see their blog post for more information"
 
-!!! note "This configuration will redirect all usernames on `@**ALIAS_DOMAIN**` to your Mastodon account `**USER_NAME**@**USER_DOMAIN**`"
+!!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
 Add the following three lines to your redirect rules file (`_redirects`):
 
@@ -213,7 +213,7 @@ Add the following three lines to your redirect rules file (`_redirects`):
 
 ## Static file generator
 
-!!! note "This configuration will redirect all usernames on `@**ALIAS_DOMAIN**` to your Mastodon account `**USER_NAME**@**USER_DOMAIN**`"
+!!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
 Assuming your public web directory for your website is `www/public`
 
@@ -289,7 +289,7 @@ Assuming your public web directory for your website is `www/public`
 
 ### Wordpress
 
-!!! note "This configuration will redirect all usernames on `@**ALIAS_DOMAIN**` to your Mastodon account `**USER_NAME**@**USER_DOMAIN**`"
+!!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
 1. Install the [Redirection Plugin](https://wordpress.org/plugins/redirection/){target=_blank}
 1. `Source URL` must be `/.well-known/webfinger`
@@ -311,7 +311,7 @@ Assuming your public web directory for your website is `www/public`
 
 !!! info "Original implementation by [aeracode.org](https://aeracode.org/2022/11/01/fediverse-custom-domains/){target=_blank}, please see their blog post for more information"
 
-!!! note "This configuration will redirect all usernames on `@**ALIAS_DOMAIN**` to your Mastodon account `**USER_NAME**@**USER_DOMAIN**`"
+!!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
 Add 3 views to your Django application like this
 
