@@ -211,7 +211,28 @@ Add the following three lines to your redirect rules file (`_redirects`):
 /.well-known/nodeinfo* https://__USER_DOMAIN__/.well-known/nodeinfo:splat 301
 ```
 
-## 5. Static file generator
+### Netlify
+
+!!! info "This guide is based on the [netlify-plugin-mastodon-alias](https://github.com/dkundel/netlify-plugin-mastodon-alias){target=_blank} GitHub project."
+
+1. Install `netlify-plugin-mastodon-alias`
+    ```shell
+    npm install netlify-plugin-mastodon-alias
+    ```
+2. Configure WebFinger by adding the following to your `netlify.toml` file:
+    ```toml
+    [[plugins]]
+    package = "netlify-plugin-mastodon-alias"
+
+    [plugins.inputs]
+        username = "__USER_NAME__"
+        instance = "__USER_DOMAIN__"
+        # delete or comment the next line if you want "*@__ALIAS_DOMAIN__" to work rather than just "__ALIAS_NAME__@__ALIAS_DOMAIN__"
+        strictUsername = "__ALIAS_NAME__"
+    ```
+3. Deploy netlify
+
+## 5. Static files
 
 !!! note "This configuration will redirect all usernames on `@__ALIAS_DOMAIN__` to your Mastodon account `__USER_NAME__@__USER_DOMAIN__`"
 
@@ -306,6 +327,26 @@ Assuming your public web directory for your website is `www/public`
 </figure>
 
 <div style="clear: both" />
+
+### Jekyll
+
+1. Add `jekyll-mastodon_webfinger` to your Gemfile:
+    ```shell
+    bundle add jekyll-mastodon_webfinger
+    ```
+2. Add the plugin to your list of plugins in `_config.yml`:
+    ```yaml
+    plugins:
+        - jekyll/mastodon_webfinger
+    ```
+3. Add your Mastodon username and instance to `_config.yml`:
+    ```yaml
+    mastodon:
+        username: __USER_NAME__
+        instance: __USER_DOMAIN__
+    ```
+
+Next time you build the site, you will find a `/.well-known/webfinger` file in your output directory, and when you deploy you will be able to refer to your Mastodon account using your own domain.
 
 ### Django (Python)
 
