@@ -19,6 +19,7 @@ extra_css:
 
 extra_javascript:
   - js/migrate.js
+  - js/custom-domain.js
 
 markdown_extensions:
   - tables
@@ -66,13 +67,15 @@ theme:
         name: Switch to light mode
 
 nav:
-  - 📚 Mastodon guide:
+  - 👋 Mastodon Intro:
       - guide/choosing-a-server.md
-      - "Move Mastodon server": guide/move-mastodon-server.md
       - guide/getting-started-on-mastodon.md
       - guide/twitter-and-mastodon.md
       - guide/tips.md
       - guide/faq.md
+  - 📚 Mastodon guide:
+      - "Move Mastodon server": guide/move-mastodon-server.md
+      - "Use your own domain": guide/use-your-own-domain.md
   - 🇩🇰 Dansk Mastodon:
       - "Danske Mastodon #hashtags": dk/hashtags.md
       - Danske Mastodon servere: dk/servers.md

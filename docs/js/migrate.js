@@ -10,7 +10,13 @@ function url_domain(data) {
 
 document$.subscribe(function () {
   var fromServerElement = document.getElementById("from-server")
+  if (!fromServerElement) {
+    return
+  }
   var toServerElement = document.getElementById("to-server")
+  if (!toServerElement) {
+    return
+  }
 
   var refreshLinks = function () {
     var q = new URLSearchParams(location.search)
@@ -22,7 +28,7 @@ document$.subscribe(function () {
       var identity = link.getAttribute("identity")
       if (identity == "old") {
         if (fromServer) {
-          link.setAttribute("href", "https://"+fromServer + link.getAttribute("path"))
+          link.setAttribute("href", "https://" + fromServer + link.getAttribute("path"))
           link.onclick = null
 
           return
@@ -34,7 +40,7 @@ document$.subscribe(function () {
 
       if (identity == "new") {
         if (toServer) {
-          link.setAttribute("href", "https://"+toServer + link.getAttribute("path"))
+          link.setAttribute("href", "https://" + toServer + link.getAttribute("path"))
           link.onclick = null
 
           return
@@ -65,7 +71,8 @@ document$.subscribe(function () {
         }
       }
 
-      innerSpan.innerText = (span.getAttribute("prefix") ?? "") + innerSpan.innerHTML + (span.getAttribute("suffix") ?? "")
+      innerSpan.innerText =
+        (span.getAttribute("prefix") ?? "") + innerSpan.innerHTML + (span.getAttribute("suffix") ?? "")
 
       span.innerHTML = innerSpan.outerHTML
     })
@@ -147,7 +154,7 @@ function isValidHostname(value) {
 }
 
 function warnMissingConfig(text) {
-  return function() {
+  return function () {
     alert(text)
     return false
   }

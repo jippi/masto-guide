@@ -1,4 +1,5 @@
-input.server-selector {
+input.server-selector,
+input.username-selector {
     color: var(--md-primary-bg-color--light);
     padding: 10px;
     width: 300px;
@@ -6,11 +7,13 @@ input.server-selector {
     background-color: var(--md-primary-fg-color--dark);
 }
 
-input.server-selector.bad {
+input.server-selector.bad,
+input.username-selector.bad {
     border: 2px solid red
 }
 
-input.server-selector::placeholder {
+input.server-selector::placeholder,
+input.username-selector::placeholder {
     color: var(--md-primary-bg-color--light);
 }
 
