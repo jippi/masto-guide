@@ -21,14 +21,14 @@ document$.subscribe(function () {
 
       if (username) {
         var userChunks = username.split("@")
-        template = template.replaceAll("__USER_NAME__", userChunks[0])
-        template = template.replaceAll("__USER_DOMAIN__", userChunks[1])
+        template = template.replaceAll("${MASTODON_USER}", userChunks[0])
+        template = template.replaceAll("${MASTODON_DOMAIN}", userChunks[1])
       }
 
       if (alias) {
         var aliasChunks = alias.split("@")
-        template = template.replaceAll("__ALIAS_NAME__", aliasChunks[0])
-        template = template.replaceAll("__ALIAS_DOMAIN__", aliasChunks[1])
+        template = template.replaceAll("${ALIAS_USER}", aliasChunks[0])
+        template = template.replaceAll("${ALIAS_DOMAIN}", aliasChunks[1])
       }
 
       elem.innerHTML = template
