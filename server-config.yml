@@ -39,4 +39,5 @@ servers:
   - url: https://uddannelse.social
   - url: https://social.data.coop
     category: private
+  - url: https://fynbo.social
 
