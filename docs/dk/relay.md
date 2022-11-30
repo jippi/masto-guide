@@ -8,10 +8,10 @@ For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at de
 
 ## Deltagende servere
 
-- [norrebro.space](https://norrebro.space){target=_blank}
 - [expressional.social](https://expressional.social){target=_blank}
-- [turingfesten.dk](https://turingfesten.dk){target=_blank}
 - [fynbo.social](https://fynbo.social){target=_blank}
+- [norrebro.space](https://norrebro.space){target=_blank}
+- [turingfesten.dk](https://turingfesten.dk){target=_blank}
 
 ## Ansøgning
 
