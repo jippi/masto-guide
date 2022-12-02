@@ -10,6 +10,7 @@ For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at de
 
 - [expressional.social](https://expressional.social){target=_blank}
 - [fynbo.social](https://fynbo.social){target=_blank}
+- [mstdn.dk](https://mstdn.dk){target=_blank}
 - [norrebro.space](https://norrebro.space){target=_blank}
 - [turingfesten.dk](https://turingfesten.dk){target=_blank}
 
