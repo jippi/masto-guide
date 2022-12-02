@@ -21,7 +21,7 @@ type Category struct {
 }
 
 type Server struct {
-	URL      string    `json:"url"`
+	Domain   string    `json:"domain"`
 	Category *Category `json:"category,omitempty"`
 	Covenant bool      `json:"covenant,omitempty"`
 }
@@ -32,11 +32,11 @@ func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
 		return err
 	}
 
-	url, ok := details["url"]
+	domain, ok := details["domain"]
 	if !ok {
-		return errors.New("missing url")
+		return errors.New("missing domain")
 	}
-	s.URL = url.(string)
+	s.Domain = domain.(string)
 
 	covenant, ok := details["covenant"]
 	if ok {

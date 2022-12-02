@@ -130,7 +130,7 @@ func fetchServerInformation(server Server, log *log.Entry) {
 
 	// Very simplistic retry policy
 	for i := 0; i < 5; i++ {
-		logger := log.WithField("subsystem", "worker").WithField("attempt", i).WithField("server", server.URL)
+		logger := log.WithField("subsystem", "worker").WithField("attempt", i).WithField("server", server.Domain)
 		logger.Info("Fetching server information")
 
 		retry := func(err error) {
@@ -142,7 +142,7 @@ func fetchServerInformation(server Server, log *log.Entry) {
 		}
 
 		serverResponse := &ServerResponse{}
-		if _, err := httpClient.R().SetResult(serverResponse).Get(server.URL + "/api/v2/instance"); err != nil {
+		if _, err := httpClient.R().SetResult(serverResponse).Get("https://" + server.Domain + "/api/v2/instance"); err != nil {
 			retry(err)
 			continue
 		}
@@ -160,7 +160,7 @@ func fetchServerInformation(server Server, log *log.Entry) {
 		return
 	}
 
-	serverErrors[server.URL] = lastError
+	serverErrors[server.Domain] = lastError
 }
 
 func getLatestReleaseOfMastodon() {

@@ -11,12 +11,12 @@
 # in the file, so if it's confusing, you can probably find something to copy+paste
 # instead of writing it manually by hand.
 #
-# url:
+# domain:
 #
-#   The full URL/link to the front page of the server.
+#   The domain to the front page of the server.
 #
 #   It MUST *not* include trailing slash (/).
-#   It MUST include the protocol (https://)
+#   It MUST *not* include the protocol (https://)
 #
 # covenant:
 #
@@ -36,20 +36,22 @@
 #   It MUST include a comment explaining why it was forced into the category
 #   If omitted, auto-detection will place the server in the right category
 
-- url: https://expressional.social
+- domain: expressional.social
   covenant: true # https://expressional.social/docs/#about-the-server
 
-- url: https://norrebro.space
+- domain: norrebro.space
 
-- url: https://turingfesten.dk
+- domain: turingfesten.dk
 
-- url: https://mstdn.dk
+- domain: mstdn.dk
 
-- url: https://helvede.net
+- domain: helvede.net
 
-- url: https://uddannelse.social
+- domain: uddannelse.social
 
-- url: https://social.data.coop
+- domain: social.data.coop
   category: private # private organization that require paid membership to join
 
-- url: https://fynbo.social
+- domain: fynbo.social
+
+- domain: mastodon.samtale.rocks
