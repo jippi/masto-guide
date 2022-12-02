@@ -1,4 +1,44 @@
 ---
+######################################################
+# Introduction to the config file
+######################################################
+#
+# This file uses YAML format, you can learn more about it here:
+#   https://circleci.com/blog/what-is-yaml-a-beginner-s-guide
+#
+# Configuration settings for each server are explained in the following
+# sections. There are examples for all the configuration options already
+# in the file, so if it's confusing, you can probably find something to copy+paste
+# instead of writing it manually by hand.
+#
+# url:
+#
+#   The full URL/link to the front page of the server.
+#
+#   It MUST *not* include trailing slash (/).
+#   It MUST include the protocol (https://)
+#
+# covenant:
+#
+#   Configure whether the server follows the Mastodon server covenant
+#   explained in details here: https://joinmastodon.org/covenant.
+#
+#   It MUST be either [true] or [false] (without the []-brackets)
+#   If omitted, [false] is assumed.
+#   If [true] a comment MUST be added to the server with link outlining this (can be the "About" page)
+#
+# category:
+#
+#   Force a server into a specific category, and bypass the auto-detection logic.
+#   You can find the valid categories in the file [scripts/servers/config/categories.yml] (inside this directory)
+#
+#   It MUST reference the [id] value from [categories.yml]
+#   It MUST include a comment explaining why it was forced into the category
+#   If omitted, auto-detection will place the server in the right category
+
+- url: https://expressional.social
+  covenant: true # https://expressional.social/docs/#about-the-server
+
 - url: https://norrebro.space
 
 - url: https://turingfesten.dk
@@ -7,12 +47,11 @@
 
 - url: https://helvede.net
 
-- url: https://expressional.social
-  covenant: true
-
 - url: https://uddannelse.social
 
 - url: https://social.data.coop
-  category: private
+  category: private # private organization that require paid membership to join
 
 - url: https://fynbo.social
+
+- url: https://social.multiverse.net
