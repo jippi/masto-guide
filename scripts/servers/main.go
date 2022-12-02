@@ -17,9 +17,6 @@ import (
 var (
 	config = &Config{}
 
-	// Categories we're managing
-	categories []*Category
-
 	// Worker coordination
 	readerCh = make(chan Server)
 	wg       sync.WaitGroup
@@ -32,7 +29,8 @@ var (
 	// The latest release of Mastodon according to GitHub releases
 	mastodonVersion *semver.Constraints
 
-	serverErrors map[string]error
+	serverErrors  = make(map[string]error)
+	categoryIndex = make(map[string]int)
 )
 
 func main() {
@@ -42,16 +40,6 @@ func main() {
 	loadConfigFile()
 	initializeTemplateRenderer()
 	getLatestReleaseOfMastodon()
-
-	// The order we want categories to show up in the markdown output
-	categories = []*Category{
-		config.Categories["open"],
-		config.Categories["review"],
-		config.Categories["invite"],
-		config.Categories["private"],
-	}
-
-	serverErrors = make(map[string]error)
 
 	// Start workers
 	for w := 1; w <= int(math.Min(5, float64(len(config.Servers)))); w++ {
@@ -68,7 +56,7 @@ func main() {
 	// enqueue servers that need to be fetched
 	for _, server := range config.Servers {
 		wg.Add(1)
-		readerCh <- server
+		readerCh <- *server
 	}
 
 	// Prevent any further writing to the channel
@@ -79,9 +67,22 @@ func main() {
 	logger.Info("Done reading server information")
 
 	// Sorting the servers by name to keep it consistent and fair
-	for _, cat := range categories {
-		sort.SliceStable(cat.Servers, func(a, b int) bool {
-			return cat.Servers[a].Domain < cat.Servers[b].Domain
+	for _, cat := range config.Categories {
+		sort.Slice(cat.Servers, func(a, b int) bool {
+			serverA, serverB := cat.Servers[a], cat.Servers[b]
+
+			// Server A ✅ covenant, but Server B does not - A should come first
+			if serverA.HasCommittedToServerCovenant() && !serverB.HasCommittedToServerCovenant() {
+				return true
+			}
+
+			// Server A has no covenant, but Server A does - B should come first
+			if !serverA.HasCommittedToServerCovenant() && serverB.HasCommittedToServerCovenant() {
+				return false
+			}
+
+			// Sort by name for the remainder
+			return serverA.Domain < serverB.Domain
 		})
 	}
 
@@ -97,7 +98,7 @@ func main() {
 		UpdateAt   string
 		Errors     map[string]error
 	}{
-		Categories: categories,
+		Categories: config.Categories,
 		UpdateAt:   time.Now().Format(time.RFC822),
 		Errors:     serverErrors,
 	}
@@ -129,8 +130,8 @@ func fetchServerInformation(server Server, log *log.Entry) {
 			time.Sleep(time.Duration(i) * time.Second)
 		}
 
-		serverResponse := ServerResponse{}
-		if _, err := httpClient.R().SetResult(&serverResponse).Get(server.URL + "/api/v2/instance"); err != nil {
+		serverResponse := &ServerResponse{}
+		if _, err := httpClient.R().SetResult(serverResponse).Get(server.URL + "/api/v2/instance"); err != nil {
 			retry(err)
 			continue
 		}
@@ -173,12 +174,24 @@ func loadConfigFile() {
 	logger := log.WithField("subsystem", "config")
 	logger.Debug("Loading configuration file")
 
-	serversContent, err := ioutil.ReadFile("../../server-config.yml")
+	categories, err := ioutil.ReadFile("config/categories.yml")
 	if err != nil {
 		logger.Fatal(err)
 	}
 
-	if err := yaml.Unmarshal(serversContent, config); err != nil {
+	if err := yaml.Unmarshal(categories, &config.Categories); err != nil {
+		logger.Fatal(err)
+	}
+
+	for idx, cat := range config.Categories {
+		categoryIndex[cat.ID] = idx
+	}
+
+	servers, err := ioutil.ReadFile("config/servers.yml")
+	if err != nil {
+		logger.Fatal(err)
+	}
+	if err := yaml.Unmarshal(servers, &config.Servers); err != nil {
 		logger.Fatal(err)
 	}
 

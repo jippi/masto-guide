@@ -1,0 +1,18 @@
+---
+- url: https://norrebro.space
+
+- url: https://turingfesten.dk
+
+- url: https://mstdn.dk
+
+- url: https://helvede.net
+
+- url: https://expressional.social
+  covenant: true
+
+- url: https://uddannelse.social
+
+- url: https://social.data.coop
+  category: private
+
+- url: https://fynbo.social

@@ -18,6 +18,9 @@ var (
 )
 
 var tmplFuncs = template.FuncMap{
+	"trimSpace": func(in string) string {
+		return strings.TrimSpace(in)
+	},
 	"prefixWith": func(in, prefix string) string {
 		in = strings.ReplaceAll(in, "\r", "")
 

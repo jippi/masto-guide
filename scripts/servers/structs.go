@@ -7,22 +7,23 @@ import (
 )
 
 type Config struct {
-	Servers    []Server             `json:"servers"`
-	Categories map[string]*Category `json:"categories"`
+	Servers    []*Server   `json:"servers"`
+	Categories []*Category `json:"categories"`
 }
 
 type Category struct {
-	Name        string           `json:"name"`
-	Description string           `json:"description"`
-	More        string           `json:"more"`
-	Admonition  string           `json:"admonition"` // https://squidfunk.github.io/mkdocs-material/reference/admonitions/
-	Servers     []ServerResponse `json:"-"`
+	ID          string            `json:"id"`
+	Name        string            `json:"name"`
+	Description string            `json:"description"`
+	More        string            `json:"more"`
+	Admonition  string            `json:"admonition"` // https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+	Servers     []*ServerResponse `json:"-"`
 }
 
 type Server struct {
 	URL      string    `json:"url"`
 	Category *Category `json:"category,omitempty"`
-	Covenant *bool     `json:"covenant,omitempty"`
+	Covenant bool      `json:"covenant,omitempty"`
 }
 
 func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
@@ -39,18 +40,19 @@ func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
 
 	covenant, ok := details["covenant"]
 	if ok {
-		s.Covenant = boolPtr(covenant.(bool))
+		s.Covenant = covenant.(bool)
 	}
 
 	category, ok := details["category"]
 	if ok {
 		categoryString := category.(string)
 
-		if _, ok := config.Categories[categoryString]; !ok {
+		idx, ok := categoryIndex[categoryString]
+		if !ok {
 			return fmt.Errorf("Invalid category: %s", category)
 		}
 
-		s.Category = config.Categories[categoryString]
+		s.Category = config.Categories[idx]
 	}
 
 	return nil
@@ -63,7 +65,7 @@ type GithubReleaseResponse struct {
 
 type ServerResponse struct {
 	// Custom config
-	MastodonCovenant *bool
+	MastodonCovenant bool
 
 	// API response
 	Domain      string `json:"domain"`
@@ -163,12 +165,16 @@ func (s *ServerResponse) Categorize(server Server) *Category {
 	}
 
 	if s.Registrations.Enabled && !s.Registrations.ApprovalRequired {
-		return config.Categories["open"]
+		return config.Categories[categoryIndex["open"]]
 	}
 
 	if s.Registrations.Enabled {
-		return config.Categories["review"]
+		return config.Categories[categoryIndex["review"]]
 	}
 
-	return config.Categories["invite"]
+	return config.Categories[categoryIndex["invite"]]
+}
+
+func (s *ServerResponse) HasCommittedToServerCovenant() bool {
+	return s.MastodonCovenant
 }

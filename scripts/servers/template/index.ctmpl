@@ -1,6 +1,6 @@
 # Oversigt over danske Mastodon servere
 
-!!! tip "Hvis du har en dansk Mastodon server [kan du tilføje den i vores konfiguration fil, så bliver den inkluderet automatisk](https://github.com/jippi/masto-guide/blob/main/server-config.yml){target=_blank}"
+!!! tip "Hvis du har en dansk Mastodon server [kan du tilføje den i vores konfiguration fil, så bliver den inkluderet automatisk](https://github.com/jippi/masto-guide/blob/main/scripts/servers/config/servers.yml){target=_blank}"
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
@@ -23,8 +23,12 @@ _Listen bliver opdateret automatisk, ca en gang i timen og er sorteret efter dom
 
         * **Navn:** [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
         * **Ejer:** [@{{ .Contact.Account.Username }}]({{ .Contact.Account.URL }}){target=_blank}
-        * [**Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth }}
+        {{ if .MastodonCovenant }}
+        * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        {{ else }}
+        * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger IKKE Mastodon Server Covenant, klik for at læse mere"}
+        {{ end }}
+        * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
         * **Version:** {{ IsCurrent .Version | BoolIcon }} (`{{ .Version }}`)
         * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
@@ -37,9 +41,14 @@ _Listen bliver opdateret automatisk, ca en gang i timen og er sorteret efter dom
 
         * **Navn:** [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
         * **Ejer:** [@{{ .Contact.Account.Username }}]({{ .Contact.Account.URL }}){target=_blank}
-        * [**Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth }}
+        {{ if .MastodonCovenant }}
+        * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        {{ else }}
+        * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger *ikke* Mastodon Server Covenant, klik for at læse mere"}
+        {{ end }}
+        * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
         * **Version:** {{ IsCurrent .Version | BoolIcon }} (`{{ .Version }}`)
+        * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
     {{ range .Rules }}
