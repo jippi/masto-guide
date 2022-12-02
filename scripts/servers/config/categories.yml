@@ -1,29 +1,33 @@
 ---
-- id: open
+- id: open # use this value in servers.yml
   name: Åbne servere
-  description: Servere du kan blive medlem af med det samme, uden godkendelse.
+  admonition: success
+  description: |
+    Servere du kan blive medlem af med det samme, uden godkendelse.
   more: |
     Du kan oprette dig og begynde at bruge din konto med det samme. Der er ingen godkendelse eller krav du skal opfylde (udover at følge reglerne).
-  admonition: success
 
-- id: review
+- id: review # use this value in servers.yml
   name: Kræver godkendelse
-  description: Servere der manuelt godkender dit medlemsskab.
+  admonition: note
+  description: |
+    Servere der manuelt godkender dit medlemsskab.
   more: |
     Det svinger meget fra server til server hvor hurtigt din bruger bliver godkendt, men regn med omkring 24 timer.
-  admonition: note
 
-- id: invite
+- id: invite # use this value in servers.yml
   name: Invitation påkrævet
-  description: Servere der ikke accepterer nye medlemmer uden invitation (eller overhovedet).
+  admonition: warning
+  description: |
+    Servere der ikke accepterer nye medlemmer uden invitation (eller overhovedet).
   more: |
     Servere kræver ofte invitation af to årsager.
 
     1. Serveren har ikke kapacitet til flere brugere.
     2. Ejeren af serveren vil gerne sikre sig der ikke kommer brugere på serveren som mindst én anden på serveren kender i forvejen.
-  admonition: warning
 
-- id: private
+- id: private # use this value in servers.yml
   name: Forening / private
-  description: Servere der kræver medlemsskab af en forening eller opfylde andre særlige krav for at få en bruger.
   admonition: warning
+  description: |
+    Servere der kræver medlemsskab af en forening eller opfylde andre særlige krav for at få en bruger.
