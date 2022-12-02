@@ -86,23 +86,28 @@ jobs:
 
       # Apply TF monitors
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v2
+        working-directory: scripts/servers/monitoring
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - name: Terraform init
         id: init
-        run: cd scripts/servers/monitoring && terraform init
+        run: terraform init
+        working-directory: scripts/servers/monitoring
       - name: Terraform validate
         id: validate
-        run: cd scripts/servers/monitoring && terraform validate -no-color
+        run: terraform validate -no-color
+        working-directory: scripts/servers/monitoring
       - name: Terraform plan
         id: plan
-        run: cd scripts/servers/monitoring && terraform plan -no-color -input=false
+        run: terraform plan -no-color -input=false
+        working-directory: scripts/servers/monitoring
         env:
           TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
           TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
       - name: Terraform apply
-        run: cd scripts/servers/monitoring && terraform apply -auto-approve -input=false
+        run: terraform apply -auto-approve -input=false
+        working-directory: scripts/servers/monitoring
         env:
           TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
           TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
