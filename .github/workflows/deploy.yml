@@ -95,18 +95,15 @@ jobs:
         working-directory: scripts/servers/monitoring
       - name: Terraform validate
         id: validate
-        run: terraform validate -no-color
-        working-directory: scripts/servers/monitoring
+        run: terraform -chdir=scripts/servers/monitoring validate
       - name: Terraform plan
         id: plan
-        run: terraform plan -no-color -input=false
-        working-directory: scripts/servers/monitoring
+        run: terraform -chdir=scripts/servers/monitoring plan -input=false
         env:
           TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
           TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
       - name: Terraform apply
-        run: terraform apply -auto-approve -input=false
-        working-directory: scripts/servers/monitoring
+        run: terraform -chdir=scripts/servers/monitoring apply -auto-approve -input=false
         env:
           TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
           TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
