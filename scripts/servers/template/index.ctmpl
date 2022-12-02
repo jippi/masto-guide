@@ -1,6 +1,8 @@
 # Oversigt over danske Mastodon servere
 
-!!! tip "Hvis du har en dansk Mastodon server [kan du tilføje den i vores konfiguration fil, så bliver den inkluderet automatisk](https://github.com/jippi/masto-guide/blob/main/scripts/servers/config/servers.yml){target=_blank}"
+!!! info "Hvis du har en dansk Mastodon server [kan du tilføje den i vores konfiguration fil, så bliver den inkluderet automatisk](https://github.com/jippi/masto-guide/blob/main/scripts/servers/config/servers.yml){target=_blank}"
+
+!!! tip "Du kan se hvor [stabil og hurtig serverne er på vores automatisk overvågning](https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94){target=_blank"}"
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
