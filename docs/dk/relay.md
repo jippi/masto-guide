@@ -6,13 +6,21 @@ Da det danske Mastodon server netværk består af en masse små og mindre server
 
 For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at deltage.
 
-## Deltagende servere
+## Deltagende community servere
 
-- [expressional.social](https://expressional.social){target=_blank}
-- [fynbo.social](https://fynbo.social){target=_blank}
-- [mstdn.dk](https://mstdn.dk){target=_blank}
-- [norrebro.space](https://norrebro.space){target=_blank}
-- [turingfesten.dk](https://turingfesten.dk){target=_blank}
+!!! tip "Servere der har mange medlemmer og ofte accepterer nye medlemmer"
+
+- [expressional.social](https://expressional.social/){target=_blank}
+- [fynbo.social](https://fynbo.social/){target=_blank}
+- [mstdn.dk](https://mstdn.dk/){target=_blank}
+- [norrebro.space](https://norrebro.space/){target=_blank}
+- [turingfesten.dk](https://turingfesten.dk/){target=_blank}
+
+## Deltagende solo servere
+
+!!! tip "Servere med én bruger, der har valgt at drive en privat server til eget brug"
+
+- [ansico.dk](https://ansico.dk/){target=_blank}
 
 ## Ansøgning
 
