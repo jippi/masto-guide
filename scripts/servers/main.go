@@ -10,6 +10,7 @@ import (
 
 	"github.com/Masterminds/semver"
 	"github.com/goodsign/monday"
+	"github.com/sirupsen/logrus"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/resty.v1"
 	"gopkg.in/yaml.v3"
@@ -17,6 +18,7 @@ import (
 
 var (
 	config = &Config{}
+	logger *logrus.Entry
 
 	// Track when we started the program
 	startTime time.Time
@@ -45,11 +47,20 @@ func main() {
 
 	startTime = time.Now().In(copenhagen)
 
-	// log.SetLevel(log.DebugLevel)
-	logger := log.WithField("subsystem", "main")
+	if val, ok := os.LookupEnv("LOG_LEVEL"); ok && val == "debug" {
+		log.SetLevel(log.DebugLevel)
+	}
+
+	logger = log.WithField("subsystem", "main")
 
 	loadConfigFile()
 	initializeTemplateRenderer()
+	writeTerraform()
+
+	if val, ok := os.LookupEnv("TF_ONLY"); ok && val == "1" {
+		return
+	}
+
 	getLatestReleaseOfMastodon()
 
 	// Start workers
@@ -97,16 +108,10 @@ func main() {
 		})
 	}
 
-	var markdownFile, terraformFile *os.File
+	var markdownFile *os.File
 
 	// Open the servers.md MarkDown markdownFile for writing
 	markdownFile, err = os.OpenFile("../../docs/dk/servers.md", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
-	if err != nil {
-		logger.Fatal(err)
-	}
-
-	// Open the terraform file for writing
-	terraformFile, err = os.OpenFile("monitoring/sites.tf", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
 	if err != nil {
 		logger.Fatal(err)
 	}
@@ -130,6 +135,21 @@ func main() {
 		logger.WithError(err).Fatal("Could not render markdown file")
 	}
 	logger.Info("Rendering completed successfully")
+}
+
+func writeTerraform() {
+	// Open the terraform file for writing
+	terraformFile, err := os.OpenFile("monitoring/sites.tf", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
+	if err != nil {
+		logger.Fatal(err)
+	}
+
+	// Struct used in the template for rendering
+	payload := struct {
+		Servers []*Server
+	}{
+		Servers: config.Servers,
+	}
 
 	logger.Info("Rendering Terraform file")
 	// Render and write the markdown template

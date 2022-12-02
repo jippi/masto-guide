@@ -94,3 +94,313 @@ resource "datadog_service_level_objective" "{{ .Domain | TerraformID }}_slo" {
 }
 
 {{ end }}
+
+resource "datadog_dashboard" "overview" {
+  title        = "Danske Mastodon Servere overvågning"
+  description  = "Created using the Datadog provider in Terraform"
+  layout_type  = "ordered"
+  reflow_type  = "fixed"
+
+  template_variable {
+    name     = "site"
+    prefix   = "site"
+    defaults = ["*"]
+  }
+
+  widget {
+    group_definition {
+      title            = "Danish Mastodon Server monitoring"
+      background_color = "vivid_blue"
+      layout_type      = "ordered"
+      show_title       = true
+
+      widget {
+        manage_status_definition {
+          title               = "Monitoring overview"
+          title_align         = "left"
+          title_size          = 16
+          color_preference    = "background"
+          display_format      = "countsAndList"
+          hide_zero_counts    = false
+          query               = "tag:(project:masto-guide AND site:$site.value)"
+          show_last_triggered = true
+          sort                = "triggered,desc"
+          summary_type        = "combined"
+        }
+
+        widget_layout {
+          height          = 6
+          is_column_break = false
+          width           = 5
+          x               = 0
+          y               = 1
+        }
+      }
+
+      widget {
+        event_stream_definition {
+          event_size  = "s"
+          query       = "project:masto-guide $site"
+          title       = "Monitor log"
+          title_align = "left"
+          title_size  = "16"
+        }
+
+        widget_layout {
+          height          = 6
+          is_column_break = false
+          width           = 7
+          x               = 5
+          y               = 1
+        }
+      }
+    }
+
+    widget_layout {
+      height          = 7
+      is_column_break = false
+      width           = 12
+      x               = 0
+      y               = 0
+    }
+  }
+
+  widget {
+    group_definition {
+      title            = "Performance monitoring"
+      background_color = "vivid_pink"
+      layout_type      = "ordered"
+      show_title       = true
+
+      widget {
+        timeseries_definition {
+          title          = "Average server response time for 2xx response codes"
+          legend_layout  = "auto"
+          show_legend    = true
+          title_align    = "left"
+          title_size     = "16"
+
+          yaxis {
+            include_zero = false
+          }
+
+          legend_columns = [
+            "avg",
+            "max",
+            "min",
+            "sum",
+            "value",
+          ]
+
+          request {
+            display_type   = "line"
+            on_right_yaxis = false
+
+            formula {
+              formula_expression = "query1"
+            }
+
+            query {
+              metric_query {
+                data_source = "metrics"
+                name        = "query1"
+                query       = "avg:synthetics.http.response.time{project:masto-guide,$site,status_code_class:2xx} by {site}"
+              }
+            }
+
+            style {
+              line_type  = "solid"
+              line_width = "normal"
+              palette    = "semantic"
+            }
+          }
+        }
+
+        widget_layout {
+          height          = 4
+          is_column_break = false
+          width           = 12
+          x               = 0
+          y               = 0
+        }
+      }
+
+      widget {
+        toplist_definition {
+          title       = "Average response time for 2xx response code (lower is better)"
+          title_align = "left"
+          title_size  = "16"
+
+          request {
+            conditional_formats {
+              comparator = "<="
+              hide_value = false
+              palette    = "white_on_green"
+              value      = 200
+            }
+
+            conditional_formats {
+              comparator = "<="
+              hide_value = false
+              palette    = "white_on_yellow"
+              value      = 500
+            }
+
+            conditional_formats {
+              comparator = ">"
+              hide_value = false
+              palette    = "white_on_red"
+              value      = 500
+            }
+
+            formula {
+              formula_expression = "query2"
+
+              limit {
+                count = 500
+                order = "asc"
+              }
+            }
+
+            query {
+              metric_query {
+                aggregator  = "avg"
+                data_source = "metrics"
+                name        = "query2"
+                query       = "avg:synthetics.http.response.time{project:masto-guide,status_code_class:2xx} by {site}.fill(zero)"
+              }
+            }
+          }
+        }
+
+        widget_layout {
+          height          = 3
+          is_column_break = false
+          width           = 6
+          x               = 0
+          y               = 4
+        }
+      }
+
+      widget {
+        change_definition {
+          title       = "Response time change since the day before for 2xx response codes"
+          title_align = "left"
+          title_size  = "16"
+
+          request {
+            change_type   = "absolute"
+            increase_good = false
+            order_by      = "name"
+            order_dir     = "asc"
+            show_present  = false
+
+            formula {
+              formula_expression = "day_before(query1)"
+            }
+
+            formula {
+              formula_expression = "query1"
+            }
+
+            query {
+              metric_query {
+                aggregator  = "max"
+                data_source = "metrics"
+                name        = "query1"
+                query       = "avg:synthetics.http.response.time{project:masto-guide,status_code_class:2xx} by {site}"
+              }
+            }
+          }
+        }
+
+        widget_layout {
+          height          = 3
+          is_column_break = false
+          width           = 6
+          x               = 6
+          y               = 4
+        }
+      }
+    }
+
+    widget_layout {
+      height          = 8
+      is_column_break = false
+      width           = 12
+      x               = 0
+      y               = 7
+    }
+  }
+
+  widget {
+    group_definition {
+      title            = "Individual SLO status"
+      background_color = "vivid_purple"
+      layout_type      = "ordered"
+      show_title       = true
+
+      widget {
+        note_definition {
+          background_color = "green"
+          font_size        = "14"
+          has_padding      = false
+          show_tick        = false
+          text_align       = "center"
+          tick_edge        = "left"
+          tick_pos         = "50%"
+          vertical_align   = "center"
+          content          = <<-EOT
+                The target [SLO](https://docs.datadoghq.com/monitors/service_level_objectives/) is **[99.95%](https://uptime.is/99.95)** - Meaning downtime in total per
+
+                **Day:** 43s | **Week:** 5m 2.4s | **Month:** 21m 44s | **Quarter:** 1h 5m 12s | **Year:** 4h 20m 49s
+            EOT
+        }
+
+        widget_layout {
+          height          = 1
+          is_column_break = false
+          width           = 12
+          x               = 0
+          y               = 0
+        }
+      }
+
+{{ range $index, $elem := .Servers }}
+      widget {
+        service_level_objective_definition {
+          show_error_budget = true
+          slo_id            = resource.datadog_service_level_objective.{{ TerraformID $elem.Domain }}_slo.id
+
+          time_windows      = [
+              "7d",
+              "30d",
+              "90d",
+            ]
+          title             = "SLO status for: {{ $elem.Domain }}"
+          title_align       = "left"
+          title_size        = "16"
+          view_mode         = "overall"
+          view_type         = "detail"
+        }
+
+        widget_layout {
+          height          = 4
+          width           = 6
+          x               = {{ DD_SplitIntoFourX $index }}
+          y               = {{ DD_SplitIntoFourY $index }}
+          is_column_break = false
+        }
+      }
+{{ end }}
+    }
+
+    widget_layout {
+      height          = 22
+      is_column_break = false
+      width           = 12
+      x               = 0
+      y               = 15
+    }
+  }
+}

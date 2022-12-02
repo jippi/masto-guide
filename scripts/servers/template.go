@@ -67,6 +67,12 @@ var tmplFuncs = template.FuncMap{
 	"TerraformID": func(in string) string {
 		return strings.ReplaceAll(in, ".", "_")
 	},
+	"DD_SplitIntoFourX": func(in int) int {
+		return (in * 6) % 12
+	},
+	"DD_SplitIntoFourY": func(in int) int {
+		return (in * 2)
+	},
 }
 
 func initializeTemplateRenderer() {
