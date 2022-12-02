@@ -15,6 +15,7 @@ For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at de
 - [mstdn.dk](https://mstdn.dk/){target=_blank}
 - [norrebro.space](https://norrebro.space/){target=_blank}
 - [turingfesten.dk](https://turingfesten.dk/){target=_blank}
+- [uddannelse.social](https://uddannelse.social/){target=_blank}
 
 ## Deltagende solo servere
 
