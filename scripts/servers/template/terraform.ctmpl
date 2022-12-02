@@ -95,6 +95,10 @@ resource "datadog_service_level_objective" "{{ .Domain | TerraformID }}_slo" {
 
 {{ end }}
 
+// -------------------
+// DASHBOARD
+// -------------------
+
 resource "datadog_dashboard" "overview" {
   title        = "Danske Mastodon Servere overvågning"
   description  = "Created using the Datadog provider in Terraform"
@@ -108,11 +112,92 @@ resource "datadog_dashboard" "overview" {
   }
 
   widget {
+    note_definition {
+      background_color = "green"
+      content          = <<-EOT
+            Hello! Welcome to the Danish Mastodon community monitoring service. All servers listed on the [**official Danish Mastodon Servers list**](https://guide.toot.as/dk/servers/) are automatically included in the monitoring you see below.
+
+            Each server is monitored in the same way:
+
+            * The server has to respond with `200 OK`
+            * The server has to respond with `500 ms`
+
+            Each server is checked once per minute, and in case of failure, an automatic retry is made after `300ms`. If a server fail its checks for `1 minute` and `3 out of 5` locations agree, the server is registered as being down.
+        EOT
+      font_size        = "14"
+      has_padding      = true
+      show_tick        = false
+      text_align       = "left"
+      tick_edge        = "left"
+      tick_pos         = "50%"
+      vertical_align   = "top"
+    }
+
+    widget_layout {
+      height          = 2
+      is_column_break = false
+      width           = 12
+      x               = 0
+      y               = 0
+    }
+  }
+
+  widget {
     group_definition {
       title            = "Danish Mastodon Server monitoring"
       background_color = "vivid_blue"
       layout_type      = "ordered"
       show_title       = true
+
+      widget {
+        note_definition {
+          background_color = "yellow"
+          content          = <<-EOT
+                **Monitoring status**
+
+                Show each Mastodon server with their current check status and when they last triggered
+            EOT
+          font_size        = "14"
+          has_padding      = true
+          show_tick        = true
+          text_align       = "center"
+          tick_edge        = "bottom"
+          tick_pos         = "50%"
+          vertical_align   = "center"
+        }
+
+        widget_layout {
+          height          = 1
+          width           = 5
+          y               = 0
+          x               = 0
+        }
+      }
+
+      widget {
+        note_definition {
+          background_color = "yellow"
+          content          = <<-EOT
+                **Monitoring log**
+
+                Shows the individual outage and recovery events that has happened
+            EOT
+          font_size        = "14"
+          has_padding      = true
+          show_tick        = true
+          text_align       = "center"
+          tick_edge        = "bottom"
+          tick_pos         = "50%"
+          vertical_align   = "center"
+        }
+
+        widget_layout {
+          height          = 1
+          width           = 7
+          y               = 0
+          x               = 5
+        }
+      }
 
       widget {
         manage_status_definition {
@@ -157,7 +242,7 @@ resource "datadog_dashboard" "overview" {
     }
 
     widget_layout {
-      height          = 7
+      height          = 8
       is_column_break = false
       width           = 12
       x               = 0
@@ -173,8 +258,35 @@ resource "datadog_dashboard" "overview" {
       show_title       = true
 
       widget {
+        note_definition {
+          background_color = "green"
+          content          = <<-EOT
+                Server response time is a crucial part of a great end-user experience.
+
+                These graphs show the average response time for `2xx` responses (aka `200 OK`) in various ways to give you an sense of how fast of an experience you can expect from each.
+            EOT
+          font_size        = "16"
+          has_padding      = false
+          show_tick        = false
+          text_align       = "center"
+          tick_edge        = "left"
+          tick_pos         = "50%"
+          vertical_align   = "center"
+        }
+
+
+        widget_layout {
+          height          = 1
+          is_column_break = false
+          width           = 12
+          x               = 0
+          y               = 0
+        }
+      }
+
+      widget {
         timeseries_definition {
-          title          = "Average server response time for 2xx response codes"
+          title          = "Average server response time for 2xx response codes (lower is better)"
           legend_layout  = "auto"
           show_legend    = true
           title_align    = "left"
@@ -191,6 +303,24 @@ resource "datadog_dashboard" "overview" {
             "sum",
             "value",
           ]
+
+          marker {
+            display_type = "ok bold"
+            label        = "Fast"
+            value        = "0 < y < 250"
+          }
+
+          marker {
+            display_type = "warning bold"
+            label        = "Decent"
+            value        = "250 < y < 500"
+          }
+
+          marker {
+            display_type = "error bold"
+            label        = "Slow"
+            value        = "y > 500"
+          }
 
           request {
             display_type   = "line"
@@ -284,7 +414,7 @@ resource "datadog_dashboard" "overview" {
 
       widget {
         change_definition {
-          title       = "Response time change since the day before for 2xx response codes"
+          title       = "Response time change since the day before for 2xx response codes (lower is better)"
           title_align = "left"
           title_size  = "16"
 
@@ -329,7 +459,7 @@ resource "datadog_dashboard" "overview" {
       is_column_break = false
       width           = 12
       x               = 0
-      y               = 7
+      y               = 8
     }
   }
 
@@ -351,7 +481,7 @@ resource "datadog_dashboard" "overview" {
           tick_pos         = "50%"
           vertical_align   = "center"
           content          = <<-EOT
-                The target [SLO](https://docs.datadoghq.com/monitors/service_level_objectives/) is **[99.95%](https://uptime.is/99.95)** - Meaning downtime in total per
+                The target [SLO](https://docs.datadoghq.com/monitors/service_level_objectives/) is **[99.95%](https://uptime.is/99.95)** Meaning downtime in total per
 
                 **Day:** 43s | **Week:** 5m 2.4s | **Month:** 21m 44s | **Quarter:** 1h 5m 12s | **Year:** 4h 20m 49s
             EOT
