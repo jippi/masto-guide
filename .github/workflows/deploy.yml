@@ -71,7 +71,7 @@ jobs:
 
       # build the mkdocs site
       - name: Build mkdocs output
-        run: ./mkdocs.sh build
+        run: ./scripts/mkdocs.sh build
 
       # Configure GitHub pages
       - name: Setup Pages
