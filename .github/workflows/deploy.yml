@@ -65,15 +65,15 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # generate the DK servers markdown and TF config
+      # Generate Markdown and Terraform config
       - name: Generate DK servers
         run: ./scripts/update-servers.sh
 
-      # build the mkdocs site
+      # Build documentation
       - name: Build mkdocs output
         run: ./scripts/mkdocs.sh build
 
-      # Configure GitHub pages
+      # GitHub pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact

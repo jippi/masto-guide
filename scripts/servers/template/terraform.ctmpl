@@ -307,7 +307,7 @@ resource "datadog_dashboard" "overview" {
           marker {
             display_type = "ok bold"
             label        = "Fast"
-            value        = "0 < y < 250"
+            value        = "y < 250"
           }
 
           marker {
