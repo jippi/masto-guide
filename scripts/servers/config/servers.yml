@@ -25,7 +25,7 @@
 #
 #   It MUST be either [true] or [false] (without the []-brackets)
 #   If omitted, [false] is assumed.
-#   If [true] a comment MUST be added to the server with link outlining this (can be the "About" page)
+#   If [true] a comment MUST be added to the server with link describing it/how (can be the "About" page)
 #
 # category:
 #
