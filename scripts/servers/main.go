@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/Masterminds/semver"
+	"github.com/goodsign/monday"
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/resty.v1"
 	"gopkg.in/yaml.v3"
@@ -16,6 +17,9 @@ import (
 
 var (
 	config = &Config{}
+
+	// Track when we started the program
+	startTime time.Time
 
 	// Worker coordination
 	readerCh = make(chan Server)
@@ -34,6 +38,13 @@ var (
 )
 
 func main() {
+	copenhagen, err := time.LoadLocation("Europe/Copenhagen")
+	if err != nil {
+		panic(err)
+	}
+
+	startTime = time.Now().In(copenhagen)
+
 	// log.SetLevel(log.DebugLevel)
 	logger := log.WithField("subsystem", "main")
 
@@ -99,7 +110,7 @@ func main() {
 		Errors     map[string]error
 	}{
 		Categories: config.Categories,
-		UpdateAt:   time.Now().Format(time.RFC822),
+		UpdateAt:   monday.Format(startTime, "Monday, _2 January kl 15:04", monday.LocaleDaDK),
 		Errors:     serverErrors,
 	}
 
@@ -157,14 +168,25 @@ func getLatestReleaseOfMastodon() {
 	logger.Debug("Finding latest release of Mastodon")
 
 	serverResponse := GithubReleaseResponse{}
-	_, err := httpClient.R().SetResult(&serverResponse).Get("https://api.github.com/repos/mastodon/mastodon/releases/latest")
+	resp, err := httpClient.R().SetBasicAuth("Bearer", os.Getenv("GITHUB_TOKEN")).SetResult(&serverResponse).Get("https://api.github.com/repos/mastodon/mastodon/releases/latest")
 	if err != nil {
-		logger.Fatal(err)
+		logger.
+			WithError(err).
+			Fatal("Could not read latest release of Mastodon from GitHub API")
+	}
+
+	if resp.IsError() {
+		logger.
+			WithField("response_body", resp.String()).
+			WithField("response_code", resp.StatusCode()).
+			Fatal("Did not get HTTP 200 OK from GitHub API")
 	}
 
 	mastodonVersion, err = semver.NewConstraint(">= " + serverResponse.TagName)
 	if err != nil {
-		logger.Fatal(err)
+		logger.
+			WithError(err).
+			Fatal("Could not create version constraint")
 	}
 
 	logger.Debug("Found version %s", serverResponse.TagName)

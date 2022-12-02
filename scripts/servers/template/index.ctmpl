@@ -4,7 +4,12 @@
 
 Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
 
-_Listen bliver opdateret automatisk, ca en gang i timen og er sorteret efter domæne navn. Sidst opdateret {{ .UpdateAt }}_
+Listen bliver opdateret automatisk, ca en gang i timen og er sorteret efter
+
+1. Om serveren følger [Mastodon Server Covenant](https://joinmastodon.org/covenant){target=_blank}
+1. domæne navn alfabetisk (`A->Z`)
+
+_Sidst opdateret {{ .UpdateAt }}_
 
 {{ range .Categories }}
 ## {{ .Name }}
