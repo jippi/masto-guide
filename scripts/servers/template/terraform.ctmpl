@@ -78,19 +78,16 @@ resource "datadog_service_level_objective" "{{ .Domain | TerraformID }}_slo" {
   thresholds {
     timeframe = "7d"
     target    = 99.95
-    warning   = 99.9
   }
 
   thresholds {
     timeframe = "30d"
     target    = 99.95
-    warning   = 99.9
   }
 
   thresholds {
     timeframe = "90d"
     target    = 99.95
-    warning   = 99.9
   }
 
   tags = ["site:{{ .Domain }}", "project:masto-guide", "env:production"]
