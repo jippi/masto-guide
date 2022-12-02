@@ -3,7 +3,7 @@
 resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitoring" {
   type    = "api"
   subtype = "http"
-  name    = "Uptime Monitoring of {{ .Domain }}"
+  name    = "{{ .Domain }}"
   message = ""
   tags    = ["site:{{ .Domain }}", "project:masto-guide", "env:production"]
   status = "live"
@@ -65,6 +65,35 @@ resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitorin
       interval = 300
     }
   }
+}
+
+resource "datadog_service_level_objective" "{{ .Domain | TerraformID }}_slo" {
+  name        = "{{ .Domain }} SLO"
+  type        = "monitor"
+  description = "Managed via TF"
+  monitor_ids = [
+    resource.datadog_synthetics_test.{{ .Domain | TerraformID }}_uptime_monitoring.monitor_id,
+  ]
+
+  thresholds {
+    timeframe = "7d"
+    target    = 99.95
+    warning   = 99.90
+  }
+
+  thresholds {
+    timeframe = "30d"
+    target    = 99.95
+    warning   = 99.90
+  }
+
+  thresholds {
+    timeframe = "90d"
+    target    = 99.95
+    warning   = 99.90
+  }
+
+  tags = ["site:{{ .Domain }}", "project:masto-guide", "env:production"]
 }
 
 {{ end }}
