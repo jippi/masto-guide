@@ -97,8 +97,16 @@ func main() {
 		})
 	}
 
-	// Open the servers.md MarkDown file for writing
-	file, err := os.OpenFile("../../docs/dk/servers.md", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
+	var markdownFile, terraformFile *os.File
+
+	// Open the servers.md MarkDown markdownFile for writing
+	markdownFile, err = os.OpenFile("../../docs/dk/servers.md", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
+	if err != nil {
+		logger.Fatal(err)
+	}
+
+	// Open the terraform file for writing
+	terraformFile, err = os.OpenFile("monitoring/sites.tf", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
 	if err != nil {
 		logger.Fatal(err)
 	}
@@ -106,18 +114,27 @@ func main() {
 	// Struct used in the template for rendering
 	payload := struct {
 		Categories []*Category
+		Servers    []*Server
 		UpdateAt   string
 		Errors     map[string]error
 	}{
 		Categories: config.Categories,
+		Servers:    config.Servers,
 		UpdateAt:   monday.Format(startTime, "Monday, _2 January kl 15:04", monday.LocaleDaDK),
 		Errors:     serverErrors,
 	}
 
 	logger.Info("Rendering MarkDown file")
 	// Render and write the markdown template
-	if err := indexTemplate.Execute(file, payload); err != nil {
-		logger.Fatal(err)
+	if err := indexTemplate.Execute(markdownFile, payload); err != nil {
+		logger.WithError(err).Fatal("Could not render markdown file")
+	}
+	logger.Info("Rendering completed successfully")
+
+	logger.Info("Rendering Terraform file")
+	// Render and write the markdown template
+	if err := terraformTemplate.Execute(terraformFile, payload); err != nil {
+		logger.WithError(err).Fatal("Could not render terraform file")
 	}
 
 	logger.Info("Rendering completed successfully")

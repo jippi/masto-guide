@@ -1,0 +1,70 @@
+{{ range .Servers }}
+
+resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitoring" {
+  type    = "api"
+  subtype = "http"
+  name    = "Uptime Monitoring of {{ .Domain }}"
+  message = ""
+  tags    = ["site:{{ .Domain }}", "project:masto-guide", "env:production"]
+  status = "live"
+
+  # hit the /about page for the server
+  request_definition {
+    method = "GET"
+    url    = "https://{{ .Domain }}/about"
+  }
+
+  # make it clear who is doing the monitoring
+  request_headers = {
+    X-About = "Request made as part of MastuGuide (https://guide.toot.as/dk/servers/)"
+  }
+
+  # site must respond within 500ms
+  assertion {
+    type     = "responseTime"
+    operator = "lessThan"
+    target   = 500
+  }
+
+  # and it must response with 200 OK
+  assertion {
+    type     = "statusCode"
+    operator = "is"
+    target   = "200"
+  }
+
+  locations = [
+    "aws:eu-central-1",
+    "aws:eu-north-1",
+    "aws:eu-west-1",
+    "aws:eu-west-2",
+    "aws:eu-west-3",
+  ]
+
+  options_list {
+    # check every 60s
+    tick_every = 60
+
+    # TLS is important, and has to be well-configured
+    accept_self_signed = false
+    check_certificate_revocation = true
+    ignore_server_certificate_error = false
+
+    # Don't allow HTTP content when on HTTPS
+    allow_insecure = false
+
+    # must fail for 1 minute
+    min_failure_duration = 1
+
+    # and 3 servers has to agree
+    min_location_failed = 3
+
+    # allow a 300ms retry policy in case of maintenance
+    retry {
+      count    = 1
+      interval = 300
+    }
+  }
+}
+
+{{ end }}

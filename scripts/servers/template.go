@@ -11,10 +11,14 @@ import (
 )
 
 var (
-	indexTemplate *template.Template
+	indexTemplate     *template.Template
+	terraformTemplate *template.Template
 
 	//go:embed template/index.ctmpl
 	indexTemplateText string
+
+	//go:embed template/terraform.ctmpl
+	terraformTemplateText string
 )
 
 var tmplFuncs = template.FuncMap{
@@ -60,12 +64,20 @@ var tmplFuncs = template.FuncMap{
 
 		return "❌"
 	},
+	"TerraformID": func(in string) string {
+		return strings.ReplaceAll(in, ".", "_")
+	},
 }
 
 func initializeTemplateRenderer() {
 	var err error
 
 	indexTemplate, err = template.New("").Funcs(tmplFuncs).Parse(indexTemplateText)
+	if err != nil {
+		panic(err)
+	}
+
+	terraformTemplate, err = template.New("").Funcs(tmplFuncs).Parse(terraformTemplateText)
 	if err != nil {
 		panic(err)
 	}
