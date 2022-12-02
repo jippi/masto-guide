@@ -122,7 +122,7 @@ resource "datadog_dashboard" "overview" {
             * The server has to respond with `200 OK`
             * The server has to respond with `500 ms`
 
-            Each server is checked once per minute, and in case of failure, an automatic retry is made after `300ms`. If a server fail its checks for `1 minute` and `3 out of 5` locations agree, the server is registered as being down.
+            Each server is checked once per minute, and in case of failure, an automatic retry is made after `300 ms`. If a server fail its checks for `1 minute` and `3 out of 5` locations agree, the server is registered as being down.
         EOT
       font_size        = "14"
       has_padding      = true
