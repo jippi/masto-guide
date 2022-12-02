@@ -68,7 +68,7 @@ resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitorin
 }
 
 resource "datadog_service_level_objective" "{{ .Domain | TerraformID }}_slo" {
-  name        = "{{ .Domain }} SLO"
+  name        = "{{ .Domain }}"
   type        = "monitor"
   description = "Managed via TF"
   monitor_ids = [
