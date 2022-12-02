@@ -8,7 +8,7 @@ The easy way requires [Docker for Desktop](https://www.docker.com/get-started/) 
 
 ### With Docker
 
-Simply running `./mkdocs.sh`  will start the `mkdocs` dev server on port `8000`. Once the container is running, you should be able to access the documentation via `http://localhost:8000` in your browser.
+Simply running `./scripts/mkdocs.sh`  will start the `mkdocs` dev server on port `8000`. Once the container is running, you should be able to access the documentation via `http://localhost:8000` in your browser.
 
 ### Without Docker
 
