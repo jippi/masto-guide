@@ -1,4 +1,12 @@
 terraform {
+  cloud {
+    organization = "jippi"
+
+    workspaces {
+      tags = ["masto-guide"]
+    }
+  }
+
   required_providers {
     datadog = {
       source = "DataDog/datadog"
