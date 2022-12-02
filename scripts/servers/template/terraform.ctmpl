@@ -54,7 +54,7 @@ resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitorin
     allow_insecure = false
 
     # must fail for 1 minute
-    min_failure_duration = 1
+    min_failure_duration = 60
 
     # and 3 servers has to agree
     min_location_failed = 3
