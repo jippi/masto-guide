@@ -6,7 +6,7 @@ source scripts/shared.sh
 exec docker run \
     --rm \
     --name $DOCKER_CONTAINER_NAME \
-    --port 8000:8000 \
+    --publish 8000:8000 \
     --volume ${PWD}:/docs \
     $DOCKER_IMAGE \
     $@
