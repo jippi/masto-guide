@@ -37,7 +37,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # generate the DK servers markdown page
+      # generate the DK servers markdown and TF config
       - name: Generate DK servers
         run: ./scripts/update-servers.sh
 
@@ -48,22 +48,17 @@ jobs:
       # Configure GitHub pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
-
-      # Upload site/ directory to GitHub pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
           path: 'site'
-
-      # Deploy to GitHub pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
 
       # Apply TF monitors
       - name: Change folder
-        run: scripts/servers/monitoring
+        run: cd scripts/servers/monitoring
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
