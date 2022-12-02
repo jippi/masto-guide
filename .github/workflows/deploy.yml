@@ -19,6 +19,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  packages: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -58,6 +59,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
@@ -68,7 +70,7 @@ jobs:
         run: ./scripts/update-servers.sh
 
       # build the mkdocs site
-      - name: build docs
+      - name: Build mkdocs output
         run: ./mkdocs.sh build
 
       # Configure GitHub pages
