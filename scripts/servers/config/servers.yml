@@ -15,8 +15,8 @@
 #
 #   The domain to the front page of the server.
 #
-#   It MUST *not* include trailing slash (/).
-#   It MUST *not* include the protocol (https://)
+#   It MUST *NOT* include trailing slash (/).
+#   It MUST *NOT* include the protocol (https://)
 #
 # covenant:
 #
