@@ -26,7 +26,7 @@ resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitorin
     target   = 500
   }
 
-  # and it must response with 200 OK
+  # and it must response with 2xx
   assertion {
     type     = "statusCode"
     operator = "matches"
