@@ -60,7 +60,11 @@ _Sidst opdateret {{ .UpdateAt }}_
         * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
+{{ if .WithoutMonitoring }}
+    Serveren har valgt ikke at detlage i den automatiske overvågning.
+{{ else }}
     <iframe width="70%" height="700" src="https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94?tpl_var_site={{ .Domain }}"></iframe>
+{{ end }}
 
 === "Server regler"
 

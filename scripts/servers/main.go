@@ -148,7 +148,7 @@ func writeTerraform() {
 	payload := struct {
 		Servers []*Server
 	}{
-		Servers: config.Servers,
+		Servers: getServersWithMonitoring(config.Servers),
 	}
 
 	logger.Info("Rendering Terraform file")
@@ -184,8 +184,9 @@ func fetchServerInformation(server Server, log *log.Entry) {
 			continue
 		}
 
-		// Copy the covenant setting over
+		// Copy config over
 		serverResponse.MastodonCovenant = server.Covenant
+		serverResponse.WithoutMonitoring = server.WithoutMonitoring
 
 		// Categorize the server based on it's settings
 		category := serverResponse.Categorize(server)
@@ -255,6 +256,20 @@ func loadConfigFile() {
 	}
 
 	logger.Debug("Configuration file successfully loaded")
+}
+
+func getServersWithMonitoring(in []*Server) []*Server {
+	monitored := make([]*Server, 0)
+
+	for _, server := range in {
+		if server.WithoutMonitoring {
+			continue
+		}
+
+		monitored = append(monitored, server)
+	}
+
+	return monitored
 }
 
 func boolPtr(in bool) *bool {

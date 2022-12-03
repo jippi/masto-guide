@@ -35,6 +35,14 @@
 #   It MUST reference the [id] value from [categories.yml]
 #   It MUST include a comment explaining why it was forced into the category
 #   If omitted, auto-detection will place the server in the right category
+#
+# without_monitoring:
+#
+#   Opt the server out of the uptime and performance monitoring we provide out of the box.
+#
+#   It MUST be either [true] or [false] (without the []-brackets)
+#   If omitted, [false] is assumed.
+#
 
 - domain: expressional.social
   covenant: true # https://expressional.social/docs/#about-the-server
@@ -51,6 +59,7 @@
 
 - domain: social.data.coop
   category: private # private organization that require paid membership to join
+  without_monitoring: true
 
 - domain: fynbo.social
 

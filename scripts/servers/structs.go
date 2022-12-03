@@ -21,9 +21,10 @@ type Category struct {
 }
 
 type Server struct {
-	Domain   string    `json:"domain"`
-	Category *Category `json:"category,omitempty"`
-	Covenant bool      `json:"covenant,omitempty"`
+	Domain            string    `json:"domain"`
+	Category          *Category `json:"category,omitempty"`
+	Covenant          bool      `json:"covenant,omitempty"`
+	WithoutMonitoring bool      `json:"without_monitoring,omitempty"`
 }
 
 func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
@@ -41,6 +42,11 @@ func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	covenant, ok := details["covenant"]
 	if ok {
 		s.Covenant = covenant.(bool)
+	}
+
+	monitoring, ok := details["without_monitoring"]
+	if ok {
+		s.WithoutMonitoring = monitoring.(bool)
 	}
 
 	category, ok := details["category"]
@@ -65,7 +71,8 @@ type GithubReleaseResponse struct {
 
 type ServerResponse struct {
 	// Custom config
-	MastodonCovenant bool
+	MastodonCovenant  bool
+	WithoutMonitoring bool
 
 	// API response
 	Domain      string `json:"domain"`
