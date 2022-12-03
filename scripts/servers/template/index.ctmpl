@@ -42,6 +42,24 @@ _Sidst opdateret {{ .UpdateAt }}_
 
 {{ prefixWith .Description "    " }}
 
+=== "Overvågning"
+
+    !!! info inline "Server detaljer"
+
+        * **Navn:** [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
+        * **Ejer:** [@{{ .Contact.Account.Username }}]({{ .Contact.Account.URL }}){target=_blank}
+        {{ if .MastodonCovenant }}
+        * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
+        {{ else }}
+        * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger IKKE Mastodon Server Covenant, klik for at læse mere"}
+        {{ end }}
+        * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
+        * **Version:** {{ IsCurrent .Version | BoolIcon }} (`{{ .Version }}`)
+        * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
+        * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
+
+    <iframe width="70%" height="700" src="https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94?tpl_var_site={{ .Domain }}"></iframe>
+
 === "Server regler"
 
     !!! info inline "Server detaljer"
