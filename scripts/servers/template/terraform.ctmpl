@@ -435,7 +435,7 @@ resource "datadog_dashboard" "overview" {
 
             query {
               metric_query {
-                aggregator  = "max"
+                aggregator  = "avg"
                 data_source = "metrics"
                 name        = "query1"
                 query       = "avg:synthetics.http.response.time{project:masto-guide,status_code_class:2xx} by {site}"
