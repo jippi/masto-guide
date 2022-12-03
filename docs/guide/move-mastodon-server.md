@@ -23,7 +23,7 @@ Filling out the two fields below will make all links in this guide automatically
 1. I'm **leaving** my **old** server at: <input id="from-server" placeholder="Write or paste your old server domain/link" class="server-selector" />
 1. and **joining** my **new** server at: <input id="to-server" placeholder="Write or paste your new server domain/link" class="server-selector" />
 
-*If a field has a red border, it's empty or not configured correctly_.*
+*If a field has a red border, it's empty or not configured correctly.*
 
 ## 2. Export your data
 
