@@ -42,7 +42,7 @@ _Sidst opdateret {{ .UpdateAt }}_
 
 {{ prefixWith .Description "    " }}
 
-=== "Overvågning"
+=== "Server overvågning"
 
     !!! info inline "Server detaljer"
 
