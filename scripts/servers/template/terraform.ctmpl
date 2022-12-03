@@ -225,7 +225,7 @@ resource "datadog_dashboard" "overview" {
       widget {
         event_stream_definition {
           event_size  = "s"
-          query       = "project:masto-guide $site"
+          query       = "project:masto-guide $site @monitor.groups:\"*\""
           title       = "Monitor log"
           title_align = "left"
           title_size  = "16"
@@ -294,6 +294,10 @@ resource "datadog_dashboard" "overview" {
 
           yaxis {
             include_zero = false
+          }
+
+          event {
+            q = "project:masto-guide site:* @monitor.groups:\"*\""
           }
 
           legend_columns = [
