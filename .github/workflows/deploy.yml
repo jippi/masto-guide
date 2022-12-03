@@ -66,7 +66,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       # Generate Markdown and Terraform config
-      - name: Generate DK servers
+      - name: Generate Markdown and TF templates
         run: ./scripts/update-servers.sh
 
       # Build documentation
