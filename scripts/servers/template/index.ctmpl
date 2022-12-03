@@ -4,12 +4,14 @@
 
 !!! tip "[Du kan se og sammenligne hvor stabil og hurtig serverne er på vores automatisk overvågning](./monitoring/){target=_blank"}"
 
-Siden indeholder Mastodon servere der er drevet og ejet af danskere. [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
+Siden indeholder danske Mastodon servere der er drevet og ejet af danskere.
 
-Listen bliver opdateret automatisk, ca en gang i timen og er sorteret efter
+Svært ved at vælge en dansk Mastodon server? [Læs mere om hvad der er vigtigt at overveje ved server valg](../guide/choosing-a-server.md)
+
+Listen bliver opdateret automatisk, ca en gang i timen og er sorteret på følgende måde:
 
 1. Om serveren følger [Mastodon Server Covenant](https://joinmastodon.org/covenant){target=_blank}
-1. Domæne navn alfabetisk (`A->Z`)
+1. Domæne navn alfabetisk (`A -> Z`)
 
 _Sidst opdateret {{ .UpdateAt }}_
 
