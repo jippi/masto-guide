@@ -96,13 +96,16 @@ jobs:
       - name: Terraform validate
         id: validate
         run: terraform -chdir=scripts/servers/monitoring validate
-      - name: Terraform plan
-        id: plan
-        run: terraform -chdir=scripts/servers/monitoring plan -input=false
+
+      # update dashboard first, on it's own, to make sure SLO and such are not referenced anywhere before deleting them
+      # See: https://discuss.hashicorp.com/t/how-to-first-update-dependency-and-then-delete-an-old-object/6221/3
+      - name: Terraform apply (dashboard)
+        run: terraform -chdir=scripts/servers/monitoring apply -auto-approve -input=false -target datadog_dashboard.overview
         env:
           TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
           TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
-      - name: Terraform apply
+      # update all TF resources
+      - name: Terraform apply (all)
         run: terraform -chdir=scripts/servers/monitoring apply -auto-approve -input=false
         env:
           TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}

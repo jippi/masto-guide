@@ -105,6 +105,10 @@ resource "datadog_dashboard" "overview" {
   layout_type  = "ordered"
   reflow_type  = "fixed"
 
+  lifecycle {
+    create_before_destroy = true
+  }
+
   template_variable {
     name     = "site"
     prefix   = "site"
