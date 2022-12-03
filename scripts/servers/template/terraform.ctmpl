@@ -421,7 +421,7 @@ resource "datadog_dashboard" "overview" {
           request {
             change_type   = "absolute"
             increase_good = false
-            order_by      = "name"
+            order_by      = "present"
             order_dir     = "asc"
             show_present  = false
 
