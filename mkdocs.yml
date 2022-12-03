@@ -13,6 +13,7 @@ plugins:
   - redirects:
       redirect_maps:
         "guide/changing-server.md": "guide/move-mastodon-server.md"
+        "dk/servers/monitoring.md": "https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94"
 
 extra_css:
   - css/default.css
