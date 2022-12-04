@@ -301,7 +301,7 @@ resource "datadog_dashboard" "overview" {
           }
 
           event {
-            q = "project:masto-guide site:* @monitor.groups:\"*\""
+            q = "project:masto-guide $site @monitor.groups:\"*\""
           }
 
           legend_columns = [
