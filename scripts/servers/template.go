@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "embed"
+	"fmt"
 	"strings"
 	"text/template"
 
@@ -72,6 +73,20 @@ var tmplFuncs = template.FuncMap{
 	},
 	"DD_SplitIntoFourY": func(in int) int {
 		return (in * 2)
+	},
+	"ExcludedDomainsQuery": func(list []string) string {
+		if len(list) == 0 {
+			return ""
+		}
+
+		return fmt.Sprintf(" AND site NOT IN (%s)", strings.Join(list, ","))
+	},
+	"ExcludedDomainsEventQuery": func(list []string) string {
+		if len(list) == 0 {
+			return ""
+		}
+
+		return fmt.Sprintf(" -site:(%s)", strings.Join(list, ","))
 	},
 }
 

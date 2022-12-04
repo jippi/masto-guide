@@ -110,9 +110,14 @@ resource "datadog_dashboard" "overview" {
   }
 
   template_variable {
-    name     = "site"
-    prefix   = "site"
-    defaults = ["*"]
+    name             = "site"
+    prefix           = "site"
+    defaults         = ["*"]
+    available_values = [
+{{ range .Servers }}
+      "{{ .Domain  }}",
+{{- end }}
+    ]
   }
 
   widget {
@@ -229,7 +234,7 @@ resource "datadog_dashboard" "overview" {
       widget {
         event_stream_definition {
           event_size  = "s"
-          query       = "project:masto-guide $site @monitor.groups:\"*\""
+          query       = "project:masto-guide $site @monitor.groups:\"*\"{{ ExcludedDomainsEventQuery .ExcludedDomains }}"
           title       = "Monitor log"
           title_align = "left"
           title_size  = "16"
@@ -301,7 +306,7 @@ resource "datadog_dashboard" "overview" {
           }
 
           event {
-            q = "project:masto-guide $site @monitor.groups:\"*\""
+            q = "project:masto-guide $site @monitor.groups:\"*\"{{ ExcludedDomainsEventQuery .ExcludedDomains }}"
           }
 
           legend_columns = [
@@ -342,7 +347,7 @@ resource "datadog_dashboard" "overview" {
               metric_query {
                 data_source = "metrics"
                 name        = "query1"
-                query       = "avg:synthetics.http.response.time{project:masto-guide,$site,status_code_class:2xx} by {site}"
+                query       = "avg:synthetics.http.response.time{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}"
               }
             }
 
@@ -405,7 +410,7 @@ resource "datadog_dashboard" "overview" {
                 aggregator  = "avg"
                 data_source = "metrics"
                 name        = "query2"
-                query       = "avg:synthetics.http.response.time{project:masto-guide,status_code_class:2xx} by {site}.fill(zero)"
+                query       = "avg:synthetics.http.response.time{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}.fill(zero)"
               }
             }
           }
@@ -446,7 +451,7 @@ resource "datadog_dashboard" "overview" {
                 aggregator  = "avg"
                 data_source = "metrics"
                 name        = "query1"
-                query       = "avg:synthetics.http.response.time{project:masto-guide,status_code_class:2xx} by {site}"
+                query       = "avg:synthetics.http.response.time{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}"
               }
             }
           }

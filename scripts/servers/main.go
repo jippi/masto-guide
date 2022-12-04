@@ -146,9 +146,11 @@ func writeTerraform() {
 
 	// Struct used in the template for rendering
 	payload := struct {
-		Servers []*Server
+		Servers         []*Server
+		ExcludedDomains []string
 	}{
-		Servers: getServersWithMonitoring(config.Servers),
+		Servers:         getServersWithMonitoring(config.Servers),
+		ExcludedDomains: getDomainsWithoutMonitoring(config.Servers),
 	}
 
 	logger.Info("Rendering Terraform file")
@@ -267,6 +269,20 @@ func getServersWithMonitoring(in []*Server) []*Server {
 		}
 
 		monitored = append(monitored, server)
+	}
+
+	return monitored
+}
+
+func getDomainsWithoutMonitoring(in []*Server) []string {
+	monitored := make([]string, 0)
+
+	for _, server := range in {
+		if !server.WithoutMonitoring {
+			continue
+		}
+
+		monitored = append(monitored, server.Domain)
 	}
 
 	return monitored
