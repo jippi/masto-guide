@@ -6,7 +6,7 @@
 
     ⭐️ betyder officiel bot - bots uden ⭐️ er uofficielle.
 
-!!! tip "Du kan blokere de fleste bots fra at optråde i dit feed"
+!!! tip "Du kan blokere de fleste bots fra at optræde i dit feed"
 
     Du kan blokere hashtagget `#bot` eller `#nyhedsbot` i `Preferences -> Filters -> Add new filter` og bruge `Keywords` sat til `#nyhedsbot` f.eks.
 
