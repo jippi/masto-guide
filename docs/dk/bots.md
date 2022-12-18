@@ -4,6 +4,8 @@
 
     Liste over danske bots/robotter der automatisk deler indhold på Mastodon
 
+    ⭐️ betyder officiel bot - bots uden ⭐️ er uofficielle.
+
 !!! tip "Du kan blokere de fleste bots fra at optråde i dit feed"
 
     Du kan blokere hashtagget `#bot` eller `#nyhedsbot` i `Preferences -> Filters -> Add new filter` og bruge `Keywords` sat til `#nyhedsbot` f.eks.
@@ -22,4 +24,4 @@
 
 ## Andet
 
-- [Ugenummer](https://expressional.social/@ugenr){target=_blank} - [ugenummer.dk](https://ugenr.dk/){target=_blank}
+- ⭐️ [Ugenummer](https://expressional.social/@ugenr){target=_blank} - [ugenummer.dk](https://ugenr.dk/){target=_blank}
