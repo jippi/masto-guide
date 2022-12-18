@@ -78,6 +78,7 @@ nav:
       - "Move Mastodon server": guide/move-mastodon-server.md
       - "Using your own domain": guide/use-your-own-domain.md
   - 🇩🇰 Dansk Mastodon:
+      - "Danske robotter/bots": dk/bots.md
       - "Danske Mastodon #hashtags": dk/hashtags.md
       - Danske Mastodon servere: dk/servers.md
       - Dansk Mastodon Relay server: dk/relay.md
