@@ -37,6 +37,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     # Ubuntu is fine, we just need Docker and bash
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       # checkout the code
       - name: Checkout
