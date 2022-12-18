@@ -6,7 +6,7 @@
 
 !!! tip "Du kan blokere de fleste bots fra at optråde i dit feed"
 
-    Du kan blokere hashtagget `#bot` i `Filter` indstillingen under din profil for at skjule det mest automatiseret indhold
+    Du kan blokere hashtagget `#bot` eller `#nyhedsbot` i `Filter` indstillingen under din profil for at skjule det automatiseret indhold
 
 ## Nyheder & medier
 
