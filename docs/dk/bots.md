@@ -51,7 +51,6 @@
 - [TV2 Sport](https://expressional.social/@tv2sport){target=_blank rel=me} - RSS feed fra sport.tv2.dk
 - [TV2 Udland](https://expressional.social/@tv2udland){target=_blank rel=me} - RSS feed fra nyheder.tv2.dk med fokus på udland
 - [TV2 Vejr](https://expressional.social/@tv2vejret){target=_blank rel=me} - RSS feed fra vejr.tv2.dk
-- [Version2 Debat](https://expressional.social/@version2debat){target=_blank rel=me} - RSS debat feed fra version2.dk
 - [Version2](https://expressional.social/@version2){target=_blank rel=me} - RSS nyheder feed fra version2.dk
 
 ## Andet
