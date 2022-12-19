@@ -28,6 +28,7 @@
 
 - [Altinget](https://expressional.social/@altinget){target=_blank rel=me} - RSS nyheder feed fra altinget.dk
 - [Avisen Danmark](https://expressional.social/@AvisenDanmark){target=_blank rel=me} - RSS nyheder feed fra avisendanmark.dk
+- [B.T](https://expressional.social/@bt){target=_blank rel=me} - RSS nyheder feed fra bt.dk
 - [Berlingske](https://expressional.social/@berlingske){target=_blank rel=me} - RSS nyheder feed fra berlingske.dk
 - [Børsen](https://expressional.social/@borsen){target=_blank rel=me} - RSS nyheder feed fra borsen.dk
 - [Dagens Medicin](https://expressional.social/@DagensMedicin){target=_blank rel=me} - RSS nyheder feed fra dagensmedicin.dk
