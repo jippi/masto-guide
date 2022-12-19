@@ -56,6 +56,7 @@
 - [TV2 Udland - `@tv2udland@expressional.social`](https://expressional.social/@tv2udland){target=_blank rel=me} - RSS feed fra nyheder.tv2.dk med fokus på udland
 - [TV2 Vejr - `@tv2vejret@expressional.social`](https://expressional.social/@tv2vejret){target=_blank rel=me} - RSS feed fra vejr.tv2.dk
 - [Version2 - `@version2@expressional.social`](https://expressional.social/@version2){target=_blank rel=me} - RSS feed fra version2.dk
+- [Videnskab.dk - `@videnskab@expressional.social`](https://expressional.social/@videnskab){target=_blank rel=me} - RSS feed fra videnskab.dk
 
 ## Andet
 
