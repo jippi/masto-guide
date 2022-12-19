@@ -22,7 +22,9 @@
 
     Da Mastodon stadig er meget nyt, er de fleste mediehuse endnu ikke kommet over med deres indhold selv - denne liste er *primært* uoficielle konti der bruger nyhedsmediernes eget RSS feed til at dele indholdet på Mastodon.
 
-    I takt med medierne kommer på Mastodon officielt, vil listen blive erstattet med deres officieille konti. Så vidt muligt vil den uoficielle konto blive fusioneret med den oficielle konto, eller helt slettet - afhængige af mediehusets egne ønsker. Mediehuse der ser denne liste kan skrive til [@jippi](https://expressional.social/@jippi){target=_blank rel=me} herom.
+    I takt med medierne kommer på Mastodon officielt, vil listen blive erstattet med deres officieille konti. Så vidt muligt vil den uoficielle konto blive fusioneret med den oficielle konto, eller helt slettet - afhængige af mediehusets egne ønsker.
+
+    Mediehuse der ser denne liste kan skrive til [@jippi](https://expressional.social/@jippi){target=_blank rel=me} herom.
 
 - [Altinget](https://expressional.social/@altinget){target=_blank rel=me} - RSS nyheder feed fra altinget.dk
 - [Avisen Danmark](https://expressional.social/@AvisenDanmark){target=_blank rel=me} - RSS nyheder feed fra avisendanmark.dk
