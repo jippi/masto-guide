@@ -21,6 +21,8 @@
 - [DR Sporten](https://expressional.social/@DRSporten){target=_blank} - RSS feed fra DR Sporten
 - [DR Udland](https://expressional.social/@DRUdland){target=_blank} - RSS feed fra DR Udland
 - [DR Viden](https://expressional.social/@DRViden){target=_blank} - RSS feed fra DR Viden
+- [ing.dk](https://expressional.social/@ing){target=_blank} - RSS feed fra ing.dk
+- [Version2](https://expressional.social/@version2){target=_blank} - RSS feed fra version2.dk
 
 ## Andet
 
