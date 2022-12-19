@@ -32,6 +32,7 @@
 - [Berlingske - `@berlingske@expressional.social`](https://expressional.social/@berlingske){target=_blank rel=me} - RSS feed fra berlingske.dk
 - [Børsen - `@borsen@expressional.social`](https://expressional.social/@borsen){target=_blank rel=me} - RSS feed fra borsen.dk
 - [Dagens Medicin - `@DagensMedicin@expressional.social`](https://expressional.social/@DagensMedicin){target=_blank rel=me} - RSS feed fra dagensmedicin.dk
+- [DR Breaking - `@drbreaking@botsin.space`](https://botsin.space/@drbreaking){target=_blank rel=me} - Breaking news fra dr.dk
 - [DR Indland - `@DRIndland@expressional.social`](https://expressional.social/@DRIndland){target=_blank rel=me} - RSS feed fra DR Indland
 - [DR Kultur - `@DRKultur@expressional.social`](https://expressional.social/@DRKultur){target=_blank rel=me} - RSS feed fra DR Kultur
 - [DR Mad - `@DRMad@expressional.social`](https://expressional.social/@DRMad){target=_blank rel=me} - RSS feed fra DR Mad
