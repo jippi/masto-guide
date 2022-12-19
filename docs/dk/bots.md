@@ -12,6 +12,9 @@
 
 ## Nyheder & medier
 
+- [Altinget](https://expressional.social/@altinget){target=_blank} - RSS nyheder feed fra altinget.dk
+- [Avisen Danmark](https://expressional.social/@AvisenDanmark){target=_blank} - RSS nyheder feed fra avisendanmark.dk
+- [Berlingske](https://expressional.social/@berlingske){target=_blank} - RSS nyheder feed fra berlingske.dk
 - [DR Indland](https://expressional.social/@DRIndland){target=_blank} - RSS feed fra DR Indland
 - [DR Kultur](https://expressional.social/@DRKultur){target=_blank} - RSS feed fra DR Kultur
 - [DR Mad](https://expressional.social/@DRMad){target=_blank} - RSS feed fra DR Mad
@@ -21,7 +24,12 @@
 - [DR Sporten](https://expressional.social/@DRSporten){target=_blank} - RSS feed fra DR Sporten
 - [DR Udland](https://expressional.social/@DRUdland){target=_blank} - RSS feed fra DR Udland
 - [DR Viden](https://expressional.social/@DRViden){target=_blank} - RSS feed fra DR Viden
+- [Finans](https://expressional.social/@finans){target=_blank} - RSS nyheder feed fra finans.dk
 - [ing.dk](https://expressional.social/@ing){target=_blank} - RSS feed fra ing.dk
+- [Jyllands Posten](https://expressional.social/@JyllandsPosten){target=_blank} - RSS nyheder feed fra jyllands-posten.dk
+- [Kristeligt Dagblad](https://expressional.social/@kristeligt){target=_blank} - RSS nyheder feed fra kristeligt-dagblad.dk
+- [Licitationen](https://expressional.social/@licitationen){target=_blank} - RSS nyheder feed fra licitationen.dk
+- [Politiken](https://expressional.social/@politiken){target=_blank} - RSS nyheder feed fra politiken.dk
 - [TV2 Business](https://expressional.social/@tv2business){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på business
 - [TV2 Krimi](https://expressional.social/@tv2krimi){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på krimi
 - [TV2 Politik](https://expressional.social/@TV2nyhederne){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på politik
