@@ -24,7 +24,6 @@
 - [ing.dk](https://expressional.social/@ing){target=_blank} - RSS feed fra ing.dk
 - [TV2 Business](https://expressional.social/@tv2business){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på business
 - [TV2 Krimi](https://expressional.social/@tv2krimi){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på krimi
-- [TV2 Krimi](https://expressional.social/@tv2krimi){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på krimi
 - [TV2 Politik](https://expressional.social/@TV2nyhederne){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på politik
 - [TV2 Samfund](https://expressional.social/@tv2samfund){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på indland
 - [TV2 Sport](https://expressional.social/@tv2sport){target=_blank} - RSS feed fra sport.tv2.dk
@@ -36,3 +35,4 @@
 ## Andet
 
 - ⭐️ [Ugenummer](https://expressional.social/@ugenr){target=_blank} - [ugenummer.dk](https://ugenr.dk/){target=_blank}
+- ⭐️ [Elpriser](https://mstdn.dk/@elpriser){target=_blank} - Viser spotpriserne for el, time for time, i øst og vest Danmark
