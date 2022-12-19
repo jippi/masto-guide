@@ -24,7 +24,7 @@
 
     I takt med medierne kommer på Mastodon officielt, vil listen blive erstattet med deres officieille konti. Så vidt muligt vil den uoficielle konto blive fusioneret med den oficielle konto, eller helt slettet - afhængige af mediehusets egne ønsker.
 
-    Mediehuse der ser denne liste kan skrive til [@jippi](https://expressional.social/@jippi){target=_blank rel=me} herom.
+    Medier der ikke vil være på listen, have fjernet en bot, eller overtage en konto og gøre den officiel, kan skrive til [@jippi](https://expressional.social/@jippi){target=_blank rel=me} herom.
 
 - [Altinget](https://expressional.social/@altinget){target=_blank rel=me} - RSS nyheder feed fra altinget.dk
 - [Avisen Danmark](https://expressional.social/@AvisenDanmark){target=_blank rel=me} - RSS nyheder feed fra avisendanmark.dk
