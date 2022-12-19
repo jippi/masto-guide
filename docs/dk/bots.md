@@ -22,8 +22,16 @@
 - [DR Udland](https://expressional.social/@DRUdland){target=_blank} - RSS feed fra DR Udland
 - [DR Viden](https://expressional.social/@DRViden){target=_blank} - RSS feed fra DR Viden
 - [ing.dk](https://expressional.social/@ing){target=_blank} - RSS feed fra ing.dk
-- [Version2](https://expressional.social/@version2){target=_blank} - RSS nyheder feed fra version2.dk
+- [TV2 Business](https://expressional.social/@tv2business){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på business
+- [TV2 Krimi](https://expressional.social/@tv2krimi){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på krimi
+- [TV2 Krimi](https://expressional.social/@tv2krimi){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på krimi
+- [TV2 Politik](https://expressional.social/@TV2nyhederne){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på politik
+- [TV2 Samfund](https://expressional.social/@tv2samfund){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på indland
+- [TV2 Sport](https://expressional.social/@tv2sport){target=_blank} - RSS feed fra sport.tv2.dk
+- [TV2 Udland](https://expressional.social/@tv2udland){target=_blank} - RSS feed fra nyheder.tv2.dk med fokus på udland
+- [TV2 Vejr](https://expressional.social/@tv2vejret){target=_blank} - RSS feed fra vejr.tv2.dk
 - [Version2 Debat](https://expressional.social/@version2debat){target=_blank} - RSS debat feed fra version2.dk
+- [Version2](https://expressional.social/@version2){target=_blank} - RSS nyheder feed fra version2.dk
 
 ## Andet
 
