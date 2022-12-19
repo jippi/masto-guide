@@ -69,12 +69,8 @@ Example links you can search for:
 
 Mastodon makes it ~fairly easy for you to add `aliases` to your account so you can be found under names (e.g., your private domain like `jippi.dev`).
 
-For example, my personal domain is `jippi.dev`, and I've set up so `@jippi}@jippi.dev` and `@me@jippi.dev` will find my account `@jippi@expressional.social` across all servers. You can think of it as an e-mail redirect/forward.
+For example, my personal domain is `jippi.dev`, and I've set up so `@jippi@jippi.dev` and `@me@jippi.dev` will find my account `@jippi@expressional.social` across all servers. You can think of it as an e-mail redirect/forward.
 
 It can be incredibly useful since it will allow people to find you via your regular e-mail. Since it's a redirect/forward, if you move to another server in the future, your alias can be updated to point to the new server transparently without updating many links across the web.
 
-The article [Mastodon - be findable with your domain](https://johnmu.com/2022-mastodon-for-your-domain/){target="_blank"} has a lot of good examples on how to configure this, including (but not limited to)
-
-- [Wordpress](https://johnmu.com/2022-mastodon-for-your-domain/#wordpress){target="_blank"}
-- [Apache](https://johnmu.com/2022-mastodon-for-your-domain/#apache--co){target="_blank"}
-- [nginx](https://gist.github.com/dwsmart/b9733545030cde7451f8688538b945ab){target="_blank"}
+Head over to our [interactive guide for using your own domain for Mastodon to learn more.](use-your-own-domain.md)
