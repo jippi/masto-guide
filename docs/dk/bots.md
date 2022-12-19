@@ -1,6 +1,6 @@
 # Danske robotter/bots
 
-!!! info "Danske robotter på Mastodon"
+!!! note "Danske robotter på Mastodon"
 
     Liste over danske bots/robotter der automatisk deler indhold på Mastodon
 
@@ -8,9 +8,21 @@
 
 !!! tip "Du kan blokere de fleste bots fra at optræde i dit feed"
 
-    Du kan blokere hashtagget `#bot` eller `#nyhedsbot` i `Preferences -> Filters -> Add new filter` og bruge `Keywords` sat til `#nyhedsbot` f.eks.
+    Du kan blokere hashtagget `#bot` eller `#nyhedsbot` i `Preferences -> Filters -> Add new filter` og bruge `Keywords` sat til `#nyhedsbot` hvis du ikke ønsker at se indholdet i dit feed
+
+!!! question "Hvordan følger jeg en konto?"
+
+    1. Enten højre-klik på linket for den konto du vil følge eller klik på linket og kopier det fra addressebaren.
+    1. På *din* Mastodon server indsætter/paster du linket i søgefeltet.
+    1. Klik på den lille mand med `+` i højre side af søgeresultatet.
 
 ## Nyheder & medier
+
+!!! info "Vigtig information om de uoficielle nyhedskonti neden for"
+
+    Da Mastodon stadig er meget nyt, er de fleste mediehuse endnu ikke kommet over med deres indhold selv - denne liste er *primært* uoficielle konti der bruger nyhedsmediernes eget RSS feed til at dele indholdet på Mastodon.
+
+    I takt med medierne kommer på Mastodon officielt, vil listen blive erstattet med deres officieille konti. Så vidt muligt vil den uoficielle konto blive fusioneret med den oficielle konto, eller helt slettet - afhængige af mediehusets egne ønsker. Mediehuse der ser denne liste kan skrive til [@jippi](https://expressional.social/@jippi){target=_blank} herom.
 
 - [Altinget](https://expressional.social/@altinget){target=_blank} - RSS nyheder feed fra altinget.dk
 - [Avisen Danmark](https://expressional.social/@AvisenDanmark){target=_blank} - RSS nyheder feed fra avisendanmark.dk
