@@ -41,6 +41,7 @@
 - [DR Sporten](https://expressional.social/@DRSporten){target=_blank rel=me} - RSS feed fra DR Sporten
 - [DR Udland](https://expressional.social/@DRUdland){target=_blank rel=me} - RSS feed fra DR Udland
 - [DR Viden](https://expressional.social/@DRViden){target=_blank rel=me} - RSS feed fra DR Viden
+- [EkstraBladet](https://expressional.social/@EkstraBladet){target=_blank rel=me} - RSS nyheder feed fra ekstrabladet.dk
 - [Finans](https://expressional.social/@finans){target=_blank rel=me} - RSS nyheder feed fra finans.dk
 - [ing.dk](https://expressional.social/@ing){target=_blank rel=me} - RSS feed fra ing.dk
 - [Jyllands Posten](https://expressional.social/@JyllandsPosten){target=_blank rel=me} - RSS nyheder feed fra jyllands-posten.dk
