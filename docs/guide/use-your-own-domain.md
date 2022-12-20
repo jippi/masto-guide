@@ -415,7 +415,7 @@ export function loader({ request }) {
     });
   }
 
-  if (resourceQuery !== "acct:me@tom-sherman.com") {
+  if (resourceQuery !== "acct:${ALIAS_USER}@${ALIAS_DOMAIN}") {
     return new Response("Not found", {
       status: 404,
     });
