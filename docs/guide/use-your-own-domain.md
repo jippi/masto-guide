@@ -415,6 +415,7 @@ export function loader({ request }) {
     });
   }
 
+  // Remove this if clause if you want to redirect all usernames on ${ALIAS_DOMAIN}
   if (resourceQuery !== "acct:${ALIAS_USER}@${ALIAS_DOMAIN}") {
     return new Response("Not found", {
       status: 404,
