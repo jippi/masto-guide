@@ -400,7 +400,7 @@ urlpatterns = [
 
 !!! info "Original implementation by [Tom Sherman](https://tom-sherman.com/blog/mastodon-domain-alias-on-remix){target=_blank}, please see his blog post for more information"
 
-!!! note "This configuration will only redirect the "me" username on `@${ALIAS_DOMAIN}` to your Mastodon account `${MASTODON_USER}@${MASTODON_DOMAIN}`"
+!!! note "This configuration will only redirect the `${ALIAS_USER}` username on `@${ALIAS_DOMAIN}` to your Mastodon account `${MASTODON_USER}@${MASTODON_DOMAIN}`"
 
 Add a new route at `app/routes/[.]well-known/webfinger.js` with content as follows:
 
