@@ -395,3 +395,62 @@ urlpatterns = [
     path("@${MASTODON_USER}", blog.username_redirect),
 ]
 ```
+
+### Remix (JavaScript)
+
+!!! info "Original implementation by [Tom Sherman](https://tom-sherman.com/blog/mastodon-domain-alias-on-remix){target=_blank}, please see his blog post for more information"
+
+!!! note "This configuration will only redirect the `${ALIAS_USER}` username on `@${ALIAS_DOMAIN}` to your Mastodon account `${MASTODON_USER}@${MASTODON_DOMAIN}`"
+
+Add a new route at `app/routes/[.]well-known/webfinger.js` with content as follows:
+
+```js
+export function loader({ request }) {
+  const url = new URL(request.url);
+  const resourceQuery = url.searchParams.get("resource");
+
+  if (!resourceQuery) {
+    return new Response("Missing resource query parameter", {
+      status: 400,
+    });
+  }
+
+  // Remove this if clause if you want to redirect all usernames on ${ALIAS_DOMAIN}
+  if (resourceQuery !== "acct:${ALIAS_USER}@${ALIAS_DOMAIN}") {
+    return new Response("Not found", {
+      status: 404,
+    });
+  }
+
+  return new Response(
+    JSON.stringify({
+      subject: "acct:${MASTODON_USER}@${MASTODON_DOMAIN}",
+      aliases: [
+        "https://${MASTODON_DOMAIN}/@${MASTODON_USER}",
+        "https://${MASTODON_DOMAIN}/users/${MASTODON_USER}",
+      ],
+      links: [
+        {
+          rel: "http://webfinger.net/rel/profile-page",
+          type: "text/html",
+          href: "https://${MASTODON_DOMAIN}/@${MASTODON_USER}",
+        },
+        {
+          rel: "self",
+          type: "application/activity+json",
+          href: "https://${MASTODON_DOMAIN}/users/${MASTODON_USER}",
+        },
+        {
+          rel: "http://ostatus.org/schema/1.0/subscribe",
+          template: "https://${MASTODON_DOMAIN}/authorize_interaction?uri={uri}",
+        },
+      ],
+    }),
+    {
+      headers: {
+        "content-type": "application/jrd+json",
+      },
+    }
+  );
+}
+```
