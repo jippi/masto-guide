@@ -22,7 +22,6 @@ For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at de
 !!! tip "Servere med én bruger, der har valgt at drive en privat server til eget brug"
 
 - [ansico.dk](https://ansico.dk/){target=_blank}
-- [mastodon.joedean.dev](https://mastodon.joedean.dev/){target=_blank}
 
 ## Ansøgning
 
