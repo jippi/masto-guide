@@ -423,7 +423,7 @@ export function loader({ request }) {
 
   return new Response(
     JSON.stringify({
-      subject: "acct:tomsherman@${MASTODON_DOMAIN}",
+      subject: "acct:${MASTODON_USER}@${MASTODON_DOMAIN}",
       aliases: [
         "https://${MASTODON_DOMAIN}/@${MASTODON_USER}",
         "https://${MASTODON_DOMAIN}/users/${MASTODON_USER}",
