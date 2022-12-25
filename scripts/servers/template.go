@@ -42,10 +42,10 @@ var tmplFuncs = template.FuncMap{
 	"NumberFormat": func(in int) string {
 		return message.NewPrinter(language.Danish).Sprintf("%d\n", in)
 	},
-	"IsCurrent": func(in string) *bool {
-		ver, err := semver.NewVersion(in)
+	"IsCurrent": func(in ServerResponse) *bool {
+		ver, err := semver.NewVersion(in.Version)
 		if err != nil {
-			panic(err)
+			panic(fmt.Errorf("Could not create SemVer for %s: %w", in.Domain, err))
 		}
 
 		if mastodonVersion.Check(ver) {

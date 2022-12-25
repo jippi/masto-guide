@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"math"
 	"os"
@@ -30,7 +31,8 @@ var (
 	// HTTP client
 	httpClient = resty.New().
 			SetTimeout(5*time.Second).
-			SetHeader("User-Agent", "Masto-Guide")
+			SetHeader("User-Agent", "Masto-Guide").
+			SetRetryCount(0)
 
 	// The latest release of Mastodon according to GitHub releases
 	mastodonVersion *semver.Constraints
@@ -175,14 +177,29 @@ func fetchServerInformation(server Server, log *log.Entry) {
 		retry := func(err error) {
 			lastError = err
 
-			logger.Error(err)
+			logger.WithError(err).Error("request error")
+
 			// We will sleep 1, 2, 3, 4, 5 seconds
 			time.Sleep(time.Duration(i) * time.Second)
 		}
 
 		serverResponse := &ServerResponse{}
-		if _, err := httpClient.R().SetResult(serverResponse).Get("https://" + server.Domain + "/api/v2/instance"); err != nil {
+		resp, err := httpClient.R().SetResult(serverResponse).Get("https://" + server.Domain + "/api/v2/instance")
+		if err != nil {
 			retry(err)
+			continue
+		}
+
+		if resp.IsError() {
+			err := resp.Error()
+			switch err.(type) {
+			case error:
+				retry(err.(error))
+			case nil:
+				retry(fmt.Errorf("Error type is [nil]: Server responded with [%s]", resp.Status()))
+			default:
+				logger.Errorf("Unknown error type: %T", err)
+			}
 			continue
 		}
 

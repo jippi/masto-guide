@@ -38,7 +38,7 @@ _Sidst opdateret {{ .UpdateAt }}_
         * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger IKKE Mastodon Server Covenant, klik for at læse mere"}
         {{ end }}
         * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
-        * **Version:** {{ IsCurrent .Version | BoolIcon }} (`{{ .Version }}`)
+        * **Version:** {{ IsCurrent . | BoolIcon }} (`{{ .Version }}`)
         * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
@@ -56,7 +56,7 @@ _Sidst opdateret {{ .UpdateAt }}_
         * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger IKKE Mastodon Server Covenant, klik for at læse mere"}
         {{ end }}
         * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
-        * **Version:** {{ IsCurrent .Version | BoolIcon }} (`{{ .Version }}`)
+        * **Version:** {{ IsCurrent . | BoolIcon }} (`{{ .Version }}`)
         * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
@@ -78,7 +78,7 @@ _Sidst opdateret {{ .UpdateAt }}_
         * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger *ikke* Mastodon Server Covenant, klik for at læse mere"}
         {{ end }}
         * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
-        * **Version:** {{ IsCurrent .Version | BoolIcon }} (`{{ .Version }}`)
+        * **Version:** {{ IsCurrent . | BoolIcon }} (`{{ .Version }}`)
         * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
