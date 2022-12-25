@@ -61,8 +61,6 @@
   category: private # private organization that require paid membership to join
   without_monitoring: true
 
-- domain: fynbo.social
-
 - domain: mastodon.samtale.rocks
 
 - domain: social.multiverset.net
