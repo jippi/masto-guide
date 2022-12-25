@@ -11,6 +11,7 @@ For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at de
 !!! tip "Servere der har mange medlemmer og ofte accepterer nye medlemmer"
 
 - [expressional.social](https://expressional.social/){target=_blank}
+- [frederiksberg.social](https://frederiksberg.social/){target=_blank}
 - [fynbo.social](https://fynbo.social/){target=_blank}
 - [fynbo.social](https://fynbo.social/){target=_blank}
 - [helvede.net](https://helvede.net/){target=_blank}
