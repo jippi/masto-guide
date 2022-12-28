@@ -13,7 +13,6 @@ For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at de
 - [expressional.social](https://expressional.social/){target=_blank}
 - [frederiksberg.social](https://frederiksberg.social/){target=_blank}
 - [helvede.net](https://helvede.net/){target=_blank}
-- [mastodon.samtale.rocks](https://mastodon.samtale.rocks/){target=_blank}
 - [mstdn.dk](https://mstdn.dk/){target=_blank}
 - [norrebro.space](https://norrebro.space/){target=_blank}
 - [turingfesten.dk](https://turingfesten.dk/){target=_blank}
