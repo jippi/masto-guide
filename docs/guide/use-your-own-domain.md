@@ -108,23 +108,11 @@ map $arg_resource $valid_mastodon {
     # If you want limit the accounts from @${ALIAS_DOMAIN}, add them individually
     # in the list below like this.
     #
-    # NOTE: The value needs to be URL encoded like this
-    #
-    #      replace : with %3A
-    #      replace @ with %40
-    #
-    # Example
-    #
-    #      acct:${MASTODON_USER}@${MASTODON_DOMAIN} becomes acct%3A${MASTODON_USER}%40${MASTODON_DOMAIN}
-    #      acct:${ALIAS_USER}@${ALIAS_DOMAIN} becomes acct%3${ALIAS_USER}%40${ALIAS_DOMAIN}
-    #
-    # Add as many additional ones as you would like
-
     # acct:${MASTODON_USER}@${MASTODON_DOMAIN}
-    'acct%3A${MASTODON_USER}%40${MASTODON_DOMAIN}' 1;
+    'acct:${MASTODON_USER}@${MASTODON_DOMAIN}' 1;
 
     # acct:${ALIAS_USER}@${ALIAS_DOMAIN}
-    'acct%3A${ALIAS_USER}%40${ALIAS_DOMAIN}' 1;
+    'acct:${ALIAS_USER}@${ALIAS_DOMAIN}' 1;
 }
 ```
 
