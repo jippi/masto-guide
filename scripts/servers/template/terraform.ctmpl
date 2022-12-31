@@ -77,17 +77,17 @@ resource "datadog_service_level_objective" "{{ .Domain | TerraformID }}_slo" {
 
   thresholds {
     timeframe = "7d"
-    target    = 99.95
+    target    = 99.9
   }
 
   thresholds {
     timeframe = "30d"
-    target    = 99.95
+    target    = 99.9
   }
 
   thresholds {
     timeframe = "90d"
-    target    = 99.95
+    target    = 99.9
   }
 
   tags = ["site:{{ .Domain }}", "project:masto-guide", "env:production"]
@@ -494,9 +494,9 @@ resource "datadog_dashboard" "overview" {
           tick_pos         = "50%"
           vertical_align   = "center"
           content          = <<-EOT
-                The target [SLO](https://docs.datadoghq.com/monitors/service_level_objectives/) is **[99.95%](https://uptime.is/99.95)** Meaning downtime in total per
+                The target [SLO](https://docs.datadoghq.com/monitors/service_level_objectives/) is **[99.9%](https://uptime.is/99.9)** Meaning downtime in total per
 
-                **Day:** 43s | **Week:** 5m 2.4s | **Month:** 21m 44s | **Quarter:** 1h 5m 12s | **Year:** 4h 20m 49s
+                **Day:** 1m 26s | **Week:** 10m 4.8s | **Month:** 43m 28s | **Quarter:** 2h 10m 24s | **Year:** 8h 41m 38s
             EOT
         }
 
