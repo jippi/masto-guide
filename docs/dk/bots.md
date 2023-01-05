@@ -64,3 +64,4 @@
 
 - ⭐️ [Ugenummer](https://expressional.social/@ugenr){target=_blank rel=me} - [ugenummer.dk](https://ugenr.dk/){target=_blank rel=me}
 - ⭐️ [Elpriser](https://mstdn.dk/@elpriser){target=_blank rel=me} - Viser spotpriserne for el, time for time, i øst og vest Danmark
+- ⭐️ [CO2-prognoser for strømmen](https://mastodon.social/@co2prognoser){target=_blank} - Viser prognoser for dansk strømproduktions CO2-udledning, jf. [grønstrøm.nu](https://grønstrøm.nu){target=_blank}.
