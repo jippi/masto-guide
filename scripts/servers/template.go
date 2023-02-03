@@ -45,7 +45,8 @@ var tmplFuncs = template.FuncMap{
 	"IsCurrent": func(in ServerResponse) *bool {
 		ver, err := semver.NewVersion(in.Version)
 		if err != nil {
-			panic(fmt.Errorf("Could not create SemVer for %s: %w", in.Domain, err))
+			return boolPtr(false)
+			// panic(fmt.Errorf("Could not create SemVer for %s: %w", in.Domain, err))
 		}
 
 		if mastodonVersion.Check(ver) {
