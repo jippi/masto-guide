@@ -5,7 +5,12 @@ resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitorin
   subtype = "http"
   name    = "{{ .Domain }}"
   message = ""
-  tags    = ["site:{{ .Domain }}", "project:masto-guide", "env:production"]
+  tags    = [
+    "site:{{ .Domain }}",
+    "service:{{ .Domain }}",
+    "project:masto-guide",
+    "env:production",
+  ]
   status = "live"
 
   # hit the /about page for the server
@@ -90,7 +95,12 @@ resource "datadog_service_level_objective" "{{ .Domain | TerraformID }}_slo" {
     target    = 99.9
   }
 
-  tags = ["site:{{ .Domain }}", "project:masto-guide", "env:production"]
+  tags = [
+    "site:{{ .Domain }}",
+    "service:{{ .Domain }}",
+    "project:masto-guide",
+    "env:production",
+  ]
 }
 
 {{ end }}
