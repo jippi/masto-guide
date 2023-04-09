@@ -1,0 +1,15 @@
+packages:
+  - type: github_archive
+    repo_owner: pyenv
+    repo_name: pyenv
+    description: Simple Python version management
+    files:
+      - name: pyenv
+        src: pyenv-{{trimV .Version}}/bin/pyenv
+  - type: github_archive
+    repo_owner: python-poetry
+    repo_name: poetry
+    description: Python packaging and dependency management made easy
+    files:
+      - name: install-poetry
+        src: poetry-{{trimV .Version}}/install-poetry.py

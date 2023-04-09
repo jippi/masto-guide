@@ -1,0 +1,62 @@
+---
+- name: Generelle
+  description:
+  tags:
+    - name: "NyPåMastodon"
+    - name: "Introduktion"
+    - name: "DkMastodon"
+    - name: "MastoDansk"
+    - name: "DkTrut"
+    - name: "FællesHjerne"
+    - name: "Anbefaling"
+    - name: "SoMeDk"
+    - name: "FinderSelvUd"
+    - name: "Dansk"
+    - name: "DK"
+    - name: "ffdk"
+
+- name: Politik/samfund
+  description:
+  tags:
+    - name: "dkpol"
+    - name: "eudk"
+    - name: "dksund"
+    - name: "sundpol"
+    - name: "uddpol"
+    - name: "skolechat"
+    - name: "dksocial"
+    - name: "DkHandicap"
+    - name: "dkmedier"
+
+- name: Kultur/fritid
+  description:
+  tags:
+    - name: "dkkultur"
+    - name: "dkkunst"
+    - name: "dkmusik"
+    - name: "dkfilm"
+    - name: "dkfoto"
+    - name: "DagensPlade"
+    - name: "dkevents"
+    - name: "dkmotion"
+    - name: "dksport"
+    - name: "mad"
+    - name: "opskrifter"
+
+- name: Business
+  description:
+  tags:
+  - name: "dkbiz"
+  - name: "dkmarketing"
+  - name: "dkstartup"
+  - name: "dkinnovation"
+  - name: "dkjob"
+
+- name: Teknik/miljø
+  description:
+  tags:
+    - name: "dkgreen"
+    - name: "dkklima"
+    - name: "dkenergi"
+    - name: "dkscience"
+    - name: "dkIT"

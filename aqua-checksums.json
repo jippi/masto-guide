@@ -1,0 +1,39 @@
+{
+  "checksums": [
+    {
+      "id": "github_archive/github.com/pyenv/pyenv/v2.3.16",
+      "checksum": "92F7336D7E8D2D29074FF876793404C96F459A89041A135BCAB782D192ABAACAFD055171AF3A4DD780E58ECB33777F7311FA9EB6822085F18ED346BBEFCBB4AA",
+      "algorithm": "sha512"
+    },
+    {
+      "id": "github_archive/github.com/pyenv/pyenv/v2.3.17",
+      "checksum": "282F4B8DE6E230BB959B86F6C791C6478FEF23AD85148DDB00B92FA2AB1072C59F0982B940DFC572A274CD50D4430C157059C11B55B789B5ADC5483D65D67465",
+      "algorithm": "sha512"
+    },
+    {
+      "id": "github_archive/github.com/python-poetry/poetry/1.4.2",
+      "checksum": "A044F9DF3C2E52ED28E42AF8C10685D29FC2ED25E7F89CD5A21353B64CBFA561DF24440A42FBB3749D68901C4572EF93A996EE7693A456B1498C40C8F3C0F631",
+      "algorithm": "sha512"
+    },
+    {
+      "id": "github_content/github.com/aquaproj/aqua-installer/v2.0.2/aqua-installer",
+      "checksum": "1DE27DBC01A17028612C442DE7B71AACAF4C1854DF683E432A91301151519C64F6A85B8D3EF6862DDC0BE928C41C8F2B31E02621AB9680F3F2C86D652E6B8AF8",
+      "algorithm": "sha512"
+    },
+    {
+      "id": "github_content/github.com/python-poetry/poetry/1.4.2/install-poetry.py",
+      "checksum": "B77D439F2EED8B4EFDF26177D43617F8FBA4B0A4E262B6B45313D7BC0C6E61706A111A7A8A896F24CB67CEBBB7AD7B4EF118DC51B3CE3EA4515B8DC137434C3E",
+      "algorithm": "sha512"
+    },
+    {
+      "id": "github_release/github.com/docker/compose/v2.17.2/docker-compose-darwin-aarch64",
+      "checksum": "8CC28C1D9B6EF9CC3D4EC5BFE0A1E9125795DFE4F7875F52E086C780E9FC8F2D",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "http/download.docker.com/mac/static/stable/aarch64/docker-23.0.3.tgz",
+      "checksum": "89206EAFF368B1400A0FF6FF13E5D38B5080336D2BC2A2C2E7C6B592F919882A27A12A4E54892AA6BD471CD74F648E2FE50AECF1B1D4496F55CDBA2275F5A596",
+      "algorithm": "sha512"
+    }
+  ]
+}

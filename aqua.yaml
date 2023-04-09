@@ -1,0 +1,27 @@
+---
+# aqua - Declarative CLI Version Manager
+# https://aquaproj.github.io/
+checksum:
+  enabled: true
+  require_checksum: false
+  supported_envs:
+    - all
+registries:
+  - type: standard
+    ref: v3.150.0 # renovate: depName=aquaproj/aqua-registry
+  - name: local
+    type: local
+    path: registry.yaml
+packages:
+  - name: golang/go@go1.20.3
+  # - name: golang/vuln/govulncheck
+  #   version: "master"
+  # - name: volta-cli/volta@v1.1.1
+  - name: hashicorp/terraform@v1.4.4
+  - name: pyenv/pyenv@v2.3.17
+    registry: local
+  - name: docker/cli@v23.0.3
+  - name: docker/compose@v2.17.2
+  - name: python-poetry/poetry@1.4.2
+    registry: local
+  - name: aquaproj/aqua-installer@v2.0.2
