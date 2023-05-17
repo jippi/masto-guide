@@ -29,6 +29,7 @@ For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at de
 ## Ansøgning
 
 1. Skriv til [@jippi@expressional.social](https://expressional.social/@jippi){target=_blank} **først** for en snak om din server osv.
-1. Tilføj `https://relay.expressional.social/inbox` under `Admin > Relays`
+1. (Mastodon) Tilføj `https://relay.expressional.social/inbox` under `Admin > Relays` 
+1. (Pleroma) Tilføj `https://relay.expressional.social/actor` under `Relays` 
 1. Skriv til [@jippi@expressional.social](https://expressional.social/@jippi){target=_blank} for godkendelse af relay.
 1. Din server detager nu i relay.
