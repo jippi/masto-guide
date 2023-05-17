@@ -11,18 +11,20 @@ For at sikre kvaliteten af `relay` serveren kræver det manuel godkendelse at de
 !!! tip "Servere der har mange medlemmer og ofte accepterer nye medlemmer"
 
 - [expressional.social](https://expressional.social/){target=_blank}
-- [frederiksberg.social](https://frederiksberg.social/){target=_blank}
 - [helvede.net](https://helvede.net/){target=_blank}
 - [krigskunst.social](https://krigskunst.social/){target=_blank}
 - [mstdn.dk](https://mstdn.dk/){target=_blank}
 - [norrebro.space](https://norrebro.space/){target=_blank}
 - [turingfesten.dk](https://turingfesten.dk/){target=_blank}
+- [uddannelse.social](https://uddannelse.social){target=_blank}
 
 ## Deltagende solo servere
 
 !!! tip "Servere med én bruger, der har valgt at drive en privat server til eget brug"
 
 - [ansico.dk](https://ansico.dk/){target=_blank}
+- [masto.gred.al](https://masto.gred.al){target=_blank}
+- [social.hackspace.tech](https://social.hackspace.tech/){target=_blank}
 
 ## Ansøgning
 
