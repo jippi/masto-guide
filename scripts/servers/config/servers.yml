@@ -62,6 +62,4 @@
   category: private # private organization that require paid membership to join
   without_monitoring: true
 
-- domain: social.multiverset.net
-
 - domain: krigskunst.social
