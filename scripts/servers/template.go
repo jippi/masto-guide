@@ -43,17 +43,19 @@ var tmplFuncs = template.FuncMap{
 		return message.NewPrinter(language.Danish).Sprintf("%d\n", in)
 	},
 	"IsCurrent": func(in ServerResponse) *bool {
-		ver, err := semver.NewVersion(in.Version)
+		// Remove trailing comma from version to fix glitch invalid semver issues
+		version, err := semver.NewVersion(strings.TrimRight(in.Version, "."))
 		if err != nil {
+			logger.Errorf("Invalid semver found [%s] for server [%s]", in.Version, in.Domain)
+
 			return boolPtr(false)
-			// panic(fmt.Errorf("Could not create SemVer for %s: %w", in.Domain, err))
 		}
 
-		if mastodonVersion.Check(ver) {
-			return boolPtr(true)
-		}
+		// underlying library does not allow prereleases to pass validation constraints
+		// so we're removing it
+		versionWithoutPreRelease, _ := version.SetPrerelease("")
 
-		return boolPtr(false)
+		return boolPtr(mastodonVersion.Check(&versionWithoutPreRelease))
 	},
 	"BoolIcon": func(in *bool) string {
 		if in == nil {

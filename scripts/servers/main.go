@@ -240,6 +240,7 @@ func getLatestReleaseOfMastodon() {
 			Fatal("Did not get HTTP 200 OK from GitHub API")
 	}
 
+	// We allow servers to run releases never than mainline Mastodon (e.g. glitch-soc)
 	mastodonVersion, err = semver.NewConstraint(">= " + serverResponse.TagName)
 	if err != nil {
 		logger.
@@ -247,7 +248,7 @@ func getLatestReleaseOfMastodon() {
 			Fatal("Could not create version constraint")
 	}
 
-	logger.Debugf("Found version %s", serverResponse.TagName)
+	logger.Infof("Latest Mastodon version is: %s", serverResponse.TagName)
 }
 
 func loadConfigFile() {
