@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"math"
 	"os"
 	"sort"
@@ -187,16 +186,18 @@ func fetchServerInformation(server Server, log *log.Entry) {
 		resp, err := httpClient.R().SetResult(serverResponse).Get("https://" + server.Domain + "/api/v2/instance")
 		if err != nil {
 			retry(err)
+
 			continue
 		}
 
 		if resp.IsError() {
-			err := resp.Error()
-			switch err.(type) {
+			switch err := resp.Error().(type) {
 			case error:
-				retry(err.(error))
+				retry(err)
+
 			case nil:
 				retry(fmt.Errorf("Error type is [nil]: Server responded with [%s]", resp.Status()))
+
 			default:
 				logger.Errorf("Unknown error type: %T", err)
 			}
@@ -246,14 +247,14 @@ func getLatestReleaseOfMastodon() {
 			Fatal("Could not create version constraint")
 	}
 
-	logger.Debug("Found version %s", serverResponse.TagName)
+	logger.Debugf("Found version %s", serverResponse.TagName)
 }
 
 func loadConfigFile() {
 	logger := log.WithField("subsystem", "config")
 	logger.Debug("Loading configuration file")
 
-	categories, err := ioutil.ReadFile("config/categories.yml")
+	categories, err := os.ReadFile("config/categories.yml")
 	if err != nil {
 		logger.Fatal(err)
 	}
@@ -266,7 +267,7 @@ func loadConfigFile() {
 		categoryIndex[cat.ID] = idx
 	}
 
-	servers, err := ioutil.ReadFile("config/servers.yml")
+	servers, err := os.ReadFile("config/servers.yml")
 	if err != nil {
 		logger.Fatal(err)
 	}
