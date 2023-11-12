@@ -39,7 +39,7 @@ resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitorin
   }
 
   locations = [
-    "aws:eu-central-1",
+    "aws:eu-south-1",
     "aws:eu-north-1",
     "aws:eu-west-1",
     "aws:eu-west-2",
