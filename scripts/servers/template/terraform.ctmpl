@@ -50,6 +50,9 @@ resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitorin
     # check every 60s
     tick_every = 60
 
+    # Accept both HTTP1 and HTTP2 (but prefer HTTP2)
+    http_version = "any"
+
     # TLS is important, and has to be well-configured
     accept_self_signed = false
     check_certificate_revocation = true
@@ -68,6 +71,10 @@ resource "datadog_synthetics_test" "{{ .Domain | TerraformID }}_uptime_monitorin
     retry {
       count    = 1
       interval = 300
+    }
+
+    monitor_options {
+      renotify_interval = 0 -> null
     }
   }
 }
