@@ -1,0 +1,58 @@
+- name: Generelle
+  tags:
+    - name: Anbefaling
+    - name: Dansk
+    - name: DK
+    - name: DKMastodon
+    - name: DKTrut
+    - name: FællesHjerne
+    - name: ffdk
+    - name: FinderSelvUd
+    - name: Introduktion
+    - name: MastoDansk
+    - name: NyPåMastodon
+    - name: SoMeDk
+
+- name: Politik/samfund
+  tags:
+    - name: DKHandicap
+    - name: DKMedier
+    - name: DKPol
+    - name: DKSocial
+    - name: SKSund
+    - name: EUDK
+    - name: skolechat
+    - name: sundpol
+    - name: uddpol
+
+- name: Kultur/fritid
+  tags:
+    - name: DagensPlade
+    - name: DKEvents
+    - name: DKFilm
+    - name: DKFoto
+    - name: DKKultur
+    - name: DKKunst
+    - name: DKMotion
+    - name: DKMusik
+    - name: DKSport
+    - name: Fredagsbog
+    - name: mad
+    - name: MusikalskPlanke
+    - name: opskrifter
+
+- name: Business
+  tags:
+    - name: DKBiz
+    - name: DKInnovation
+    - name: DKJob
+    - name: DKMarketing
+    - name: DKStartup
+
+- name: Teknik/miljø
+  tags:
+    - name: DKEnergi
+    - name: DKGgreen
+    - name: DKIT
+    - name: DKKlima
+    - name: DKScience

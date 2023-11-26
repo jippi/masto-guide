@@ -12,11 +12,15 @@ import (
 )
 
 var (
-	indexTemplate     *template.Template
-	terraformTemplate *template.Template
+	serverIndexTemplate *template.Template
+	tagsIndexTemplate   *template.Template
+	terraformTemplate   *template.Template
 
-	//go:embed template/index.ctmpl
+	//go:embed template/dk-servers-index.ctmpl
 	indexTemplateText string
+
+	//go:embed template/dk-tags-index.ctmpl
+	tagsTemplateText string
 
 	//go:embed template/terraform.ctmpl
 	terraformTemplateText string
@@ -96,7 +100,12 @@ var tmplFuncs = template.FuncMap{
 func initializeTemplateRenderer() {
 	var err error
 
-	indexTemplate, err = template.New("").Funcs(tmplFuncs).Parse(indexTemplateText)
+	serverIndexTemplate, err = template.New("").Funcs(tmplFuncs).Parse(indexTemplateText)
+	if err != nil {
+		panic(err)
+	}
+
+	tagsIndexTemplate, err = template.New("").Funcs(tmplFuncs).Parse(tagsTemplateText)
 	if err != nil {
 		panic(err)
 	}

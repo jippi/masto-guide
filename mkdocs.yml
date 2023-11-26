@@ -1,19 +1,20 @@
 site_name: Masto Guide
 repo_url: https://github.com/jippi/masto-guide
 edit_uri: blob/main/docs/
-site_description: "The MastoGuide goal is to help everyone learn about Mastodon"
-site_author: "Jippi"
+site_description: 'The MastoGuide goal is to help everyone learn about Mastodon'
+site_author: 'Jippi'
 site_url: https://guide.toot.as/
 
 plugins:
+  - charts
   - social
   - search
   - macros
   - glightbox
   - redirects:
       redirect_maps:
-        "guide/changing-server.md": "guide/move-mastodon-server.md"
-        "dk/servers/monitoring.md": "https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94"
+        'guide/changing-server.md': 'guide/move-mastodon-server.md'
+        'dk/servers/monitoring.md': 'https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94'
 
 extra_css:
   - css/default.css
@@ -21,6 +22,9 @@ extra_css:
 extra_javascript:
   - js/migrate.js
   - js/custom-domain.js
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
 
 markdown_extensions:
   - tables
@@ -29,7 +33,11 @@ markdown_extensions:
       baselevel: 1
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -53,14 +61,14 @@ theme:
 
   palette:
     # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
+    - media: '(prefers-color-scheme: light)'
       scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
     # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
+    - media: '(prefers-color-scheme: dark)'
       scheme: slate
       primary: teal
       toggle:
@@ -75,10 +83,10 @@ nav:
       - guide/tips.md
       - guide/faq.md
   - 📚 Mastodon guide:
-      - "Move Mastodon server": guide/move-mastodon-server.md
-      - "Using your own domain": guide/use-your-own-domain.md
+      - 'Move Mastodon server': guide/move-mastodon-server.md
+      - 'Using your own domain': guide/use-your-own-domain.md
   - 🇩🇰 Dansk Mastodon:
-      - "Danske robotter/bots": dk/bots.md
-      - "Danske Mastodon #hashtags": dk/hashtags.md
+      - 'Danske robotter/bots': dk/bots.md
+      - 'Danske Mastodon #hashtags': dk/hashtags.md
       - Danske Mastodon servere: dk/servers.md
       - Dansk Mastodon Relay server: dk/relay.md

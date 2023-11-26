@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"net/http"
 	"os"
 	"sort"
 	"sync"
@@ -24,8 +25,9 @@ var (
 	startTime time.Time
 
 	// Worker coordination
-	readerCh = make(chan Server)
-	wg       sync.WaitGroup
+	serverReaderCh = make(chan Server)
+	tagReaderCh    = make(chan *TagCategory)
+	wg             sync.WaitGroup
 
 	// HTTP client
 	httpClient = resty.New().
@@ -36,8 +38,10 @@ var (
 	// The latest release of Mastodon according to GitHub releases
 	mastodonVersion *semver.Constraints
 
-	serverErrors  = make(map[string]error)
-	categoryIndex = make(map[string]int)
+	serverErrors        = make(map[string]error)
+	serverCategoryIndex = make(map[string]int)
+	tagErrors           = make(map[string]error)
+	errLock             sync.Mutex
 )
 
 func main() {
@@ -64,14 +68,25 @@ func main() {
 
 	getLatestReleaseOfMastodon()
 
-	// Start workers
+	// Start server workers
 	for w := 1; w <= int(math.Min(5, float64(len(config.Servers)))); w++ {
 		go func(w int) {
 			workLogger := logger.WithField("worker_id", w)
 			workLogger.Debug("Starting worker")
 
-			for job := range readerCh {
+			for job := range serverReaderCh {
 				fetchServerInformation(job, workLogger)
+			}
+		}(w)
+	}
+
+	for w := 1; w <= int(math.Min(5, float64(len(config.TagsCategories)))); w++ {
+		go func(w int) {
+			workLogger := logger.WithField("worker_id", w)
+			workLogger.Debug("Starting worker")
+
+			for job := range tagReaderCh {
+				fetchTagInformation(job, workLogger)
 			}
 		}(w)
 	}
@@ -79,15 +94,22 @@ func main() {
 	// enqueue servers that need to be fetched
 	for _, server := range config.Servers {
 		wg.Add(1)
-		readerCh <- *server
+		serverReaderCh <- *server
+	}
+
+	// enqueue tags that need to be fetched
+	for _, tag := range config.TagsCategories {
+		wg.Add(1)
+		tagReaderCh <- tag
 	}
 
 	// Prevent any further writing to the channel
-	close(readerCh)
+	close(serverReaderCh)
+	close(tagReaderCh)
 
-	logger.Info("Waiting for all server information to arrive")
+	logger.Info("Waiting for all tag + server information to arrive")
 	wg.Wait()
-	logger.Info("Done reading server information")
+	logger.Info("Done reading tag + server information")
 
 	// Sorting the servers by name to keep it consistent and fair
 	for _, cat := range config.Categories {
@@ -109,33 +131,63 @@ func main() {
 		})
 	}
 
-	var markdownFile *os.File
+	{
+		var serverMarkdownFile *os.File
 
-	// Open the servers.md MarkDown markdownFile for writing
-	markdownFile, err = os.OpenFile("../../docs/dk/servers.md", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
-	if err != nil {
-		logger.Fatal(err)
+		// Open the servers.md MarkDown markdownFile for writing
+		serverMarkdownFile, err = os.OpenFile("../../docs/dk/servers.md", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		// Struct used in the template for rendering
+		payload := struct {
+			Categories []*Category
+			Servers    []*Server
+			UpdateAt   string
+			Errors     map[string]error
+		}{
+			Categories: config.Categories,
+			Servers:    config.Servers,
+			UpdateAt:   monday.Format(startTime, "Monday, _2 January kl 15:04", monday.LocaleDaDK),
+			Errors:     serverErrors,
+		}
+
+		logger.Info("Rendering MarkDown file")
+		// Render and write the markdown template
+		if err := serverIndexTemplate.Execute(serverMarkdownFile, payload); err != nil {
+			logger.WithError(err).Fatal("Could not render markdown file")
+		}
+		logger.Info("Rendering completed successfully")
 	}
 
-	// Struct used in the template for rendering
-	payload := struct {
-		Categories []*Category
-		Servers    []*Server
-		UpdateAt   string
-		Errors     map[string]error
-	}{
-		Categories: config.Categories,
-		Servers:    config.Servers,
-		UpdateAt:   monday.Format(startTime, "Monday, _2 January kl 15:04", monday.LocaleDaDK),
-		Errors:     serverErrors,
-	}
+	{
+		var tagMarkdownFile *os.File
 
-	logger.Info("Rendering MarkDown file")
-	// Render and write the markdown template
-	if err := indexTemplate.Execute(markdownFile, payload); err != nil {
-		logger.WithError(err).Fatal("Could not render markdown file")
+		// Open the servers.md MarkDown markdownFile for writing
+		tagMarkdownFile, err = os.OpenFile("../../docs/dk/hashtags.md", os.O_RDWR|os.O_CREATE|os.O_TRUNC, os.ModePerm)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+		// Struct used in the template for rendering
+		payload := struct {
+			TagCategories []*TagCategory
+			UpdateAt      string
+			Errors        map[string]error
+		}{
+			TagCategories: config.TagsCategories,
+			UpdateAt:      monday.Format(startTime, "Monday, _2 January kl 15:04", monday.LocaleDaDK),
+			Errors:        tagErrors,
+		}
+
+		logger.Info("Rendering MarkDown file")
+		// Render and write the markdown template
+		if err := tagsIndexTemplate.Execute(tagMarkdownFile, payload); err != nil {
+			logger.WithError(err).Fatal("Could not render markdown file")
+		}
+		logger.Info("Rendering completed successfully")
 	}
-	logger.Info("Rendering completed successfully")
 }
 
 func writeTerraform() {
@@ -161,6 +213,67 @@ func writeTerraform() {
 	}
 
 	logger.Info("Rendering completed successfully")
+}
+
+func fetchTagInformation(tags *TagCategory, log *log.Entry) {
+	defer wg.Done()
+
+	var lastError error
+
+	// Very simplistic retry policy
+	logger := log.WithField("subsystem", "worker").WithField("tag_category", tags.Name)
+
+	for _, tag := range tags.Tags {
+		for i := 0; i < 5; i++ {
+			logger := logger.WithField("subsystem", "worker").WithField("attempt", i).WithField("tag_category", tags.Name).WithField("tag", tag.Name)
+			logger.Info("Fetching tag information")
+
+			retry := func(err error) {
+				lastError = err
+
+				logger.WithError(err).Error("request error")
+
+				// We will sleep 1, 2, 3, 4, 5 seconds
+				time.Sleep(time.Duration(i) * time.Second)
+			}
+
+			tagResponse := &TagResponse{}
+			resp, err := httpClient.R().SetResult(tagResponse).Get("https://expressional.social/api/v1/tags/" + tag.Name)
+			if err != nil {
+				retry(err)
+
+				continue
+			}
+
+			if resp.IsError() {
+				switch err := resp.Error().(type) {
+				case error:
+					// Throttled
+					if resp.StatusCode() == http.StatusTooManyRequests {
+						lastError = err
+						break
+					}
+
+					retry(err)
+
+				case nil:
+					retry(fmt.Errorf("Error type is [nil]: Server responded with [%s]", resp.Status()))
+
+				default:
+					logger.Errorf("Unknown error type: %T", err)
+				}
+
+				continue
+			}
+
+			tag.Response = tagResponse
+			break
+		}
+
+		errLock.Lock()
+		tagErrors[tag.Name] = lastError
+		errLock.Unlock()
+	}
 }
 
 func fetchServerInformation(server Server, log *log.Entry) {
@@ -218,7 +331,9 @@ func fetchServerInformation(server Server, log *log.Entry) {
 		return
 	}
 
+	errLock.Lock()
 	serverErrors[server.Domain] = lastError
+	errLock.Unlock()
 }
 
 func getLatestReleaseOfMastodon() {
@@ -265,7 +380,7 @@ func loadConfigFile() {
 	}
 
 	for idx, cat := range config.Categories {
-		categoryIndex[cat.ID] = idx
+		serverCategoryIndex[cat.ID] = idx
 	}
 
 	servers, err := os.ReadFile("config/servers.yml")
@@ -273,6 +388,14 @@ func loadConfigFile() {
 		logger.Fatal(err)
 	}
 	if err := yaml.Unmarshal(servers, &config.Servers); err != nil {
+		logger.Fatal(err)
+	}
+
+	tags, err := os.ReadFile("config/tags.yml")
+	if err != nil {
+		logger.Fatal(err)
+	}
+	if err := yaml.Unmarshal(tags, &config.TagsCategories); err != nil {
 		logger.Fatal(err)
 	}
 

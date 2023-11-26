@@ -1,14 +1,30 @@
 package main
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"time"
 )
 
 type Config struct {
-	Servers    []*Server   `json:"servers"`
-	Categories []*Category `json:"categories"`
+	Servers        []*Server      `json:"servers"`
+	Categories     []*Category    `json:"categories"`
+	TagsCategories []*TagCategory `json:"tags"`
+}
+
+type TagCategory struct {
+	Name string `json:"name"`
+	Tags []*Tag `json:"tags"`
+}
+
+type Tag struct {
+	Name     string `json:"name"`
+	Response *TagResponse
+}
+
+func (t *Tag) SparkLineUsage() string {
+	return t.Response.SparkLineUsage()
 }
 
 type Category struct {
@@ -53,7 +69,7 @@ func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
 	if ok {
 		categoryString := category.(string)
 
-		idx, ok := categoryIndex[categoryString]
+		idx, ok := serverCategoryIndex[categoryString]
 		if !ok {
 			return fmt.Errorf("Invalid category: %s", category)
 		}
@@ -67,6 +83,26 @@ func (s *Server) UnmarshalYAML(unmarshal func(interface{}) error) error {
 type GithubReleaseResponse struct {
 	Name    string `json:"name"`
 	TagName string `json:"tag_name"`
+}
+
+type TagResponse struct {
+	Name    string `json:"name"`
+	URL     string `json:"url"`
+	History []struct {
+		Day      string `json:"day"`
+		Accounts string `json:"accounts"`
+		Uses     string `json:"uses"`
+	} `json:"history"`
+	Following bool `json:"following"`
+}
+
+func (tr TagResponse) SparkLineUsage() string {
+	bytes, err := json.Marshal(tr.History)
+	if err != nil {
+		panic(err)
+	}
+
+	return string(bytes)
 }
 
 type ServerResponse struct {
@@ -172,14 +208,14 @@ func (s *ServerResponse) Categorize(server Server) *Category {
 	}
 
 	if s.Registrations.Enabled && !s.Registrations.ApprovalRequired {
-		return config.Categories[categoryIndex["open"]]
+		return config.Categories[serverCategoryIndex["open"]]
 	}
 
 	if s.Registrations.Enabled {
-		return config.Categories[categoryIndex["review"]]
+		return config.Categories[serverCategoryIndex["review"]]
 	}
 
-	return config.Categories[categoryIndex["invite"]]
+	return config.Categories[serverCategoryIndex["invite"]]
 }
 
 func (s *ServerResponse) HasCommittedToServerCovenant() bool {

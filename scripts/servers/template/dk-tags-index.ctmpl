@@ -1,0 +1,158 @@
+# Danske Mastodon hashtags
+
+!!! info "Datagrundlag"
+
+    Tag trends bruger [expressional.social](https://expressional.social/) serveren som data grundlag. Det betyder kort sagt at posts skal have været "set" af expressional.social serveren for at tælle. Da serveren deltager i det [Danske Mastodon Relay](relay.md), er der en god chance for det retvisende data, selvom det er uperfekt.
+
+{{ range .TagCategories }}
+## {{ .Name }}
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Tag</th>
+            <th scope="col">Post Trend</th>
+            <th scope="col">Unikke brugere Trend</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{- range .Tags }}
+        <tr>
+            <td scope="row">
+                <code>#{{ .Name }}</code>
+            </td>
+            <td>
+                ```vegalite
+                {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                    "mark": "area",
+                    "height": 50,
+                    "width": 250,
+                    "data": {
+                        "values": {{ .SparkLineUsage }},
+                        "format": {
+                            "parse": {"day": "date:'%s'"}
+                        }
+                    },
+                    "config": {
+                        "background": "transparent",
+                        "view": {
+                            "stroke": "transparent"
+                        },
+                        "header": {
+                            "title": null,
+                            "labelAngle": 0,
+                            "labelAlign": "left"
+                        },
+                        "area": {
+                            "interpolate": "monotone",
+                            "line": {
+                                "color": "#448aff",
+                                "strokeWidth": 1,
+                                "interpolate": "monotone"
+                            },
+                            "fill": "#448aff1a"
+                        }
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "day",
+                            "timeUnit": "date/month",
+                            "format": "%s",
+                            "type": "ordinal",
+                            "axis": {
+                                "title": null,
+                                "orient": "bottom",
+                                "domain": false,
+                                "ticks": false,
+                                "labels": true,
+                                "grid": false,
+                                "labelAngle": -45
+                            }
+                        },
+                        "y": {
+                            "field": "uses",
+                            "type": "quantitative",
+                            "axis": {
+                                "title": null,
+                                "domain": false,
+                                "labels": true,
+                                "ticks": false,
+                                "grid": false,
+                                "tickMinStep": 1
+                            }
+                        }
+                    }
+                }
+                ```
+            </td>
+            <td>
+                ```vegalite
+                {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                    "mark": "area",
+                    "height": 50,
+                    "width": 250,
+                    "data": {
+                        "values": {{ .SparkLineUsage }},
+                        "format": {
+                            "parse": {"day": "date:'%s'"}
+                        }
+                    },
+                    "config": {
+                        "background": "transparent",
+                        "view": {
+                            "stroke": "transparent"
+                        },
+                        "header": {
+                            "title": null,
+                            "labelAngle": 0,
+                            "labelAlign": "left"
+                        },
+                        "area": {
+                            "interpolate": "monotone",
+                            "line": {
+                                "color": "#00bfa5",
+                                "strokeWidth": 1,
+                                "interpolate": "monotone"
+                            },
+                            "fill": "#00bfa51a"
+                        }
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "day",
+                            "timeUnit": "date/month",
+                            "format": "%s",
+                            "type": "ordinal",
+                            "axis": {
+                                "title": null,
+                                "orient": "bottom",
+                                "domain": false,
+                                "ticks": false,
+                                "labels": true,
+                                "grid": false,
+                                "labelAngle": -45
+                            }
+                        },
+                        "y": {
+                            "field": "accounts",
+                            "type": "quantitative",
+                            "axis": {
+                                "title": null,
+                                "domain": false,
+                                "labels": true,
+                                "ticks": false,
+                                "grid": false,
+                                "tickMinStep": 1
+                            }
+                        }
+                    }
+                }
+                ```
+            </td>
+        </tr>
+        {{- end }}
+    </tbody>
+</table>
+{{ end -}}
