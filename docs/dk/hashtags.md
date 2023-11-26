@@ -2,57 +2,59 @@
 
 ## Generelle
 
-* `#NyPåMastodon`
-* `#Introduktion`
-* `#DkMastodon`
-* `#MastoDansk`
-* `#DkTrut`
-* `#FællesHjerne`
 * `#Anbefaling`
-* `#SoMeDk`
-* `#FinderSelvUd`
 * `#Dansk`
 * `#DK`
+* `#DKMastodon`
+* `#DKTrut`
+* `#FællesHjerne`
 * `#ffdk`
+* `#FinderSelvUd`
+* `#Introduktion`
+* `#MastoDansk`
+* `#NyPåMastodon`
+* `#SoMeDk`
 
 ## Politik/samfund
 
-* `#dkpol`
-* `#eudk`
-* `#dksund`
+* `#DKHandicap`
+* `#DKMedier`
+* `#DKPol`
+* `#DKSocial`
+* `#SKSund`
+* `#EUDK`
+* `#skolechat`
 * `#sundpol`
 * `#uddpol`
-* `#skolechat`
-* `#dksocial`
-* `#DkHandicap`
-* `#dkmedier`
 
 ## Kultur/fritid
 
-* `#dkkultur`
-* `#dkkunst`
-* `#dkmusik`
-* `#dkfilm`
-* `#dkfoto`
 * `#DagensPlade`
-* `#dkevents`
-* `#dkmotion`
-* `#dksport`
+* `#DKEvents`
+* `#DKFilm`
+* `#DKFoto`
+* `#DKKultur`
+* `#DKKunst`
+* `#DKMotion`
+* `#DKMusik`
+* `#DKSport`
+* `#Fredagsbog`
 * `#mad`
+* `#MusikalskPlanke`
 * `#opskrifter`
-
+  
 ## Business
 
-* `#dkbiz`
-* `#dkmarketing`
-* `#dkstartup`
-* `#dkinnovation`
-* `#dkjob`
+* `#DKBiz`
+* `#DKInnovation`
+* `#DKJob`
+* `#DKMarketing`
+* `#DKStartup`
 
 ## Teknik/miljø
 
-* `#dkgreen`
-* `#dkklima`
-* `#dkenergi`
-* `#dkscience`
-* `#dkIT`
+* `#DKEnergi`
+* `#DKGgreen`
+* `#DKIT`
+* `#DKKlima`
+* `#DKScience`
