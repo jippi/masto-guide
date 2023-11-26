@@ -4,6 +4,8 @@
 
     Tag trends bruger [expressional.social](https://expressional.social/) serveren som data grundlag. Det betyder kort sagt at posts skal have været "set" af expressional.social serveren for at tælle. Da serveren deltager i det [Danske Mastodon Relay](relay.md), er der en god chance for det retvisende data, selvom det er uperfekt.
 
+_Sidst opdateret {{ .UpdateAt }}_
+
 {{ range .TagCategories }}
 ## {{ .Name }}
 
