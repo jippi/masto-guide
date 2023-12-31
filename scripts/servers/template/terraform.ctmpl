@@ -320,6 +320,7 @@ resource "datadog_dashboard" "overview" {
 
           yaxis {
             include_zero = false
+            "max": "1000"
           }
 
           event {
