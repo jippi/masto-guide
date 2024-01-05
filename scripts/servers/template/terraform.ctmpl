@@ -397,7 +397,7 @@ resource "datadog_dashboard" "overview" {
               comparator = "<="
               hide_value = false
               palette    = "white_on_green"
-              value      = 200
+              value      = 250
             }
 
             conditional_formats {
