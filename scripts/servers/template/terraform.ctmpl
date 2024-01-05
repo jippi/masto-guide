@@ -401,14 +401,14 @@ resource "datadog_dashboard" "overview" {
             }
 
             conditional_formats {
-              comparator = "<="
+              comparator = "<"
               hide_value = false
               palette    = "white_on_yellow"
               value      = 500
             }
 
             conditional_formats {
-              comparator = ">"
+              comparator = ">="
               hide_value = false
               palette    = "white_on_red"
               value      = 500
