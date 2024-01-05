@@ -312,7 +312,7 @@ resource "datadog_dashboard" "overview" {
 
       widget {
         timeseries_definition {
-          title          = "Average server response time for 2xx response codes (lower is better)"
+          title          = "75th percentile server response time for 2xx response codes (lower is better)"
           legend_layout  = "auto"
           show_legend    = true
           title_align    = "left"
@@ -365,7 +365,7 @@ resource "datadog_dashboard" "overview" {
               metric_query {
                 data_source = "metrics"
                 name        = "query1"
-                query       = "avg:synthetics.http.response.time{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}"
+                query       = "p75:synthetics.http.response.time.distrib{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}"
               }
             }
 
@@ -388,7 +388,7 @@ resource "datadog_dashboard" "overview" {
 
       widget {
         toplist_definition {
-          title       = "Average response time for 2xx response code (lower is better)"
+          title       = "7th percentile response time for 2xx response code (lower is better)"
           title_align = "left"
           title_size  = "16"
 
@@ -425,10 +425,10 @@ resource "datadog_dashboard" "overview" {
 
             query {
               metric_query {
-                aggregator  = "avg"
+                aggregator  = "percentile"
                 data_source = "metrics"
                 name        = "query2"
-                query       = "avg:synthetics.http.response.time{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}.fill(zero)"
+                query       = "p75:synthetics.http.response.time.distrib{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}.fill(zero)"
               }
             }
           }
@@ -445,7 +445,7 @@ resource "datadog_dashboard" "overview" {
 
       widget {
         change_definition {
-          title       = "Response time change since the day before for 2xx response codes (lower is better)"
+          title       = "75th percentile response time change since the day before for 2xx response codes (lower is better)"
           title_align = "left"
           title_size  = "16"
 
@@ -466,10 +466,10 @@ resource "datadog_dashboard" "overview" {
 
             query {
               metric_query {
-                aggregator  = "avg"
+                aggregator  = "percentile"
                 data_source = "metrics"
                 name        = "query1"
-                query       = "avg:synthetics.http.response.time{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}"
+                query       = "p75:synthetics.http.response.time.distrib{project:masto-guide AND $site AND status_code_class:2xx{{ ExcludedDomainsQuery .ExcludedDomains }}} by {site}"
               }
             }
           }
