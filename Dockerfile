@@ -38,15 +38,14 @@ RUN --mount=type=cache,id=mkdocs-cache,mode=0777,target=/root/.cache \
     && apk add \
         cairo \
         freetype-dev \
+        gcc \
         git \
         git-fast-import \
         jpeg-dev \
-        openssh \
-        zlib-dev \
-    && apk add \
-        gcc \
         libffi-dev \
         musl-dev \
+        openssh \
+        zlib-dev \
     && pip install --upgrade pip \
     && pip install \
         'mkdocs-glightbox' \
