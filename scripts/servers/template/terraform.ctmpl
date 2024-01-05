@@ -388,7 +388,7 @@ resource "datadog_dashboard" "overview" {
 
       widget {
         toplist_definition {
-          title       = "7th percentile response time for 2xx response code (lower is better)"
+          title       = "75th percentile response time for 2xx response code (lower is better)"
           title_align = "left"
           title_size  = "16"
 
