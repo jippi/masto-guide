@@ -167,17 +167,17 @@ Add the following to your `firebase.json` file.
     "redirects": [
     {
       "source": "/.well-known/host-meta",
-      "destination": "https://mastodon.social/.well-known/host-meta?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}",
+      "destination": "https://${MASTODON_DOMAIN}/.well-known/host-meta?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}",
       "type": 301
     },
     {
       "source": "/.well-known/webfinger",
-      "destination": "https://mastodon.social/.well-known/host-meta?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}",
+      "destination": "https://${MASTODON_DOMAIN}/.well-known/webfinger?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}",
       "type": 301
     },
     {
       "source": "/.well-known/nodeinfo",
-      "destination": "https://mastodon.social/.well-known/host-meta?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}",
+      "destination": "https://${MASTODON_DOMAIN}/.well-known/nodeinfo?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}",
       "type": 301
     }
     // ...
