@@ -58,7 +58,7 @@ This is a slightly more technical overview of how the alias functionality works.
 1. The web server responsible for `${ALIAS_DOMAIN}` accepts the request and redirects the `example.com` Mastodon server to the `${MASTODON_DOMAIN}` Mastodon server
     1. The web server responds with `HTTP/1.1 301 Moved Permanently`
     1. The web server with `Location: https://${MASTODON_DOMAIN}/.well-known/webfinger?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}`
-1. The `example.com` Mastodon server follows the redirect and queries the `__MASTODON_DOMAIN_` WebFinger endpoint.
+1. The `example.com` Mastodon server follows the redirect and queries the `${MASTODON_DOMAIN}` WebFinger endpoint.
     1. `GET https://${MASTODON_DOMAIN}/.well-known/webfinger?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}`
 1. The `example.com` Mastodon server gets a valid `${MASTODON_DOMAIN}` Mastodon profile back named `${MASTODON_USER}@${MASTODON_DOMAIN}` and shows the result to the user that searched for you.
 
