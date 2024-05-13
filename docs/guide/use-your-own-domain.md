@@ -194,9 +194,9 @@ Add the following to your `firebase.json` file.
 Add the following three lines to your redirect rules file (`_redirects`):
 
 ```
-/.well-known/host-meta* https://${MASTODON_DOMAIN}/.well-known/host-meta:splat 301
-/.well-known/webfinger* https://${MASTODON_DOMAIN}/.well-known/webfinger:splat 301
-/.well-known/nodeinfo* https://${MASTODON_DOMAIN}/.well-known/nodeinfo:splat 301
+/.well-known/host-meta* https://${MASTODON_DOMAIN}/.well-known/host-meta?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN} 301
+/.well-known/nodeinfo*  https://${MASTODON_DOMAIN}/.well-known/nodeinfo?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN}  301
+/.well-known/webfinger* https://${MASTODON_DOMAIN}/.well-known/webfinger?resource=acct:${MASTODON_USER}@${MASTODON_DOMAIN} 301
 ```
 
 ### Netlify
