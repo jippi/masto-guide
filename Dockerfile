@@ -28,7 +28,7 @@ RUN --mount=type=cache,id=go-build,target=/root/.cache \
 # final image w/ mkdocs
 ######################################################################
 
-FROM ghcr.io/afritzler/mkdocs-material
+FROM squidfunk/mkdocs-material
 
 RUN --mount=type=cache,id=mkdocs-cache,mode=0777,target=/root/.cache \
     --mount=type=cache,id=apk-cache,target=/var/cache/apk \
