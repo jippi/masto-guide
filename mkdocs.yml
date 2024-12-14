@@ -3,7 +3,7 @@ repo_url: https://github.com/jippi/masto-guide
 edit_uri: blob/main/docs/
 site_description: 'The MastoGuide goal is to help everyone learn about Mastodon'
 site_author: 'Jippi'
-site_url: https://guide.toot.as/
+site_url: https://guide.expressional.social/
 
 plugins:
   - charts
