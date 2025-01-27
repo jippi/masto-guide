@@ -39,32 +39,11 @@ _Sidst opdateret {{ .UpdateAt }}_
         {{ end }}
         * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
         * **Version:** {{ IsCurrent . | BoolIcon }} (`{{ .Version }}`)
+        * _[Se overvågning for serveren](https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94?tpl_var_site={{ .Domain }})_
         * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
 {{ prefixWith .Description "    " }}
-
-=== "Server overvågning"
-
-    !!! info inline "Server detaljer"
-
-        * **Navn:** [{{ .Domain }}](https://{{ .Domain }}/){target=_blank}
-        * **Ejer:** [@{{ .Contact.Account.Username }}]({{ .Contact.Account.URL }}){target=_blank}
-        {{ if .MastodonCovenant }}
-        * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger Mastodon Server Covenant, klik for at læse mere"}
-        {{ else }}
-        * [**Mastodon Server Covenant:** {{ BoolIcon .MastodonCovenant }}](https://joinmastodon.org/covenant){target=_blank title="Serveren følger IKKE Mastodon Server Covenant, klik for at læse mere"}
-        {{ end }}
-        * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
-        * **Version:** {{ IsCurrent . | BoolIcon }} (`{{ .Version }}`)
-        * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
-        * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
-
-{{ if .WithoutMonitoring }}
-    Serveren har valgt ikke at detlage i den automatiske overvågning.
-{{ else }}
-    <iframe width="70%" height="700" src="https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94?tpl_var_site={{ .Domain }}"></iframe>
-{{ end }}
 
 === "Server regler"
 
