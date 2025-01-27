@@ -39,7 +39,7 @@ _Sidst opdateret {{ .UpdateAt }}_
         {{ end }}
         * **Brugere:** {{ NumberFormat .Usage.Users.ActiveMonth | trimSpace }}
         * **Version:** {{ IsCurrent . | BoolIcon }} (`{{ .Version }}`)
-        * _[Se overvågning for serveren](https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94?tpl_var_site={{ .Domain }})_
+        * _[Se overvågning for serveren](https://p.datadoghq.eu/sb/srs42sxua9jgd9js-7114573bc72e519f4e08aac4c5a63c94?tpl_var_site={{ .Domain }}){target=_blank}__
         * _[Flyt til serveren](/guide/move-mastodon-server/?to={{ .Domain }})_
         * _[Læs mere om serveren](https://{{ .Domain }}/about){target=_blank}_
 
