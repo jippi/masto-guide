@@ -4,7 +4,7 @@
 # build go server
 ######################################################################
 
-FROM golang:1.22-alpine AS masto-guide-dk-servers
+FROM golang:1.25-alpine AS masto-guide-dk-servers
 
 WORKDIR /usr/src/app
 
