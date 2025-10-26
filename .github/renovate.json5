@@ -1,0 +1,61 @@
+{
+  extends: [
+    "config:recommended",
+    ":pinDevDependencies",
+    ":separateMultipleMajorReleases",
+    "default:pinDigestsDisabled",
+  ],
+  schedule: ["* * * * *"],
+  automerge: true,
+  configMigration: true,
+  baseBranches: ["main"],
+  rebaseWhen: "behind-base-branch",
+  labels: ["dependencies"],
+  osvVulnerabilityAlerts: true,
+  platformAutomerge: true,
+  postUpdateOptions: ["npmDedupe"],
+  prHourlyLimit: 1,
+  vulnerabilityAlerts: {
+    enabled: true,
+    labels: ["security"],
+  },
+  packageRules: [
+    {
+      matchFileNames: ["package.json"],
+      enabled: true,
+    },
+  ],
+  customManagers: [
+    {
+      customType: "regex",
+      fileMatch: ["(^|/)Dockerfile$", "(^|/)Dockerfile\\.[^/]*$"],
+      matchStrings: [
+        'renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ARG|ENV) .*?_VERSION="(?<currentValue>.*?)"?\\s',
+      ],
+      versioningTemplate: "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      extractVersionTemplate: "^v?(?<version>\\d+\\.\\d+\\.\\d+)",
+    },
+    {
+      customType: "regex",
+      fileMatch: ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+      matchStrings: [
+        'renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?_VERSION: "?(?<currentValue>.*?)"?\\s',
+      ],
+      versioningTemplate: "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      extractVersionTemplate: "^v?(?<version>\\d+\\.\\d+\\.\\d+)",
+    },
+    {
+      customType: "regex",
+      fileMatch: [
+        "(^|/)\\.env\\.docker$",
+        "(^|/)scripts/dottie$",
+        "(^|/)scripts/set-recommended-versions$",
+      ],
+      matchStrings: [
+        '@renovate datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?="?(?<currentValue>.*?)"?\\s',
+      ],
+      versioningTemplate: "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      extractVersionTemplate: "^(?<version>v?\\d+\\.\\d+\\.\\d+)",
+    },
+  ],
+}

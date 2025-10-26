@@ -2,115 +2,115 @@
 name: Deploy static content to Pages
 
 on:
-  # automatically update the DK servers page on an interval
-  schedule:
-    # update once an hour
-    - cron: "0 * * * *"
+    # automatically update the DK servers page on an interval
+    schedule:
+        # update once an hour
+        - cron: "0 * * * *"
 
-  # deploy on merge to main branch
-  push:
-    branches: ["main"]
+    # deploy on merge to main branch
+    push:
+        branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-  packages: write
+    contents: read
+    pages: write
+    id-token: write
+    packages: write
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    group: "pages"
+    cancel-in-progress: false
 
 env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+    REGISTRY: ghcr.io
+    IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    # Ubuntu is fine, we just need Docker and bash
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      # checkout the code
-      - name: Checkout
-        uses: actions/checkout@v3
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        # Ubuntu is fine, we just need Docker and bash
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        steps:
+            # checkout the code
+            - name: Checkout
+              uses: actions/checkout@v3
 
-      # Setup Docker
-      - name: Log in to the Container registry
-        uses: docker/login-action@v2
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+            # Setup Docker
+            - name: Log in to the Container registry
+              uses: docker/login-action@v2
+              with:
+                  registry: ${{ env.REGISTRY }}
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+            - name: Extract metadata (tags, labels) for Docker
+              id: meta
+              uses: docker/metadata-action@v4
+              with:
+                  images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
-      - uses: docker/setup-buildx-action@v2
+            - uses: docker/setup-buildx-action@v2
 
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+            - name: Build and push
+              uses: docker/build-push-action@v3
+              with:
+                  context: .
+                  push: true
+                  tags: ${{ steps.meta.outputs.tags }}
+                  labels: ${{ steps.meta.outputs.labels }}
+                  cache-from: type=gha
+                  cache-to: type=gha,mode=max
 
-      # Generate Markdown and Terraform config
-      - name: Generate Markdown and TF templates
-        run: ./scripts/update-servers.sh
+            # Generate Markdown and Terraform config
+            - name: Generate Markdown and TF templates
+              run: ./scripts/update-servers.sh
 
-      # Build documentation
-      - name: Build mkdocs output
-        run: ./scripts/mkdocs.sh build
+            # Build documentation
+            - name: Build mkdocs output
+              run: ./scripts/mkdocs.sh build
 
-      # GitHub pages
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "site"
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+            # GitHub pages
+            - name: Setup Pages
+              uses: actions/configure-pages@v2
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v1
+              with:
+                  path: "site"
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v1
 
-      # Apply TF monitors
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-      - name: Terraform init
-        id: init
-        run: terraform init
-        working-directory: scripts/servers/monitoring
-      - name: Terraform validate
-        id: validate
-        run: terraform -chdir=scripts/servers/monitoring validate
+            # Apply TF monitors
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v2
+              with:
+                  cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+            - name: Terraform init
+              id: init
+              run: terraform init
+              working-directory: scripts/servers/monitoring
+            - name: Terraform validate
+              id: validate
+              run: terraform -chdir=scripts/servers/monitoring validate
 
-      # update dashboard first, on it's own, to make sure SLO and such are not referenced anywhere before deleting them
-      # See: https://discuss.hashicorp.com/t/how-to-first-update-dependency-and-then-delete-an-old-object/6221/3
-      - name: Terraform apply (dashboard)
-        run: terraform -chdir=scripts/servers/monitoring apply -auto-approve -input=false -target datadog_dashboard.overview
-        env:
-          TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
-          TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
-      # update all TF resources
-      - name: Terraform apply (all)
-        run: terraform -chdir=scripts/servers/monitoring apply -auto-approve -input=false
-        env:
-          TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
-          TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
+            # update dashboard first, on it's own, to make sure SLO and such are not referenced anywhere before deleting them
+            # See: https://discuss.hashicorp.com/t/how-to-first-update-dependency-and-then-delete-an-old-object/6221/3
+            - name: Terraform apply (dashboard)
+              run: terraform -chdir=scripts/servers/monitoring apply -auto-approve -input=false -target datadog_dashboard.overview
+              env:
+                  TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
+                  TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
+            # update all TF resources
+            - name: Terraform apply (all)
+              run: terraform -chdir=scripts/servers/monitoring apply -auto-approve -input=false
+              env:
+                  TF_VAR_datadog_api_key: ${{ secrets.DD_API_KEY }}
+                  TF_VAR_datadog_app_key: ${{ secrets.DD_APP_KEY }}
