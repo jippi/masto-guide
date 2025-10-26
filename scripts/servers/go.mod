@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/Masterminds/semver v1.5.0
-	github.com/goodsign/monday v1.0.0
+	github.com/goodsign/monday v1.0.2
 	github.com/sirupsen/logrus v1.9.0
 	golang.org/x/text v0.4.0
 	gopkg.in/resty.v1 v1.12.0
