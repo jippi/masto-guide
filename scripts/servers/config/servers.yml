@@ -47,8 +47,6 @@
 - domain: expressional.social
   covenant: true # https://expressional.social/docs/#about-the-server
 
-- domain: norrebro.space
-
 - domain: mstdn.dk
   covenant: true
 
