@@ -7,7 +7,7 @@ require (
 	github.com/goodsign/monday v1.0.2
 	github.com/sirupsen/logrus v1.9.3
 	golang.org/x/text v0.30.0
-	gopkg.in/resty.v1 v1.12.0
+	gopkg.in/resty.v2 v2.16.5
 	gopkg.in/yaml.v3 v3.0.1
 )
 
